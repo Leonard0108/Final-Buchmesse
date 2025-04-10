@@ -88,6 +88,20 @@ a|
 This section outlines the key use cases the system must support. Each use case defines a specific functionality from the client’s perspective and identifies the relevant actors involved. These scenarios serve as the foundation for understanding how the system will be utilized in a real-world context.
 
 === Actors
+Actors represent either users or external systems that interact with the system. The table below provides an overview of all identified actors, along with a brief description of each. Abstract actors—displayed in italic—are used to represent groups of related actors for the purpose of generalization and simplification
+
+[options="header", cols="1, 1"]
+|===
+| User
+| Description
+
+| Customer
+| Any User, who has the role Customer and buys the products.
+
+| Admin
+| Users who have the role Admin and administrate the application.  
+
+|===
 
 === Use Case Diagrams
 === Use Case Description
