@@ -14,6 +14,7 @@ This specification document serves as the basis for a potential contract between
 == Task Definition and Objectives
 
 {company_name} hosts several book fairs on its premises each year, covering various themes such as horticulture, politics, modern history, and novels from the 18th and 19th centuries.
+
 Relevant publishing houses traditionally rent exhibition stands to:
   
   *  present their publishing portfolio to a professional audience
@@ -23,19 +24,19 @@ Relevant publishing houses traditionally rent exhibition stands to:
 To modernize the booking and management of these sales stands, Leifurter Buchmesse AG is planning the development of a web-based solution.
 The goal is to create a system prototype that automates the most important processes and can be expanded into a fully functional application system if needed.
 
-Currently, the exhibition grounds include three halls, with four additional halls in the planning phase. Each hall can accommodate between 20 and 80 sales stands. The rental price of a stand depends on its size (in multiples of 10 m²) and its location (categories A through D).
-Stand equipment such as display surfaces, shelves, counters, seating areas, and coffee machines can be rented from the trade fair company at a favorable rate and should also be managed digitally to facilitate the setup of the sales stands.
+Currently, the exhibition grounds include three halls, with four additional halls in the planning phase. Each hall can accommodate between 20 and 80 sales stands. The rental price of a stand depends on its size (in multiples of 10 m²) and its location (categories A to D).
+Stand equipment such as display surfaces, shelves, counters, seating areas, and coffee machines can be rented from the fair company at a low price and should also be managed digitally to facilitate the setup of the sales stands.
 
-A software solution for personnel management is already in place, which provides access to annual total personnel costs at any time. These costs, along with other fixed costs, are partially allocated to the financial accounting of each trade fair and should also be represented digitally.
+A software solution for personnel management is already in place, which provides access to annual total personnel costs at any time. These costs, along with other fixed costs, are partially allocated to the financial accounting of each fair and should also be represented digitally.
 
-In addition, the existing event calendar is to be digitized. It includes all trade fairs from the past and the upcoming twelve months, supplemented by statistical data such as:
+In addition, the existing event calendar is to be digitized. It includes all fairs from the past and the upcoming twelve months, supplemented by statistical data such as:
 
-  *  total number of visitors,
-  *  number of participating publishers,
-  *  total revenue from book sales,
-  *  number of book contracts concluded.
+  *  total number of visitors
+  *  number of participating publishers
+  *  total revenue from book sales
+  *  number of book contracts concluded
 
-A booking overview should also be integrated, clearly displaying the booked sales stands and the requested equipment for each planned trade fair.
+A booking overview should also be integrated, clearly displaying the booked sales stands and the requested equipment for each planned fair.
 
 == Product Use
 
@@ -117,8 +118,51 @@ This section outlines the key use cases the system must support. Each use case d
 === Nice-to-Have Criteria
 
 == Non-Functional Requirements
-=== Quality Goals
-=== Specific Non-Functional Requirements
+Non-functional requirements are the property of the system ans is used to measure the quality of the system.
+
+Priority: 1 - low ; 5 - high.
+[options="header", cols="1, 1, 1, 1"]
+|===
+| ID
+| Titel
+| Description
+| Priority
+
+| 001
+| Security
+| 
+| 2
+
+| 002
+| Data protection
+| The system shall be GDPR conform to ensure a compliant data handling.
+| 2
+
+| 003
+| Performance 
+| The load time for every user-interaction should be less then 2 seconds for 90% of requests, to ensure a fast and smooth operation.
+| 4
+
+| 004 
+| Usability
+| The user interface must be designed in such a way that the navigation is intuitive, and the applicant can quickly find all the required functions without needing additional instructions or training.
+| 5
+
+| 005
+| Reliability
+|The system must ensure an availability of at least 99% on an annual average. In case of failures, the system must be restored within 4 hours to ensure continuous usage.
+| 3
+
+| 006
+| Scalability
+| The system must be scalable to ensure good performance even with an increasing number of requests and users.
+| 5
+
+| 007
+| Flexibility
+| The system must be designed for easy adaptation to changing requirements or technologies. It should have a modular architecture, allowing new functionalities or adjustments to be added without significant disruption. All changes must be documented and traceable, ensuring efficient maintenance and extension.
+| 4
+|===
 
 == GUI Prototype
 
