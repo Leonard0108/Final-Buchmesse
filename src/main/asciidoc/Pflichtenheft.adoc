@@ -1,4 +1,70 @@
 :project_name: Book fair
+:company_name: Leifurter Buchmessen AG
 :toc: left
 :numbered:
 = Pflichtenheft __{project_name}__
+
+
+== Summary
+The objective of this specification document is to provide a clear overview of the planned software product and to establish a common communication basis between the client and the contractor (Group 4).
+It contains a comprehensive description of the project, the specific assignment, the involved stakeholders, various illustrative diagrams, as well as the functional and non-functional requirements. Additionally, a GUI prototype is presented.
+This specification document serves as the basis for a potential contract between the client and the contractor.
+
+
+== Task Definition and Objectives
+
+{company_name} hosts several book fairs on its premises each year, covering various themes such as horticulture, politics, modern history, and novels from the 18th and 19th centuries.
+Relevant publishing houses traditionally rent exhibition stands to:
+  
+  *  present their publishing portfolio to a professional audience
+  *  accept orders from booksellers
+  *  negotiate contracts with authors for new book projects
+
+To modernize the booking and management of these sales stands, Leifurter Buchmesse AG is planning the development of a web-based solution.
+The goal is to create a system prototype that automates the most important processes and can be expanded into a fully functional application system if needed.
+
+Currently, the exhibition grounds include three halls, with four additional halls in the planning phase. Each hall can accommodate between 20 and 80 sales stands. The rental price of a stand depends on its size (in multiples of 10 m²) and its location (categories A through D).
+Stand equipment such as display surfaces, shelves, counters, seating areas, and coffee machines can be rented from the trade fair company at a favorable rate and should also be managed digitally to facilitate the setup of the sales stands.
+
+A software solution for personnel management is already in place, which provides access to annual total personnel costs at any time. These costs, along with other fixed costs, are partially allocated to the financial accounting of each trade fair and should also be represented digitally.
+
+In addition, the existing event calendar is to be digitized. It includes all trade fairs from the past and the upcoming twelve months, supplemented by statistical data such as:
+
+  *  total number of visitors,
+  *  number of participating publishers,
+  *  total revenue from book sales,
+  *  number of book contracts concluded.
+
+A booking overview should also be integrated, clearly displaying the booked sales stands and the requested equipment for each planned trade fair.
+
+== Product Use
+
+== Stakeholder
+Stakeholders are groups or individuals who have a legitimate interest in and influence over the system.
+They are presented in the following table along with their objectives.
+
+[options="header", cols="20%, 40%, 40%"]
+|===
+| Name 
+| Description 
+| Objectives
+
+| Organisator {company_name} 
+| Is the client and at the same time the Product-Owner 
+a| 
+
+| Publisher 
+| Users who mainly use the system and revenue source 
+a| 
+  *  a friendly userinterface
+
+| Administrators
+| Users responsible for the management of the trade fair and bookings
+a|
+
+| Developer 
+| Individuals who develop the design and implement and test the application
+a|
+
+|===
+
