@@ -130,7 +130,7 @@ Priority: 1 - low ; 5 - high.
 
 | 001
 | Security
-| 
+| The system must be secured by authentication and role assignment to avoid attacks or manipulation in the system.
 | 2
 
 | 002
@@ -159,9 +159,20 @@ Priority: 1 - low ; 5 - high.
 | 5
 
 | 007
-| Flexibility
+| Flexibility & Maintainability
 | The system must be designed for easy adaptation to changing requirements or technologies. It should have a modular architecture, allowing new functionalities or adjustments to be added without significant disruption. All changes must be documented and traceable, ensuring efficient maintenance and extension.
 | 4
+
+| 008
+| Protocolation
+| The system must log all system activities, including login attempts, application changes, system errors, and critical events. The logs must be securely archived and retained for at least 5 years in compliance with legal requirements.
+| 3
+
+| 009
+| Documentation
+| There must be comprehensive documentation available for the system, describing both the software architecture and the specific implementations, to facilitate long-term maintenance and further development.
+| 5
+
 |===
 
 == GUI Prototype
