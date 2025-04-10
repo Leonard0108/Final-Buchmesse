@@ -43,7 +43,9 @@ A booking overview should also be integrated, clearly displaying the booked sale
 Stakeholders are groups or individuals who have a legitimate interest in and influence over the system.
 They are presented in the following table along with their objectives.
 
-[options="header", cols="20%, 40%, 40%"]
+[options="header"]
+[cols="1, 1, 1"]
+
 |===
 | Name 
 | Description 
@@ -52,19 +54,74 @@ They are presented in the following table along with their objectives.
 | Organisator {company_name} 
 | Is the client and at the same time the Product-Owner 
 a| 
+  *  get more publisher
+  *  automate the process
+  *  avoid mistakes by human
 
 | Publisher 
 | Users who mainly use the system and revenue source 
 a| 
   *  a friendly userinterface
+  *  a fast process of booking
 
 | Administrators
 | Users responsible for the management of the trade fair and bookings
 a|
+  *  get fast a simple overview about data
+  *  manage data
 
 | Developer 
 | Individuals who develop the design and implement and test the application
 a|
-
+  *  expandable system prototype
+  *  easly modifyable system 
 |===
 
+
+== System Boundary and Top-Level Architecture
+=== Context Diagram
+=== Top-Level Architecture
+
+== Use Cases
+
+This section outlines the key use cases the system must support. Each use case defines a specific functionality from the client’s perspective and identifies the relevant actors involved. These scenarios serve as the foundation for understanding how the system will be utilized in a real-world context.
+
+=== Actors
+
+=== Use Case Diagrams
+=== Use Case Description
+
+== Functional Requirements
+=== Must-Have Criteria
+[options="header", cols="1, 1, 1, 1, 1"]
+|===
+| ID
+| Titel
+| Status
+| Description
+| Evaluation criteria
+
+| 001
+| Login
+| open
+| The system should provide registered users to login as well to logout.
+| There is a button for login, logout as well as input fields for email and password.
+
+| 002
+| Registration
+| open
+| The system should provide unregistered users the option to sign up with an email, password, and the name of the publishing house.
+| There is a button for registration as well as input fields for E-mail, password and publishing house.
+
+|===
+=== Nice-to-Have Criteria
+
+== Non-Functional Requirements
+=== Quality Goals
+=== Specific Non-Functional Requirements
+
+== GUI Prototype
+
+== Data Model
+=== Overview: Class Diagrams
+=== Classes and Enumeration
