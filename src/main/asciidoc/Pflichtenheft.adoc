@@ -1,4 +1,4 @@
-:project_name: Buchmesse
+:project_name: Book fair
 :toc: left
 :numbered:
 = Pflichtenheft __{project_name}__
