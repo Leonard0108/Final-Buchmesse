@@ -135,7 +135,7 @@ Actors represent either users or external systems that interact with the system.
 Non-functional requirements are the property of the system ans is used to measure the quality of the system.
 
 Priority: 1 - low ; 5 - high.
-[options="header", cols="1, 1, 1, 1"]
+[options="header", cols="1, 1, 1, ^1"]
 |===
 | ID
 | Titel
