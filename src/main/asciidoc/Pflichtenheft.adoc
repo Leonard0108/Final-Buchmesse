@@ -119,16 +119,100 @@ Actors represent either users or external systems that interact with the system.
 | 001
 | Login
 | open
-| The system should provide registered users to login as well to logout.
-| There is a button for login, logout as well as input fields for email and password.
+| The system should provide registered users to authenticate and login.
+| There is a button for a login which leads to a new mask with input fields for E-Mail and password. If logged in successful, the user should be redirected to the customer/admin-view.
+
+| 002
+| Logout
+| open
+| The system should provide registered users to logout again.
+| There is a button to logout. If logged out successful, the user should be redirected to the home-page again.
 
 | 002
 | Registration
 | open
-| The system should provide unregistered users the option to sign up with an email, password, and the name of the publishing house.
-| There is a button for registration as well as input fields for E-mail, password and publishing house.
+| The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
+| There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the user-list.
+
+| 004
+| Book sales stands
+| open
+| The customers shall be able to buy a sale stand for events.
+| There should be a drop-down menu to select the event. If an event is selected, he can adjust the size and select a wished category. If finished, he can click book and the order should be added to his account.
+
+| 005
+| Book equipment
+| open
+| The customer shall be able to buy equipment for the sale stand.
+| There should be a button on the booking list to add equipment for the booked sale stand. If finished, he can press the button and the equipment will be added to the stand.
+
+| 006
+| View Bookings
+| open
+| The customer shall be able to view a list of his bookings.
+| The customer should have a view of a list of his booked stands with equipment.
+
+| 007
+| View Event calender
+| open
+a| The admin shall be able to view the calender with events for the last and the next year. The view should provide informations about:
+
+* total visitors
+* total publisher
+* total revenue from book sales
+* number of conludes book contracts
+| There should be a button which redirects the admin to the calender view.
+
+| 008
+| Add Event
+| open
+| The admin shall be able to add a event into the event calender.
+| There should be a button in event calender to add a new event. If clicked, a new mask should open, where you can name the event and set the time. If finished, the admin can press apply and the event will be added to the calender. 
+
+| 009
+| Remove event
+| open
+| The admin shall be able to remove events from the event calender.
+| In the calender should be buttons in events to remove it. If pressed and confirmed, the event will be removed from the calender.
+
+| 010
+| View Occupancy plan
+| open
+a| The admin shall be able to view a list of sale stands. It should provide information about:
+
+  *  stand
+  *  hall
+  *  publisher
+  *  booked
+  *  size
+  *  category
+| There should be a button which redirects the admin to the occupancy plan view.
+
+| 011
+| View balance sheet 
+| open
+| The admin shall be able to to see a balance sheet for an event with active and passiv side. 
+| There should be a button for the admin to get to the view with the balance sheet.
+
+| 012
+| View equipment warehouse
+| open
+|
+|
+
+| 013 
+| Add Equipment
+| The admin shall be able to add equipment to the equipment warehouse.
+| 
+
+| 014
+| Remove Equipment
+| open
+|
+|
 
 |===
+
 === Nice-to-Have Criteria
 
 == Non-Functional Requirements
