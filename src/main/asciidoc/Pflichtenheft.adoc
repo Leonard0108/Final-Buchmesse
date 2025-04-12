@@ -96,14 +96,15 @@ Actors represent either users or external systems that interact with the system.
 | Description
 
 | Customer
-| Any User, who has the role Customer and buys the products.
+| Any User, who has the role Customer and buys the products (sale stands and equipment).
 
 | Admin
-| Users who have the role Admin and administrate the application.  
+| Users who have the role Admin and administrate the application. They have access to the event calender, the equipment warehouse, balance sheet as well as the occupancy plan.
 
 |===
 
 === Use Case Diagrams
+
 === Use Case Description
 
 == Functional Requirements
@@ -135,16 +136,16 @@ Actors represent either users or external systems that interact with the system.
 | There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the user-list.
 
 | 004
-| Book sales stands
+| Book Sales Stands
 | open
 | The customers shall be able to buy a sale stand for events.
 | There should be a drop-down menu to select the event. If an event is selected, he can adjust the size and select a wished category. If finished, he can click book and the order should be added to his account.
 
 | 005
-| Book equipment
+| Book Equipment
 | open
 | The customer shall be able to buy equipment for the sale stand.
-| There should be a button on the booking list to add equipment for the booked sale stand. If finished, he can press the button and the equipment will be added to the stand.
+| There should be a button on the booking list to add equipment for the booked sale stand. If finished, the book-button can be pressed and the equipment will be added to the stand.
 
 | 006
 | View Bookings
@@ -153,7 +154,7 @@ Actors represent either users or external systems that interact with the system.
 | The customer should have a view of a list of his booked stands with equipment.
 
 | 007
-| View Event calender
+| View Event Calender
 | open
 a| The admin shall be able to view the calender with events for the last and the next year. The view should provide informations about:
 
@@ -170,13 +171,13 @@ a| The admin shall be able to view the calender with events for the last and the
 | There should be a button in event calender to add a new event. If clicked, a new mask should open, where you can name the event and set the time. If finished, the admin can press apply and the event will be added to the calender. 
 
 | 009
-| Remove event
+| Remove Event
 | open
 | The admin shall be able to remove events from the event calender.
 | In the calender should be buttons in events to remove it. If pressed and confirmed, the event will be removed from the calender.
 
 | 010
-| View Occupancy plan
+| View Occupancy Plan
 | open
 a| The admin shall be able to view a list of sale stands. It should provide information about:
 
@@ -189,18 +190,19 @@ a| The admin shall be able to view a list of sale stands. It should provide info
 | There should be a button which redirects the admin to the occupancy plan view.
 
 | 011
-| View balance sheet 
+| View Balance Sheet 
 | open
 | The admin shall be able to to see a balance sheet for an event with active and passiv side. 
 | There should be a button for the admin to get to the view with the balance sheet.
 
 | 012
-| View equipment warehouse
+| View Equipment Warehouse
 | open
-|
+|  The admin shall be able to view a list of equipment.
 |
 
 | 013 
+| open
 | Add Equipment
 | The admin shall be able to add equipment to the equipment warehouse.
 | 
@@ -208,13 +210,43 @@ a| The admin shall be able to view a list of sale stands. It should provide info
 | 014
 | Remove Equipment
 | open
-|
+| The admin shall be able to remove equipment from the equipment warehouse.
 |
 
 |===
 
 === Nice-to-Have Criteria
 
+[options="header", cols="1, 1, 1, 1, 1"]
+|===
+| ID
+| Titel
+| Status
+| Description
+| Evaluation criteria
+
+| 001
+| Filter Event Calender
+| open
+a| The admin shall be able to filter the calender with:
+
+  *  time
+  *  events 
+  *  halls
+| There should be input fields to search and filter for specific parts. If used, it should only show the parts wich match the filter criterias. It should also be possible to reset the filter to show every entry.
+
+| 002
+| Filter Occupancy Plan
+| open
+a| The admin shall be able to filter the calender with:
+
+  *  publisher
+  *  halls
+  *  stand
+| There should be input fields to search and filter for specific parts. If used, it should only show the parts wich match the filter criterias. It should also be possible to reset the filter to show every entry.
+
+
+|===
 == Non-Functional Requirements
 Non-functional requirements are the property of the system ans is used to measure the quality of the system.
 
