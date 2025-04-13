@@ -107,6 +107,159 @@ Actors represent either users or external systems that interact with the system.
 
 === Use Case Description
 
+[cols="1h, 3"]
+[[U001]]
+|===
+| ID                               | U001
+| Name                             | Login
+| Description                      | The unauthorized User shall be able to login and authorize with the system to access further functionality.
+| Actor                            | Customer and Admin
+| Essential Steps                  a| 
+1. User accesses "Login" in the navigation bar
+2. User enters his E-Mail and password
+3. User hits "Login" button
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U002]]
+|===
+| ID                               | U002
+| Name                             | Logout
+| Description                      | The authorized user shall be able to log out again.
+| Actor                            | Customer and Admin
+| Essential Steps                  | 1. User hits „Log out“ button in the navigation bar
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U003]]
+|===
+| ID                               | U003
+| Name                             | Registration
+| Description                      | The unauthorized user shall be able to create an account.
+| Actor                            | Customer
+| Essential Steps                 a| 
+1. Unauthorized User presses the „Register“ button
+2. He enters his desired E-Mail, password and his publisher name
+3. He clicks the „create Account“ button
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U004]]
+|===
+| ID                               | U004
+| Name                             | View Catalog
+| Description                      | Every publisher of the Book fair should be able to access the catalog which deplays the different stall sizes, categories as well as equipment.
+| Actor                            | Customer
+| Essential Steps                 a| 
+1. User clicks on the „Catalog“ tab
+2. User is shown the booking products Sale-Stands as well as afforable Equipment
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U005]]
+|===
+| ID                               | U005
+| Name                             | View Cart
+| Description                      | The Customer shall be able to view the contents of his cart and the total price of his bookings.
+| Actor                            | Customer
+| Essential Steps                 a| 
+1. Customer clicks „Cart“ button in the navigation bar
+2. Customer is shown his bookings as well as the total price
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U006]]
+|===
+| ID                               | U006
+| Name                             | Manage Bookings
+| Description                      | The Customer shall be able to add a new booking of a stall with equipment to his Cart or remove a booking from his Cart.
+| Actor                            | Customer
+| Essential Steps                 a|
+Add:
+
+1. The Customer clicks on „Catalog“ in navigation
+
+2. The Customer sees the variations of Stalls and Equipment, where he can click on his wished Stall as well as adding Equipment by clicking on the object and enters the wished amount
+
+3. If finished, he clicks on „Add to Cart“ 
+
+Remove:
+
+1. The Customer clicks on „Cart“ in navigation
+
+2. The Customer clicks on his booking he wants to remove and click on the button „Remove from Cart“
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U007]]
+|===
+| ID                               | U007
+| Name                             | Buy Bookings
+| Description                      | The Customer shall be able to buy the bookings in his Cart.
+| Actor                            | Customer
+| Essential Steps                 a| 
+1. The Customer presses the button „Cart“ in the navigation bar
+2. The Customer presses the button „Buy“
+3. If validated and purchased successful, the purchase will be added to his „Bookings“
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U008]]
+|===
+| ID                               | U008
+| Name                             | 
+| Description                      |
+| Actor                            | 
+| Essential Steps                  |
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U001]]
+|===
+| ID                               |
+| Name                             |
+| Description                      |
+| Actor                            | 
+| Essential Steps                  |
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U001]]
+|===
+| ID                               |
+| Name                             |
+| Description                      |
+| Actor                            | 
+| Essential Steps                  |
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U001]]
+|===
+| ID                               |
+| Name                             |
+| Description                      |
+| Actor                            | 
+| Essential Steps                  |
+| Functional Requirements          |
+|===
+
 == Functional Requirements
 === Must-Have Criteria
 [options="header", cols="1, 1, 1, 1, 1"]
