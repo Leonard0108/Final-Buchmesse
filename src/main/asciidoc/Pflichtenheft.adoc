@@ -193,7 +193,6 @@ Add:
 Remove:
 
 1. The Customer clicks on „Cart“ in navigation
-
 2. The Customer clicks on his booking he wants to remove and click on the button „Remove from Cart“
 
 | Functional Requirements          |
@@ -234,11 +233,11 @@ Remove:
 |===
 | ID                               | U009
 | Name                             | View Orders
-| Description                      | The Customer shall be able to see his bookings.
-| Actor                            | Customer
+| Description                      | The Customer shall be able to see his bookings. The Admin shall be able to see all Orders.
+| Actor                            | Customer and Admin
 | Essential Steps                 a| 
-1. The Customer presses the button „Orders“ in the navigation bar
-2. The Customer will get an overview about his bookings of stalls with equipment
+1. The Customer/Admin presses the button „Orders“ in the navigation bar
+2. The Customer will get an overview about his bookings of stalls with equipment. The Admin will get a overview of all Orders for an event.
 
 | Functional Requirements          |
 |===
@@ -283,6 +282,7 @@ Add:
 4. He then can update the desired information and click "Save"
 
 Remove:
+
 3. The admin can click on an event and then press the "Remove" button
 
 | Functional Requirements          |
@@ -327,19 +327,16 @@ Remove:
 Add:
 
 1. The Admin clicks on the button „Add“ on stalls or equipment
-
 2. The Admin enters information about the object 
 
 (Change:)
 
 1. The Admin clicks on the button „Change“ on the stalls or equipment
-
 2. The Admin can change information about the object (price etc.) by enter a new value and click „Save“
 
 Delete:
 
 1. The Admin clicks on the button „Delete“ on the stall or equipment
-
 2.  The Admin enters the date for deletion and clicks „confirm“
 
 | Functional Requirements          |
@@ -383,7 +380,7 @@ Delete:
 | Description
 | Evaluation criteria
 
-| 001
+| F001
 | Login
 | open
 | The system should provide registered users to authenticate and login.
@@ -443,7 +440,7 @@ a| The admin shall be able to view the calender with events for the last and the
 | In the calender should be buttons in events to remove it. If pressed and confirmed, the event will be removed from the calender.
 
 | 010
-| View Occupancy Plan
+| View Orders
 | open
 a| The admin shall be able to view a list of sale stands. It should provide information about:
 
