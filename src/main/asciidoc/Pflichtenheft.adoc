@@ -187,9 +187,7 @@ Actors represent either users or external systems that interact with the system.
 Add:
 
 1. The Customer clicks on „Catalog“ in navigation
-
 2. The Customer sees the variations of Stalls and Equipment, where he can click on his wished Stall as well as adding Equipment by clicking on the object and enters the wished amount
-
 3. If finished, he clicks on „Add to Cart“ 
 
 Remove:
@@ -220,43 +218,158 @@ Remove:
 [[U008]]
 |===
 | ID                               | U008
-| Name                             | 
-| Description                      |
-| Actor                            | 
-| Essential Steps                  |
+| Name                             | Create Order
+| Description                      | The system shall be able to create automatically an order when a customer wants to buy the bookings in the cart.
+| Actor                            | System
+| Essential Steps                  a|
+1. Customer presses "Buy" in the Cart
+2. Ensure that the inventory has sufficient stock for all products
+3. Create an order with the current time
+
 | Functional Requirements          |
 |===
 
 [cols="1h, 3"]
-[[U001]]
+[[U009]]
 |===
-| ID                               |
-| Name                             |
-| Description                      |
-| Actor                            | 
-| Essential Steps                  |
+| ID                               | U009
+| Name                             | View Orders
+| Description                      | The Customer shall be able to see his bookings.
+| Actor                            | Customer
+| Essential Steps                 a| 
+1. The Customer presses the button „Orders“ in the navigation bar
+2. The Customer will get an overview about his bookings of stalls with equipment
+
 | Functional Requirements          |
 |===
 
 [cols="1h, 3"]
-[[U001]]
+[[U010]]
 |===
-| ID                               |
-| Name                             |
-| Description                      |
-| Actor                            | 
-| Essential Steps                  |
+| ID                               | U010
+| Name                             | View Event Calendar
+| Description                      | The Admin shall be able to see a Calendar with the events with statistic details
+| Actor                            | Admin
+| Essential Steps                 a|
+1. The Admin clicks on the the button „Event Calendar“ in the navigation
+2. The Admin will see a Calendar along with the following information displayed below:
+  *  total visitors
+  *  total publisher
+  *  total revenue from book sales
+  *  number of conludes book contracts
+
 | Functional Requirements          |
 |===
 
 [cols="1h, 3"]
-[[U001]]
+[[U011]]
 |===
-| ID                               |
-| Name                             |
-| Description                      |
-| Actor                            | 
-| Essential Steps                  |
+| ID                               | U011
+| Name                             | Manage Events
+| Description                      | The Admin shall be able add, change and remove events from the Calendar
+| Actor                            | Admin
+| Essential Steps                 a| 
+1. The Admin clicks in the navigation on the button „Event Calendar“
+2. There he gets an overview about the timeline of events and get information about statistic informations.
+
+Add:
+
+3. The Admin can click on „Add Event“ 
+4. Then he can enter the informations about the event and press the „Finish“ button
+
+(Change:)
+
+3. The Admin can click on an event and there on the button „Change“
+4. He then can update the desired information and click "Save"
+
+Remove:
+3. The admin can click on an event and then press the "Remove" button
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U012]]
+|===
+| ID                               | U012
+| Name                             | View Accountancy
+| Description                      | The Admin shall be able to see the financial result of an event.
+| Actor                            | Admin
+| Essential Steps                 a|
+1. The Admin clicks on „Accountancy“ in the navigation
+2. The admin will have an overview of the event’s Balance, including the following details:
+  *  revenue from stands and equipment
+  *  operation costs
+  *  Total profit
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U013]]
+|===
+| ID                               | U013
+| Name                             | View Inventory
+| Description                      | The Admin shall be able to see the Inventory of stalls and equipment.
+| Actor                            | Admin
+| Essential Steps                  | 1. The Admin clicks on the button „Inventory“ in the navigation 
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U014]]
+|===
+| ID                               | U014
+| Name                             | Manage Inventory
+| Description                      | The Admin shall be able to add, change and remove stalls and equipment from the Inventory.
+| Actor                            | Admin
+| Essential Steps                 a|
+Add:
+
+1. The Admin clicks on the button „Add“ on stalls or equipment
+
+2. The Admin enters information about the object 
+
+(Change:)
+
+1. The Admin clicks on the button „Change“ on the stalls or equipment
+
+2. The Admin can change information about the object (price etc.) by enter a new value and click „Save“
+
+Delete:
+
+1. The Admin clicks on the button „Delete“ on the stall or equipment
+
+2.  The Admin enters the date for deletion and clicks „confirm“
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U015]]
+|===
+| ID                               | U015
+| Name                             | View Customers
+| Description                      | The Admin shall be able to see a list of Customers.
+| Actor                            | Admin
+| Essential Steps                 a|
+1. The Admin clicks on the button „ Customers“ in the navigation
+2. The Admin will see a list of publisher with E-mails.
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U016]]
+|===
+| ID                               | U016
+| Name                             | View Home
+| Description                      | The Users shall be able to see the home-screen.
+| Actor                            | User (un-/authorized)
+| Essential Steps                  a|
+1. The User opens the website or clicks on the button „Home“ in the navigation
+2. The User is shown the Home-Screen.
+
 | Functional Requirements          |
 |===
 
