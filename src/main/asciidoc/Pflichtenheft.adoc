@@ -234,10 +234,10 @@ Remove:
 | ID                               | U009
 | Name                             | View Orders
 | Description                      | The Customer shall be able to see his bookings. The Admin shall be able to see all Orders.
-| Actor                            | Customer and Admin
+| Actor                            | Customer
 | Essential Steps                 a| 
-1. The Customer/Admin presses the button „Orders“ in the navigation bar
-2. The Customer will get an overview about his bookings of stalls with equipment. The Admin will get a overview of all Orders for an event.
+1. The Customer presses the button „Orders“ in the navigation bar
+2. The Customer will get an overview about his bookings of stalls with equipment
 
 | Functional Requirements          |
 |===
@@ -246,6 +246,20 @@ Remove:
 [[U010]]
 |===
 | ID                               | U010
+| Name                             | View Event Orders
+| Description                      | The Admin shall be able to see all Orders.
+| Actor                            | Admin
+| Essential Steps                 a| 
+1. The Admin presses the button „Event Orders“ in the navigation bar
+2. The Admin will get a overview of all Orders for an event.
+
+| Functional Requirements          |
+|===
+
+[cols="1h, 3"]
+[[U011]]
+|===
+| ID                               | U011
 | Name                             | View Event Calendar
 | Description                      | The Admin shall be able to see a Calendar with the events with statistic details
 | Actor                            | Admin
@@ -261,9 +275,9 @@ Remove:
 |===
 
 [cols="1h, 3"]
-[[U011]]
+[[U012]]
 |===
-| ID                               | U011
+| ID                               | U012
 | Name                             | Manage Events
 | Description                      | The Admin shall be able add, change and remove events from the Calendar
 | Actor                            | Admin
@@ -289,9 +303,9 @@ Remove:
 |===
 
 [cols="1h, 3"]
-[[U012]]
+[[U013]]
 |===
-| ID                               | U012
+| ID                               | U013
 | Name                             | View Accountancy
 | Description                      | The Admin shall be able to see the financial result of an event.
 | Actor                            | Admin
@@ -306,9 +320,9 @@ Remove:
 |===
 
 [cols="1h, 3"]
-[[U013]]
+[[U014]]
 |===
-| ID                               | U013
+| ID                               | U014
 | Name                             | View Inventory
 | Description                      | The Admin shall be able to see the Inventory of stalls and equipment.
 | Actor                            | Admin
@@ -317,9 +331,9 @@ Remove:
 |===
 
 [cols="1h, 3"]
-[[U014]]
+[[U015]]
 |===
-| ID                               | U014
+| ID                               | U015
 | Name                             | Manage Inventory
 | Description                      | The Admin shall be able to add, change and remove stalls and equipment from the Inventory.
 | Actor                            | Admin
@@ -343,9 +357,9 @@ Delete:
 |===
 
 [cols="1h, 3"]
-[[U015]]
+[[U016]]
 |===
-| ID                               | U015
+| ID                               | U016
 | Name                             | View Customers
 | Description                      | The Admin shall be able to see a list of Customers.
 | Actor                            | Admin
@@ -357,9 +371,9 @@ Delete:
 |===
 
 [cols="1h, 3"]
-[[U016]]
+[[U017]]
 |===
-| ID                               | U016
+| ID                               | U017
 | Name                             | View Home
 | Description                      | The Users shall be able to see the home-screen.
 | Actor                            | User (un-/authorized)
@@ -386,13 +400,13 @@ Delete:
 | The system should provide registered users to authenticate and login.
 | There is a button for a login which leads to a new mask with input fields for E-Mail and password. If logged in successful, the user should be redirected to the customer/admin-view.
 
-| 002
+| F002
 | Logout
 | open
 | The system should provide registered users to logout again.
 | There is a button to logout. If logged out successful, the user should be redirected to the home-page again.
 
-| 002
+| F002
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
