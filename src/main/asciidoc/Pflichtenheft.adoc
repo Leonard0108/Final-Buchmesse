@@ -96,7 +96,7 @@ Actors represent either users or external systems that interact with the system.
 | Description
 
 | Customer
-| Any User, who has the role Customer and buys the products (sale stands and equipment).
+| Any User, who has the role Customer and buys the products (stalls and equipment).
 
 | Admin
 | Users who have the role Admin and administrate the application. They have access to the event calender, the equipment warehouse, balance sheet as well as the occupancy plan.
@@ -119,7 +119,7 @@ Actors represent either users or external systems that interact with the system.
 2. User enters his E-Mail and password
 3. User hits "Login" button
 
-| Functional Requirements          |
+| Functional Requirements          | <<F001>>
 |===
 
 [cols="1h, 3"]
@@ -395,7 +395,7 @@ Delete:
 | Evaluation criteria
 
 | F001
-| Login
+| Authentication
 | open
 | The system should provide registered users to authenticate and login.
 | There is a button for a login which leads to a new mask with input fields for E-Mail and password. If logged in successful, the user should be redirected to the customer/admin-view.
@@ -406,25 +406,58 @@ Delete:
 | The system should provide registered users to logout again.
 | There is a button to logout. If logged out successful, the user should be redirected to the home-page again.
 
-| F002
+| F003
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
-| There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the user-list.
+| There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the Customer-list.
 
-| 004
-| Book Sales Stands
+| F004
+| View Catalog
 | open
-| The customers shall be able to buy a sale stand for events.
-| There should be a drop-down menu to select the event. If an event is selected, he can adjust the size and select a wished category. If finished, he can click book and the order should be added to his account.
+| The system shall enable a User to access and view the Catalog contents.
+| In Navigation is a button for the Catalog. If pressed, the user should be redirected to the Catalog-page.
 
-| 005
-| Book Equipment
+| F005
+| View Cart
 | open
-| The customer shall be able to buy equipment for the sale stand.
-| There should be a button on the booking list to add equipment for the booked sale stand. If finished, the book-button can be pressed and the equipment will be added to the stand.
+| The system shall provide the Customer the ability to view his Cart.
+| In Navigation should be a button for the Cart. If pressed, the Customer should be redirected to the Cart-page.
 
-| 006
+| F006
+| Add stall with Equipment
+| open
+a| The system should make it possible to the Customer to select a stall with different sizes (multiple of 10m^2) and categories (A-D). If selected, he can add various equipment to the stall:
+  *  Clipboard
+  *  Displays
+  *  Counter
+  * Seating Area
+  * Coffee Machine
+| There are interactebel fields to select the stand. For the equipment he can select the object and the quantity. If finished, the button "Add to Cart" should be available to press.
+
+| F007
+| Remove stall with Equipment
+| open
+| The system should provide the ability to remove a booking from his Cart.
+| There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
+
+| F008
+| Validate Bookings
+| open
+| The system should provide the Customer the possibility to purchase the bookings in his Cart. In the process, the system checks if the stall and the equipment is sufficient and creates an Order if the Validation was successful.
+| The system shall verify the availability of the stall and equipment. If both are available, it shall create an order and clear the cart. Otherwise, it shall notify the customer and take no further action.
+
+
+| F009
+| Create Order
+| open
+| The system should create automatically an Order if the Customer buys a validated Booking and add it to his Bookings.
+| 
+
+
+
+
+| F007
 | View Bookings
 | open
 | The customer shall be able to view a list of his bookings.
@@ -456,7 +489,7 @@ a| The admin shall be able to view the calender with events for the last and the
 | 010
 | View Orders
 | open
-a| The admin shall be able to view a list of sale stands. It should provide information about:
+a| The admin shall be able to view a list of stalls. It should provide information about:
 
   *  stand
   *  hall
