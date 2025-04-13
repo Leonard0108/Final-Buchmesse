@@ -95,6 +95,9 @@ Actors represent either users or external systems that interact with the system.
 | User
 | Description
 
+| unauthorized User
+| Users who are not logged in and only sees the Catalog
+
 | Customer
 | Any User, who has the role Customer and buys the products (stalls and equipment).
 
@@ -448,7 +451,7 @@ a| The system should make it possible to the Customer to select a stall with dif
 | The system should provide the ability to remove a booking from his Cart.
 | There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
 
-[[F008]
+[[F008]]
 | F008
 | Validate Bookings
 | open
@@ -593,28 +596,35 @@ a| The system should make it possible to the Customer to select a stall with dif
 | Description
 | Evaluation criteria
 
-| 001
+| F901
 | Filter Event Calender
 | open
-a| The admin shall be able to filter the calender with:
+a| The system shall be able to filter the calender with:
 
   *  time
   *  events 
   *  halls
 | There should be input fields to search and filter for specific parts. If used, it should only show the parts wich match the filter criterias. It should also be possible to reset the filter to show every entry.
 
-| 002
-| Filter Occupancy Plan
+| F902
+| Filter Event Orders
 | open
-a| The admin shall be able to filter the calender with:
+a| The system shall provide the Admin the ability to filter the calender with:
 
   *  publisher
   *  halls
   *  stand
 | There should be input fields to search and filter for specific parts. If used, it should only show the parts wich match the filter criterias. It should also be possible to reset the filter to show every entry.
 
+| F903
+| Change Event
+|open
+| The system shall provide the Admin the ability to change entered event informations (date and name). 
+| There should be a button for events to change the entered informations and save it.
+
 
 |===
+
 == Non-Functional Requirements
 Non-functional requirements are the property of the system ans is used to measure the quality of the system.
 
