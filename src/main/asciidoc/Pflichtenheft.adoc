@@ -130,7 +130,7 @@ Actors represent either users or external systems that interact with the system.
 | Description                      | The authorized user shall be able to log out again.
 | Actor                            | Customer and Admin
 | Essential Steps                  | 1. User hits „Log out“ button in the navigation bar
-| Functional Requirements          |
+| Functional Requirements          | <<F002>>
 |===
 
 [cols="1h, 3"]
@@ -145,7 +145,7 @@ Actors represent either users or external systems that interact with the system.
 2. He enters his desired E-Mail, password and his publisher name
 3. He clicks the „create Account“ button
 
-| Functional Requirements          |
+| Functional Requirements          | <<F003>>
 |===
 
 [cols="1h, 3"]
@@ -159,7 +159,7 @@ Actors represent either users or external systems that interact with the system.
 1. User clicks on the „Catalog“ tab
 2. User is shown the booking products Sale-Stands as well as afforable Equipment
 
-| Functional Requirements          |
+| Functional Requirements          | <<F004>>
 |===
 
 [cols="1h, 3"]
@@ -173,7 +173,7 @@ Actors represent either users or external systems that interact with the system.
 1. Customer clicks „Cart“ button in the navigation bar
 2. Customer is shown his bookings as well as the total price
 
-| Functional Requirements          |
+| Functional Requirements          | <<F005>>
 |===
 
 [cols="1h, 3"]
@@ -183,7 +183,7 @@ Actors represent either users or external systems that interact with the system.
 | Name                             | Manage Bookings
 | Description                      | The Customer shall be able to add a new booking of a stall with equipment to his Cart or remove a booking from his Cart.
 | Actor                            | Customer
-| Essential Steps                 a|
+| Essential Steps                 a| 
 Add:
 
 1. The Customer clicks on „Catalog“ in navigation
@@ -195,7 +195,7 @@ Remove:
 1. The Customer clicks on „Cart“ in navigation
 2. The Customer clicks on his booking he wants to remove and click on the button „Remove from Cart“
 
-| Functional Requirements          |
+| Functional Requirements          | <<F006>>, <<F007>>
 |===
 
 [cols="1h, 3"]
@@ -210,7 +210,7 @@ Remove:
 2. The Customer presses the button „Buy“
 3. If validated and purchased successful, the purchase will be added to his „Bookings“
 
-| Functional Requirements          |
+| Functional Requirements          | <<F008>>
 |===
 
 [cols="1h, 3"]
@@ -225,7 +225,7 @@ Remove:
 2. Ensure that the inventory has sufficient stock for all products
 3. Create an order with the current time
 
-| Functional Requirements          |
+| Functional Requirements          | <<F009>>
 |===
 
 [cols="1h, 3"]
@@ -239,7 +239,7 @@ Remove:
 1. The Customer presses the button „Orders“ in the navigation bar
 2. The Customer will get an overview about his bookings of stalls with equipment
 
-| Functional Requirements          |
+| Functional Requirements          | <<F010>>
 |===
 
 [cols="1h, 3"]
@@ -253,7 +253,7 @@ Remove:
 1. The Admin presses the button „Event Orders“ in the navigation bar
 2. The Admin will get a overview of all Orders for an event.
 
-| Functional Requirements          |
+| Functional Requirements          | <<F011>>
 |===
 
 [cols="1h, 3"]
@@ -271,7 +271,7 @@ Remove:
   *  total revenue from book sales
   *  number of conludes book contracts
 
-| Functional Requirements          |
+| Functional Requirements          | <<F012>>
 |===
 
 [cols="1h, 3"]
@@ -299,7 +299,7 @@ Remove:
 
 3. The admin can click on an event and then press the "Remove" button
 
-| Functional Requirements          |
+| Functional Requirements          | <<F013>>, <<F014>>
 |===
 
 [cols="1h, 3"]
@@ -316,7 +316,7 @@ Remove:
   *  operation costs
   *  Total profit
 
-| Functional Requirements          |
+| Functional Requirements          | <<F015>>
 |===
 
 [cols="1h, 3"]
@@ -326,8 +326,8 @@ Remove:
 | Name                             | View Inventory
 | Description                      | The Admin shall be able to see the Inventory of stalls and equipment.
 | Actor                            | Admin
-| Essential Steps                  | 1. The Admin clicks on the button „Inventory“ in the navigation 
-| Functional Requirements          |
+| Essential Steps                  | 1. The Admin clicks on the button „Inventory“ in the navigation to view the Inventory
+| Functional Requirements          | <<F016>>
 |===
 
 [cols="1h, 3"]
@@ -337,7 +337,7 @@ Remove:
 | Name                             | Manage Inventory
 | Description                      | The Admin shall be able to add, change and remove stalls and equipment from the Inventory.
 | Actor                            | Admin
-| Essential Steps                 a|
+| Essential Steps                 a| 
 Add:
 
 1. The Admin clicks on the button „Add“ on stalls or equipment
@@ -346,14 +346,14 @@ Add:
 (Change:)
 
 1. The Admin clicks on the button „Change“ on the stalls or equipment
-2. The Admin can change information about the object (price etc.) by enter a new value and click „Save“
+2. The Admin can change the price or name of the object by enter a new value and click „Save“
 
 Delete:
 
 1. The Admin clicks on the button „Delete“ on the stall or equipment
 2.  The Admin enters the date for deletion and clicks „confirm“
 
-| Functional Requirements          |
+| Functional Requirements          | <<F017>>, <<F018>>, <<F019>>, <<F020>>, <<F021>>, <<F022>>, <<F023>>, <<F024>>
 |===
 
 [cols="1h, 3"]
@@ -367,7 +367,7 @@ Delete:
 1. The Admin clicks on the button „ Customers“ in the navigation
 2. The Admin will see a list of publisher with E-mails.
 
-| Functional Requirements          |
+| Functional Requirements          | <<F025>>
 |===
 
 [cols="1h, 3"]
@@ -381,7 +381,7 @@ Delete:
 1. The User opens the website or clicks on the button „Home“ in the navigation
 2. The User is shown the Home-Screen.
 
-| Functional Requirements          |
+| Functional Requirements          | <<F026>>
 |===
 
 == Functional Requirements
@@ -394,36 +394,42 @@ Delete:
 | Description
 | Evaluation criteria
 
+[[F001]]
 | F001
 | Authentication
 | open
 | The system should provide registered users to authenticate and login.
 | There is a button for a login which leads to a new mask with input fields for E-Mail and password. If logged in successful, the user should be redirected to the customer/admin-view.
 
+[[F002]]
 | F002
 | Logout
 | open
 | The system should provide registered users to logout again.
 | There is a button to logout. If logged out successful, the user should be redirected to the home-page again.
 
+[[F003]]
 | F003
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
 | There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the Customer-list.
 
+[[F004]]
 | F004
 | View Catalog
 | open
 | The system shall enable a User to access and view the Catalog contents.
 | In Navigation is a button for the Catalog. If pressed, the user should be redirected to the Catalog-page.
 
+[[F005]]
 | F005
 | View Cart
 | open
 | The system shall provide the Customer the ability to view his Cart.
 | In Navigation should be a button for the Cart. If pressed, the Customer should be redirected to the Cart-page.
 
+[[F006]]
 | F006
 | Add stall with Equipment
 | open
@@ -435,93 +441,145 @@ a| The system should make it possible to the Customer to select a stall with dif
   * Coffee Machine
 | There are interactebel fields to select the stand. For the equipment he can select the object and the quantity. If finished, the button "Add to Cart" should be available to press.
 
+[[F007]]
 | F007
 | Remove stall with Equipment
 | open
 | The system should provide the ability to remove a booking from his Cart.
 | There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
 
+[[F008]
 | F008
 | Validate Bookings
 | open
 | The system should provide the Customer the possibility to purchase the bookings in his Cart. In the process, the system checks if the stall and the equipment is sufficient and creates an Order if the Validation was successful.
 | The system shall verify the availability of the stall and equipment. If both are available, it shall create an order and clear the cart. Otherwise, it shall notify the customer and take no further action.
 
-
+[[F009]]
 | F009
 | Create Order
 | open
 | The system should create automatically an Order if the Customer buys a validated Booking and add it to his Bookings.
-| 
+| When the Customer clicks "Buy", the Purchase will be validated. If successfull, an Order will be created and added to the Customers Bookings.
 
-
-
-
-| F007
-| View Bookings
-| open
-| The customer shall be able to view a list of his bookings.
-| The customer should have a view of a list of his booked stands with equipment.
-
-| 007
-| View Event Calender
-| open
-a| The admin shall be able to view the calender with events for the last and the next year. The view should provide informations about:
-
-* total visitors
-* total publisher
-* total revenue from book sales
-* number of conludes book contracts
-| There should be a button which redirects the admin to the calender view.
-
-| 008
-| Add Event
-| open
-| The admin shall be able to add a event into the event calender.
-| There should be a button in event calender to add a new event. If clicked, a new mask should open, where you can name the event and set the time. If finished, the admin can press apply and the event will be added to the calender. 
-
-| 009
-| Remove Event
-| open
-| The admin shall be able to remove events from the event calender.
-| In the calender should be buttons in events to remove it. If pressed and confirmed, the event will be removed from the calender.
-
-| 010
+[[F010]]
+| F010
 | View Orders
 | open
-a| The admin shall be able to view a list of stalls. It should provide information about:
+| The system shall provide the Customer to see his Orders.
+| The button "Orders" should redirect the Customer to the Orders-page.
 
-  *  stand
-  *  hall
-  *  publisher
-  *  booked
-  *  size
-  *  category
-| There should be a button which redirects the admin to the occupancy plan view.
-
-| 011
-| View Balance Sheet 
+[[F011]]
+| F011
+| View Event Orders
 | open
-| The admin shall be able to to see a balance sheet for an event with active and passiv side. 
-| There should be a button for the admin to get to the view with the balance sheet.
+| The system shall provide the Admin to see the Orders for an Event.
+| The button "Event Orders" should redirect the Admin to the Event-Orders-page.
 
-| 012
-| View Equipment Warehouse
+[[F012]]
+| F012
+| View Event Calendar
 | open
-|  The admin shall be able to view a list of equipment.
-|
+| The system shall provide the Admin to see the Event Calendar with statistic informations below.
+| There should be a button "Event Calender" which redirects the Admin to the Event Calendar-page. 
 
-| 013 
+[[F013]]
+| F013
+| Add Events
 | open
+| The system shall allow the Admin to add an event to the calendar. It shall check whether the selected time is in the future as well if the slot is already occupied, and if not, create the event and add it to the calendar.
+| There is a button "Add Event", where a new mask opens with input fields for the name, time and halls. If finished, the button "Add" will validate and create a new Event in the Calendar.
+
+[[F014]]
+| F014
+| Remove Events
+| open
+| The system shall allow the Admin to remove an Event from the calender.
+| For every entry is a delete button, which, if pressed, deletes the entry from the Calendar.
+
+[[F015]]
+| F015
+| View Accountancy
+| open
+| The system shall provide the Admin the ability to see the Accountancy of events.
+| The system shall provide the Admin to be redirected to the Accountancy-page if the button "Accountancy" in the navigation is pressed.
+
+[[F016]]
+| F016
+| View Inventory
+| open
+| The system shall provide the Admin the ability to view the Inventory of stalls and equipment.
+| The system should provide an button in Navigation for "Inventory", which redirects the Admin to the Accountancy-page.
+
+[[F017]]
+| F017
+| Add Stall
+| open
+| The system shall give the Admin the ability to add a new Stall to the Inventory.
+| There should be a button "Add Stall" which leads to a mask with input fields for information (size, category and hall). If pressed "Add" the Stall will be added to the Stall-Inventory.
+
+[[F018]]
+| F018
+| Change Stall price
+| open
+| The sytsem should provide the Admin the ability to change the price of the various groups of Stalls.
+| There should be a button "Change" which opens a new input field to enter the new price. If pressed "Apply", the price from this group of stall will be updated.
+
+[[F019]]
+| F019
+| Remove Stall
+| open
+| The system shall give the Admin the ability to remove a Stall from the Inventory.
+| There should be a button "Remove Stall" which removes a stall from the stall Inventory.
+
+[[F020]]
+| F020
+| Add Hall
+| open
+| The system shall give the Admin the ability to add a new Hall. 
+| There should be a button "Add Hall" which leads to a mask with input fields for information . If pressed "Add" the Hall will be added to the Hall-Inventory.
+
+[[F021]]
+| F021
+| Remove Hall
+| open
+| The system shall give the Admin the ability to remove a Hall from the Inventory.
+| There should be a button "Remove Hall" which removes a Hall from the Hall-Inventory.
+
+[[F022]]
+| F022
 | Add Equipment
-| The admin shall be able to add equipment to the equipment warehouse.
-| 
+| open
+| The system shall give the Admin the ability to add a new Equipment. 
+| There should be a button "Add" which leads to a mask with input fields for information . If pressed "Apply" the Equipment will be added to the Equipment-Inventory.
 
-| 014
+[[F023]]
+| F023
+| Change Equipment
+| open
+| The system shall provide the Admin the ability to change the quantity or price of a Equipment and to update it in the Inventory.
+| There should be a button "Change" for every Equipment where you can enter the new informations in input fields. If pressed "Apply" the Equipment will be updated.
+
+[[F024]]
+| F024
 | Remove Equipment
 | open
-| The admin shall be able to remove equipment from the equipment warehouse.
-|
+| The system shall give the Admin the ability to remove a Equipment from the Inventory.
+| There should be a button "Remove Equipment" which removes a hall from the Equipment-Inventory.
+
+[[F025]]
+| F025
+| View Customers
+| open
+| The sytsem shall be able to show the list in the Customer-page.
+| There should be a button in navigation called "Customers" which redirects the Admin to the Customer-page.
+
+[[F026]]
+| F026
+| View Home
+| open
+| The sytsem shall provide the ability to view the Home-page.
+| There should be a button in navigation called "Home" which redirects the User to the Home-page.
 
 |===
 
