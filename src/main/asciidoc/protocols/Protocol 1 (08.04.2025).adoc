@@ -10,7 +10,7 @@ Ende:     14:50 Uhr
 Schriftführer: Alexander Schuster
 
 *Nächstes Treffen:* +
-16.04.2025, 13:30 Uhr, Ort: offen?
+15.04.2025, 13:30 Uhr, Ort: G/3/34
 
 Teilnehmer:
 
@@ -18,7 +18,7 @@ Teilnehmer:
 - Alexander Schuster (Scrum Master)
 - Ayaz Shakirov
 - Daniel Deynega
-
+- Leonard Setiadji - krank
 
 == Bemerkungen
   *  Vortsellung der Mitglieder
@@ -34,7 +34,16 @@ Noch kein Pflichtenheft erstellt/angefangen
 
 [option="headers"]
 |===
+//PH = Pflichtenheft
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
-|…     |…     |…            |…                |…
-| I001 | Pflichtenheft Zusammenfassung | 
+| I001 | PH - Zusammenfassung | Erstellung Text Zusammenfassung | Alex | offen
+| I002 | PH - Aufgabendefinition & Ziele | Erstellung Text Aufgabendefinition & Ziele | Alex | offen
+| I003 | PH - Produktnutzung | Erstellung Text Produktnutzung | Daniel  | offen
+| I004 | PH - Stakeholders | Erstellung Tabelle Stakholders | Alex | offen
+| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | offen
+| I005 | PH - Use Cases | Erstellung von Use Case Diagrammen mit Beschreibungen | Leon | offen
+| I006 | PH - Functional Requirements | Erstellung Tabelle mit funktionalen Anforderungen | Alex | offen
+| I007 | PH - Nicht funktionale Anforderungen | Erstellung einer Tabelle mit funktionalen Anforderungen | Alex | offen
+| I008 | PH - GUI-Prototyp | Erstellung von Bildern mit einen GUI - Prototyp | Ayaz | offen
+| I009 | PH - Datenmodell | Erstellung von Klassendiagrammen und Texten zum Thema Datenmodell | Ayaz | offen
 |===
