@@ -36,4 +36,5 @@ Noch kein Pflichtenheft erstellt/angefangen
 |===
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
 |…     |…     |…            |…                |…
+| I001 | Pflichtenheft Zusammenfassung | 
 |===
