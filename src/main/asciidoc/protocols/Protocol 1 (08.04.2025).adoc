@@ -40,7 +40,7 @@ Noch kein Pflichtenheft erstellt/angefangen
 | I002 | PH - Aufgabendefinition & Ziele | Erstellung Text Aufgabendefinition & Ziele | Alex | offen
 | I003 | PH - Produktnutzung | Erstellung Text Produktnutzung | Daniel  | fertig
 | I004 | PH - Stakeholders | Erstellung Tabelle Stakholders | Alex | offen
-| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | fetig
+| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | fertig
 | I005 | PH - Use Cases | Erstellung von Use Case Diagrammen mit Beschreibungen | Leon | offen
 | I006 | PH - Functional Requirements | Erstellung Tabelle mit funktionalen Anforderungen | Alex | offen
 | I007 | PH - Nicht funktionale Anforderungen | Erstellung einer Tabelle mit funktionalen Anforderungen | Alex | offen
