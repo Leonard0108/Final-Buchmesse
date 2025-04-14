@@ -39,6 +39,21 @@ In addition, the existing event calendar is to be digitized. It includes all fai
 A booking overview should also be integrated, clearly displaying the booked sales stands and the requested equipment for each planned fair.
 
 == Product Use
+This section describes how the developed system is intended to be used after its completion and under which conditions it will operate.
+The system is intended for use by Leifurter Buchmesse AG. It will function as a website, hosted on a server and accessible via the internet around the clock (24/7) through a web browser.
+
+The software will be optimized for the following browsers:
+
+  *  Mozilla Firefox, version 92.0.1+
+  *  Google Chrome, version 94.0.4606+
+
+The system will primarily be used by employees of Leifurter Buchmesse AG who are responsible for the planning, execution, and follow-up of the book fairs. This includes tasks such as maintaining the fair calendar and managing exhibition halls and sales booths.
+Other users or customers of Leifurter Buchmesse AG may also use the system to register their publishing companies for the fair or to view news and updates.
+
+Users of the system are expected to have basic knowledge of how to use a typical website. However, no programming or technical background is required. The system is designed to be flexible and user-friendly.
+
+No technical support is needed, as Leifurter Buchmesse AG has its own developers. All information is stored in a database hosted on the company’s own server. All data is openly accessible within the system, and employees can create and manage data through the UI (User Interface).
+This allows for flexible usage without the need for direct SQL interaction.
 
 == Stakeholder
 Stakeholders are groups or individuals who have a legitimate interest in and influence over the system.
@@ -81,7 +96,10 @@ a|
 
 == System Boundary and Top-Level Architecture
 === Context Diagram
+The system context diagram illustrates the planned system within its environment. This includes all types of users, their access capabilities to the system, as well as third-party systems that either access our system or are accessed by it.
+
 === Top-Level Architecture
+
 
 == Use Cases
 
