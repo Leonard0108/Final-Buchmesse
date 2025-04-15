@@ -122,7 +122,7 @@ Actors represent either users or external systems that interact with the system.
 | Users who are not logged in and only sees the Catalog
 
 | Customer
-| Any User, who has the role Customer and buys the products (stalls and equipment).
+| Any User, who has the role Customer and buys the products (Booths and equipment).
 
 | Admin
 | Users who have the role Admin and administrate the application. They have access to the event calender, the equipment warehouse, balance sheet as well as the occupancy plan.
@@ -180,7 +180,7 @@ image::./models/analysis/Use Cases.svg[context diagram, 100%, 100%, pdfwidth=100
 |===
 | ID                               | U004
 | Name                             | View Catalog
-| Description                      | Every publisher of the Book fair should be able to access the catalog which deplays the different stall sizes, categories as well as equipment.
+| Description                      | Every publisher of the Book fair should be able to access the catalog which deplays the different Booth sizes, categories as well as equipment.
 | Actor                            | Customer
 | Essential Steps                 a| 
 1. User clicks on the „Catalog“ tab
@@ -208,13 +208,13 @@ image::./models/analysis/Use Cases.svg[context diagram, 100%, 100%, pdfwidth=100
 |===
 | ID                               | U006
 | Name                             | Manage Bookings
-| Description                      | The Customer shall be able to add a new booking of a stall with equipment to his Cart or remove a booking from his Cart.
+| Description                      | The Customer shall be able to add a new booking of a Booth with equipment to his Cart or remove a booking from his Cart.
 | Actor                            | Customer
 | Essential Steps                 a| 
 Add:
 
 1. The Customer clicks on „Catalog“ in navigation
-2. The Customer sees the variations of Stalls and Equipment, where he can click on his wished Stall as well as adding Equipment by clicking on the object and enters the wished amount
+2. The Customer sees the variations of Booths and Equipment, where he can click on his wished Booth as well as adding Equipment by clicking on the object and enters the wished amount
 3. If finished, he clicks on „Add to Cart“ 
 
 Remove:
@@ -264,7 +264,7 @@ Remove:
 | Actor                            | Customer
 | Essential Steps                 a| 
 1. The Customer presses the button „Orders“ in the navigation bar
-2. The Customer will get an overview about his bookings of stalls with equipment
+2. The Customer will get an overview about his bookings of Booths with equipment
 
 | Functional Requirements          | <<F010>>
 |===
@@ -333,11 +333,11 @@ Remove:
 [[U013]]
 |===
 | ID                               | U013
-| Name                             | View Accountancy
+| Name                             | View Fair Balance
 | Description                      | The Admin shall be able to see the financial result of an event.
 | Actor                            | Admin
 | Essential Steps                 a|
-1. The Admin clicks on „Accountancy“ in the navigation
+1. The Admin clicks on „Fair Balance“ in the navigation
 2. The admin will have an overview of the event’s Balance, including the following details:
   *  revenue from stands and equipment
   *  operation costs
@@ -351,7 +351,7 @@ Remove:
 |===
 | ID                               | U014
 | Name                             | View Inventory
-| Description                      | The Admin shall be able to see the Inventory of stalls and equipment.
+| Description                      | The Admin shall be able to see the Inventory of Booths and equipment.
 | Actor                            | Admin
 | Essential Steps                  | 1. The Admin clicks on the button „Inventory“ in the navigation to view the Inventory
 | Functional Requirements          | <<F016>>
@@ -362,22 +362,22 @@ Remove:
 |===
 | ID                               | U015
 | Name                             | Manage Inventory
-| Description                      | The Admin shall be able to add, change and remove stalls and equipment from the Inventory.
+| Description                      | The Admin shall be able to add, change and remove Booths and equipment from the Inventory.
 | Actor                            | Admin
 | Essential Steps                 a| 
 Add:
 
-1. The Admin clicks on the button „Add“ on stalls or equipment
+1. The Admin clicks on the button „Add“ on Booths or equipment
 2. The Admin enters information about the object 
 
 (Change:)
 
-1. The Admin clicks on the button „Change“ on the stalls or equipment
+1. The Admin clicks on the button „Change“ on the Booths or equipment
 2. The Admin can change the price or name of the object by enter a new value and click „Save“
 
 Delete:
 
-1. The Admin clicks on the button „Delete“ on the stall or equipment
+1. The Admin clicks on the button „Delete“ on the Booth or equipment
 2.  The Admin enters the date for deletion and clicks „confirm“
 
 | Functional Requirements          | <<F017>>, <<F018>>, <<F019>>, <<F020>>, <<F021>>, <<F022>>, <<F023>>, <<F024>>
@@ -459,9 +459,9 @@ Delete:
 
 [[F006]]
 | F006
-| Add stall with Equipment
+| Add Booth with Equipment
 | open
-a| The system should make it possible to the Customer to select a stall with different sizes (multiple of 10m^2) and categories (A-D). If selected, he can add various equipment to the stall:
+a| The system should make it possible to the Customer to select a Booth with different sizes (multiple of 10m^2) and categories (A-D). If selected, he can add various equipment to the Booth:
   *  Clipboard
   *  Displays
   *  Counter
@@ -471,7 +471,7 @@ a| The system should make it possible to the Customer to select a stall with dif
 
 [[F007]]
 | F007
-| Remove stall with Equipment
+| Remove Booth with Equipment
 | open
 | The system should provide the ability to remove a booking from his Cart.
 | There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
@@ -480,8 +480,8 @@ a| The system should make it possible to the Customer to select a stall with dif
 | F008
 | Validate Bookings
 | open
-| The system should provide the Customer the possibility to purchase the bookings in his Cart. In the process, the system checks if the stall and the equipment is sufficient and creates an Order if the Validation was successful.
-| The system shall verify the availability of the stall and equipment. If both are available, it shall create an order and clear the cart. Otherwise, it shall notify the customer and take no further action.
+| The system should provide the Customer the possibility to purchase the bookings in his Cart. In the process, the system checks if the Booth and the equipment is sufficient and creates an Order if the Validation was successful.
+| The system shall verify the availability of the Booth and equipment. If both are available, it shall create an order and clear the cart. Otherwise, it shall notify the customer and take no further action.
 
 [[F009]]
 | F009
@@ -527,38 +527,38 @@ a| The system should make it possible to the Customer to select a stall with dif
 
 [[F015]]
 | F015
-| View Accountancy
+| View Fair Balance
 | open
-| The system shall provide the Admin the ability to see the Accountancy of events.
-| The system shall provide the Admin to be redirected to the Accountancy-page if the button "Accountancy" in the navigation is pressed.
+| The system shall provide the Admin the ability to see the Fair Balance of events.
+| The system shall provide the Admin to be redirected to the Fair Balance-page if the button "Fair Balance" in the navigation is pressed.
 
 [[F016]]
 | F016
 | View Inventory
 | open
-| The system shall provide the Admin the ability to view the Inventory of stalls and equipment.
-| The system should provide an button in Navigation for "Inventory", which redirects the Admin to the Accountancy-page.
+| The system shall provide the Admin the ability to view the Inventory of Booths and equipment.
+| The system should provide an button in Navigation for "Inventory", which redirects the Admin to the Fair Balance-page.
 
 [[F017]]
 | F017
-| Add Stall
+| Add Booth
 | open
-| The system shall give the Admin the ability to add a new Stall to the Inventory.
-| There should be a button "Add Stall" which leads to a mask with input fields for information (size, category and hall). If pressed "Add" the Stall will be added to the Stall-Inventory.
+| The system shall give the Admin the ability to add a new Booth to the Inventory.
+| There should be a button "Add Booth" which leads to a mask with input fields for information (size, category and hall). If pressed "Add" the Booth will be added to the Booth-Inventory.
 
 [[F018]]
 | F018
-| Change Stall price
+| Change Booth price
 | open
-| The sytsem should provide the Admin the ability to change the price of the various groups of Stalls.
-| There should be a button "Change" which opens a new input field to enter the new price. If pressed "Apply", the price from this group of stall will be updated.
+| The sytsem should provide the Admin the ability to change the price of the various groups of Booths.
+| There should be a button "Change" which opens a new input field to enter the new price. If pressed "Apply", the price from this group of Booth will be updated.
 
 [[F019]]
 | F019
-| Remove Stall
+| Remove Booth
 | open
-| The system shall give the Admin the ability to remove a Stall from the Inventory.
-| There should be a button "Remove Stall" which removes a stall from the stall Inventory.
+| The system shall give the Admin the ability to remove a Booth from the Inventory.
+| There should be a button "Remove Booth" which removes a Booth from the Booth Inventory.
 
 [[F020]]
 | F020
@@ -712,4 +712,44 @@ Priority: 1 - low ; 5 - high.
 
 == Data Model
 === Overview: Class Diagrams
+
 === Classes and Enumeration
+
+[options="header", cols="1, 3"]
+|===
+| Class/Enumeration
+| Description
+
+| User
+| General representation of a real person who uses the system.
+
+| Customer
+| A registered user who can book booths at the book fair as a publisher or exhibitor.
+
+| Administrator
+| A registered user who manages the system. Has access to all functions, including fair management and financial evaluations.
+
+| Hall
+| An event area of the book fair that contains multiple booths. A hall has a defined capacity and operational costs.
+
+| Booth
+| A bookable sales booth within a hall. Booths vary by size and location category (A–D).
+
+| Equipment
+| Technical or logistical accessories (e.g., tables, display cases, coffee machines) that can be rented together with a booth.
+
+| Fair Balance
+| Financial evaluation of a completed book fair. Includes income from booth and equipment rentals, operational costs, and the calculated total profit.
+
+| Fair
+| Core class of the system. Represents a single book fair with a theme, date, and general information.
+
+| Registered User
+| A user who has registered and authenticated within the system.
+
+| Cart
+| A shopping cart that contains the booths and equipment selected by the user before purchase.
+
+| Status
+| Describes the state of an order.
+|===
