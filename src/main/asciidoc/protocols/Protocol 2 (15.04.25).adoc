@@ -51,6 +51,7 @@ Pflichtenheft im groben fertig
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
 | I010 | Vereinheitlichung Diagramme | Diagramme und Texte auf einander abstimmen und einhetilich machen (Sprache) | alle (Leon) | offen
 | I011 | Erweiterung Videoshop | individuelle Erweiterungen an dem Beispiel Videoshop in Git | alle | offen
-| I012 | Anfangen Erstellung Entwicklerdokumentation | alle | offen
+| I012 | Verfeinerung Pflichtenheft | Verfeinerung der Architektur, Komponenten, GUI und ggf. an das Salespointframework anpassen | alle | offen
+| I013 | Anfangen Erstellung Entwicklerdokumentation | Zuteilung von Aufgaben und Anfangen der Bearbeitung| alle | offen
 
 |===
