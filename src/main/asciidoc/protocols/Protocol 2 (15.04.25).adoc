@@ -5,22 +5,24 @@ Treffen am 15.04.2025
 Ort:      BigBlueBotton (online)
 
 Beginn:   13:30 Uhr 
-Ende:     ... Uhr
+Ende:     14:25 Uhr
 
 Schriftführer: Alexander Schuster
 
 *Nächstes Treffen:* +
-(22.04.2025, 13:30 Uhr, Ort: G/3/34)
+22.04.2025, 15:15 Uhr, Ort: BBB (online)
 
 Teilnehmer:
 
 - Kolja Schumacher (Kunde & Product Owner)
 - Alexander Schuster (Scrum Master)
+- Ayaz Shakirov
 - Daniel Deynega
 - Leonard Setiadji 
 
 == Bemerkungen
-...
+  *  Neuer Regeltermin (Di um 15:15)
+  *  noch uneinheitliche Diagramme und Texte (Verantworlticher: Leon)
 
 
 == Aktueller Stand
@@ -45,7 +47,10 @@ Pflichtenheft im groben fertig
 |===
 
 == Planung des nächsten Sprints
-
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+| I010 | Vereinheitlichung Diagramme | Diagramme und Texte auf einander abstimmen und einhetilich machen (Sprache) | alle (Leon) | offen
+| I011 | Erweiterung Videoshop | individuelle Erweiterungen an dem Beispiel Videoshop in Git | alle | offen
+| I012 | Anfangen Erstellung Entwicklerdokumentation | alle | offen
 |===
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
 
