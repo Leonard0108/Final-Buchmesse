@@ -713,6 +713,8 @@ Priority: 1 - low ; 5 - high.
 == Data Model
 === Overview: Class Diagrams
 
+image::./models/analysis/Klassendiagramm.svg[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
+
 === Classes and Enumeration
 
 [options="header", cols="1, 3"]
