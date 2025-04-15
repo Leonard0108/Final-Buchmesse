@@ -98,8 +98,13 @@ a|
 === Context Diagram
 The system context diagram illustrates the planned system within its environment. This includes all types of users, their access capabilities to the system, as well as third-party systems that either access our system or are accessed by it.
 
+image::./models/analysis/Context-Diagram_UML.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
+
+image::./models/analysis/Kontext-Diagramm_C4.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
+
 === Top-Level Architecture
 
+image::./models/analysis/Top-Level-Architektur_UML.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
 
 == Use Cases
 
