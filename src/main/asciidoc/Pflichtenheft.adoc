@@ -105,7 +105,7 @@ image::./models/analysis/Kontext-Diagramm_C4.png[context diagram, 100%, 100%, pd
 === Top-Level Architecture
 
 image::./models/analysis/Top-Level-Architektur_UML.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
-
+image:: ./models/analysis/Kontext-Diagramm_C4_C3.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
 == Use Cases
 
 This section outlines the key use cases the system must support. Each use case defines a specific functionality from the client’s perspective and identifies the relevant actors involved. These scenarios serve as the foundation for understanding how the system will be utilized in a real-world context.
