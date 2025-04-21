@@ -712,6 +712,8 @@ Priority: 1 - low ; 5 - high.
 
 == GUI Prototype
 
+image::./models/analysis/gui.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name} in UML", align=center]
+
 == Data Model
 === Overview: Class Diagrams
 
