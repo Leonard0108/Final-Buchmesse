@@ -181,12 +181,11 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 [[U004]]
 |===
 | ID                               | U004
-| Name                             | View Catalog
-| Description                      | Every publisher of the Book fair should be able to access the catalog which deplays the different Booth sizes, categories as well as equipment.
+| Name                             | View Events
+| Description                      | Customer should be able to see available book fair events
 | Actor                            | Customer
 | Essential Steps                 a| 
-1. User clicks on the „Catalog“ tab
-2. User is shown the booking products Sale-Stands as well as afforable Equipment
+1. User clicks on the „View Event“ tab
 
 | Functional Requirements          | <<F004>>
 |===
@@ -195,12 +194,12 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 [[U005]]
 |===
 | ID                               | U005
-| Name                             | View Cart
-| Description                      | The Customer shall be able to view the contents of his cart and the total price of his bookings.
+| Name                             | View Registered Event
+| Description                      | The Customer shall be able to view the contents of his registered Event.
 | Actor                            | Customer
 | Essential Steps                 a| 
-1. Customer clicks „Cart“ button in the navigation bar
-2. Customer is shown his bookings as well as the total price
+1. Customer clicks „View Registered Event“ button in the navigation bar
+2. Customer is shown his bookings as well as details of event
 
 | Functional Requirements          | <<F005>>
 |===
@@ -209,208 +208,141 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 [[U006]]
 |===
 | ID                               | U006
-| Name                             | Manage Bookings
-| Description                      | The Customer shall be able to add a new booking of a Booth with equipment to his Cart or remove a booking from his Cart.
-| Actor                            | Customer
+| Name                             | View Customer
+| Description                      | Admin should be able to see how many customer an event will have
+| Actor                            | Admin
 | Essential Steps                 a| 
 Add:
 
-1. The Customer clicks on „Catalog“ in navigation
-2. The Customer sees the variations of Booths and Equipment, where he can click on his wished Booth as well as adding Equipment by clicking on the object and enters the wished amount
-3. If finished, he clicks on „Add to Cart“ 
+1. The Admin clicks on „View Customer“ in an Event
 
-Remove:
-
-1. The Customer clicks on „Cart“ in navigation
-2. The Customer clicks on his booking he wants to remove and click on the button „Remove from Cart“
-
-| Functional Requirements          | <<F006>>, <<F007>>
+| Functional Requirements          | <<F006>>
 |===
 
 [cols="1h, 3"]
 [[U007]]
 |===
 | ID                               | U007
-| Name                             | Buy Bookings
-| Description                      | The Customer shall be able to buy the bookings in his Cart.
+| Name                             | View Event Calendar
+| Description                      | the Customer should be able to see a calendar of events
 | Actor                            | Customer
 | Essential Steps                 a| 
-1. The Customer presses the button „Cart“ in the navigation bar
-2. The Customer presses the button „Buy“
-3. If validated and purchased successful, the purchase will be added to his „Bookings“
-
-| Functional Requirements          | <<F008>>
+1. The Customer presses the button „Calendar“ in the navigation bar
+| Functional Requirements          | <<F007>>
 |===
 
 [cols="1h, 3"]
 [[U008]]
 |===
 | ID                               | U008
-| Name                             | Create Order
-| Description                      | The system shall be able to create automatically an order when a customer wants to buy the bookings in the cart.
-| Actor                            | System
+| Name                             | Join Events
+| Description                      | Customer can join Events
+| Actor                            | Customer
 | Essential Steps                  a|
-1. Customer presses "Buy" in the Cart
-2. Ensure that the inventory has sufficient stock for all products
-3. Create an order with the current time
+1. Customer presses "Join Event" in the Cart
 
-| Functional Requirements          | <<F009>>
+| Functional Requirements          | <<F008>>
 |===
 
 [cols="1h, 3"]
 [[U009]]
 |===
 | ID                               | U009
-| Name                             | View Orders
-| Description                      | The Customer shall be able to see his bookings. The Admin shall be able to see all Orders.
+| Name                             | Cancel Join Event
+| Description                      | The Customer shall be able to cancel his bookings.
 | Actor                            | Customer
 | Essential Steps                 a| 
-1. The Customer presses the button „Orders“ in the navigation bar
-2. The Customer will get an overview about his bookings of Booths with equipment
+1. The Customer presses the button „Cancel Join Event“ in the navigation bar
 
-| Functional Requirements          | <<F010>>
+| Functional Requirements          | <<F009>>
 |===
 
 [cols="1h, 3"]
 [[U010]]
 |===
 | ID                               | U010
-| Name                             | View Event Orders
-| Description                      | The Admin shall be able to see all Orders.
+| Name                             | Add News
+| Description                      | The Admin shall be able to add news.
 | Actor                            | Admin
 | Essential Steps                 a| 
-1. The Admin presses the button „Event Orders“ in the navigation bar
-2. The Admin will get a overview of all Orders for an event.
 
-| Functional Requirements          | <<F011>>
+| Functional Requirements          | <<F010>>
 |===
 
 [cols="1h, 3"]
 [[U011]]
 |===
 | ID                               | U011
-| Name                             | View Event Calendar
-| Description                      | The Admin shall be able to see a Calendar with the events with statistic details
+| Name                             | Delete News
+| Description                      | The Admin shall be able delete news
 | Actor                            | Admin
 | Essential Steps                 a|
-1. The Admin clicks on the the button „Event Calendar“ in the navigation
-2. The Admin will see a Calendar along with the following information displayed below:
-  *  total visitors
-  *  total publisher
-  *  total revenue from book sales
-  *  number of conludes book contracts
+1. The Admin clicks on the the button „Delete News“ in the navigation
 
-| Functional Requirements          | <<F012>>
+| Functional Requirements          | <<F011>>
 |===
 
 [cols="1h, 3"]
 [[U012]]
 |===
 | ID                               | U012
-| Name                             | Manage Events
-| Description                      | The Admin shall be able add, change and remove events from the Calendar
+| Name                             | add Events
+| Description                      | The Admin shall be able to add events from the Calendar
 | Actor                            | Admin
 | Essential Steps                 a| 
 1. The Admin clicks in the navigation on the button „Event Calendar“
-2. There he gets an overview about the timeline of events and get information about statistic informations.
-
-Add:
-
-3. The Admin can click on „Add Event“ 
-4. Then he can enter the informations about the event and press the „Finish“ button
-
-(Change:)
-
-3. The Admin can click on an event and there on the button „Change“
-4. He then can update the desired information and click "Save"
-
-Remove:
-
-3. The admin can click on an event and then press the "Remove" button
-
-| Functional Requirements          | <<F013>>, <<F014>>
+2. The Admin can click on „Add Event“ 
+| Functional Requirements          | <<F012>>
 |===
 
 [cols="1h, 3"]
 [[U013]]
 |===
 | ID                               | U013
-| Name                             | View Fair Balance
-| Description                      | The Admin shall be able to see the financial result of an event.
+| Name                             | Delete Event
+| Description                      | The Admin shall be able to delete an event.
 | Actor                            | Admin
 | Essential Steps                 a|
-1. The Admin clicks on „Fair Balance“ in the navigation
-2. The admin will have an overview of the event’s Balance, including the following details:
-  *  revenue from stands and equipment
-  *  operation costs
-  *  Total profit
+1. The Admin click on "delete" Event
 
-| Functional Requirements          | <<F015>>
+| Functional Requirements          | <<F013>>
 |===
 
 [cols="1h, 3"]
 [[U014]]
 |===
 | ID                               | U014
-| Name                             | View Inventory
-| Description                      | The Admin shall be able to see the Inventory of Booths and equipment.
+| Name                             | Add Blog
+| Description                      | Admin can add new blog to make the website more compelling
 | Actor                            | Admin
-| Essential Steps                  | 1. The Admin clicks on the button „Inventory“ in the navigation to view the Inventory
-| Functional Requirements          | <<F016>>
+| Essential Steps                  | 1. The Admin clicks on the button „add new blog“
+| Functional Requirements          | <<F014>>
 |===
 
 [cols="1h, 3"]
 [[U015]]
 |===
 | ID                               | U015
-| Name                             | Manage Inventory
-| Description                      | The Admin shall be able to add, change and remove Booths and equipment from the Inventory.
+| Name                             | Delete Blog
+| Description                      | The Admin shall be able to remove blog.
 | Actor                            | Admin
 | Essential Steps                 a| 
 Add:
+1. The Admin clicks on the button „Delete blog“ on the Booth or equipment
 
-1. The Admin clicks on the button „Add“ on Booths or equipment
-2. The Admin enters information about the object 
-
-(Change:)
-
-1. The Admin clicks on the button „Change“ on the Booths or equipment
-2. The Admin can change the price or name of the object by enter a new value and click „Save“
-
-Delete:
-
-1. The Admin clicks on the button „Delete“ on the Booth or equipment
-2.  The Admin enters the date for deletion and clicks „confirm“
-
-| Functional Requirements          | <<F017>>, <<F018>>, <<F019>>, <<F020>>, <<F021>>, <<F022>>, <<F023>>, <<F024>>
+| Functional Requirements          | <<F015>>
 |===
 
 [cols="1h, 3"]
 [[U016]]
 |===
 | ID                               | U016
-| Name                             | View Customers
-| Description                      | The Admin shall be able to see a list of Customers.
-| Actor                            | Admin
+| Name                             | Payment System
+| Description                      | System should be able to include a secure payment for the customer.
+| Actor                            | System
 | Essential Steps                 a|
-1. The Admin clicks on the button „ Customers“ in the navigation
-2. The Admin will see a list of publisher with E-mails.
 
-| Functional Requirements          | <<F025>>
-|===
-
-[cols="1h, 3"]
-[[U017]]
-|===
-| ID                               | U017
-| Name                             | View Home
-| Description                      | The Users shall be able to see the home-screen.
-| Actor                            | User (un-/authorized)
-| Essential Steps                  a|
-1. The User opens the website or clicks on the button „Home“ in the navigation
-2. The User is shown the Home-Screen.
-
-| Functional Requirements          | <<F026>>
+| Functional Requirements          | <<F016>>
 |===
 
 == Functional Requirements
@@ -447,169 +379,83 @@ Delete:
 
 [[F004]]
 | F004
-| View Catalog
+| View Events
 | open
-| The system shall enable a User to access and view the Catalog contents.
-| In Navigation is a button for the Catalog. If pressed, the user should be redirected to the Catalog-page.
+| The system shall enable a User to access and view Events Available.
 
 [[F005]]
 | F005
-| View Cart
+| View Registered Event
 | open
-| The system shall provide the Customer the ability to view his Cart.
-| In Navigation should be a button for the Cart. If pressed, the Customer should be redirected to the Cart-page.
+| The system shall provide the Customer the ability to view his Registered Event.
 
 [[F006]]
 | F006
-| Add Booth with Equipment
+| View Customer
 | open
-a| The system should make it possible to the Customer to select a Booth with different sizes (multiple of 10m^2) and categories (A-D). If selected, he can add various equipment to the Booth:
-  *  Clipboard
-  *  Displays
-  *  Counter
-  * Seating Area
-  * Coffee Machine
-| There are interactebel fields to select the stand. For the equipment he can select the object and the quantity. If finished, the button "Add to Cart" should be available to press.
+| Admin should be able to see how many customer an event will have 
 
 [[F007]]
 | F007
-| Remove Booth with Equipment
+| View Event Calendar
 | open
 | The system should provide the ability to remove a booking from his Cart.
 | There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
 
 [[F008]]
 | F008
-| Validate Bookings
+| Join Events
 | open
-| The system should provide the Customer the possibility to purchase the bookings in his Cart. In the process, the system checks if the Booth and the equipment is sufficient and creates an Order if the Validation was successful.
-| The system shall verify the availability of the Booth and equipment. If both are available, it shall create an order and clear the cart. Otherwise, it shall notify the customer and take no further action.
+| The system should provide the Customer the possibility to Join an events and to provide a payment system on the next step
 
 [[F009]]
 | F009
-| Create Order
+| Cancel join event
 | open
-| The system should create automatically an Order if the Customer buys a validated Booking and add it to his Bookings.
-| When the Customer clicks "Buy", the Purchase will be validated. If successfull, an Order will be created and added to the Customers Bookings.
+| The system should provide the Customer the possibility to cancel joined events
 
 [[F010]]
 | F010
-| View Orders
+| Add news
 | open
-| The system shall provide the Customer to see his Orders.
-| The button "Orders" should redirect the Customer to the Orders-page.
+| Admin should be able to add news
 
 [[F011]]
 | F011
-| View Event Orders
+| Remove news
 | open
-| The system shall provide the Admin to see the Orders for an Event.
-| The button "Event Orders" should redirect the Admin to the Event-Orders-page.
-
+| Admin should be able to remove news
+ 
 [[F012]]
 | F012
-| View Event Calendar
+| Add event
 | open
-| The system shall provide the Admin to see the Event Calendar with statistic informations below.
-| There should be a button "Event Calender" which redirects the Admin to the Event Calendar-page. 
+| Admin should be able to add Event
 
 [[F013]]
 | F013
-| Add Events
+| Delete Events
 | open
-| The system shall allow the Admin to add an event to the calendar. It shall check whether the selected time is in the future as well if the slot is already occupied, and if not, create the event and add it to the calendar.
-| There is a button "Add Event", where a new mask opens with input fields for the name, time and halls. If finished, the button "Add" will validate and create a new Event in the Calendar.
-
+| Admin should be able to delete Event
+ 
 [[F014]]
 | F014
-| Remove Events
+| Add Blog
 | open
-| The system shall allow the Admin to remove an Event from the calender.
-| For every entry is a delete button, which, if pressed, deletes the entry from the Calendar.
+| Admin should be able to add blog on the website 
 
 [[F015]]
 | F015
-| View Fair Balance
+| Remove Blog
 | open
-| The system shall provide the Admin the ability to see the Fair Balance of events.
-| The system shall provide the Admin to be redirected to the Fair Balance-page if the button "Fair Balance" in the navigation is pressed.
+| Admin Should be able to remove blog on the website
 
 [[F016]]
 | F016
-| View Inventory
+| Payment system
 | open
-| The system shall provide the Admin the ability to view the Inventory of Booths and equipment.
-| The system should provide an button in Navigation for "Inventory", which redirects the Admin to the Fair Balance-page.
-
-[[F017]]
-| F017
-| Add Booth
-| open
-| The system shall give the Admin the ability to add a new Booth to the Inventory.
-| There should be a button "Add Booth" which leads to a mask with input fields for information (size, category and hall). If pressed "Add" the Booth will be added to the Booth-Inventory.
-
-[[F018]]
-| F018
-| Change Booth price
-| open
-| The sytsem should provide the Admin the ability to change the price of the various groups of Booths.
-| There should be a button "Change" which opens a new input field to enter the new price. If pressed "Apply", the price from this group of Booth will be updated.
-
-[[F019]]
-| F019
-| Remove Booth
-| open
-| The system shall give the Admin the ability to remove a Booth from the Inventory.
-| There should be a button "Remove Booth" which removes a Booth from the Booth Inventory.
-
-[[F020]]
-| F020
-| Add Hall
-| open
-| The system shall give the Admin the ability to add a new Hall. 
-| There should be a button "Add Hall" which leads to a mask with input fields for information . If pressed "Add" the Hall will be added to the Hall-Inventory.
-
-[[F021]]
-| F021
-| Remove Hall
-| open
-| The system shall give the Admin the ability to remove a Hall from the Inventory.
-| There should be a button "Remove Hall" which removes a Hall from the Hall-Inventory.
-
-[[F022]]
-| F022
-| Add Equipment
-| open
-| The system shall give the Admin the ability to add a new Equipment. 
-| There should be a button "Add" which leads to a mask with input fields for information . If pressed "Apply" the Equipment will be added to the Equipment-Inventory.
-
-[[F023]]
-| F023
-| Change Equipment
-| open
-| The system shall provide the Admin the ability to change the quantity or price of a Equipment and to update it in the Inventory.
-| There should be a button "Change" for every Equipment where you can enter the new informations in input fields. If pressed "Apply" the Equipment will be updated.
-
-[[F024]]
-| F024
-| Remove Equipment
-| open
-| The system shall give the Admin the ability to remove a Equipment from the Inventory.
-| There should be a button "Remove Equipment" which removes a hall from the Equipment-Inventory.
-
-[[F025]]
-| F025
-| View Customers
-| open
-| The sytsem shall be able to show the list in the Customer-page.
-| There should be a button in navigation called "Customers" which redirects the Admin to the Customer-page.
-
-[[F026]]
-| F026
-| View Home
-| open
-| The sytsem shall provide the ability to view the Home-page.
-| There should be a button in navigation called "Home" which redirects the User to the Home-page.
+| The system shall provide the Customer the ability to pay
+ch redirects the User to the Home-page.
 
 |===
 
@@ -738,24 +584,9 @@ image::./models/analysis/Klassendiagramm.svg[context diagram, 100%, 100%, pdfwid
 | Hall
 | An event area of the book fair that contains multiple booths. A hall has a defined capacity and operational costs.
 
-| Booth
-| A bookable sales booth within a hall. Booths vary by size and location category (A–D).
-
-| Equipment
-| Technical or logistical accessories (e.g., tables, display cases, coffee machines) that can be rented together with a booth.
-
-| Fair Balance
-| Financial evaluation of a completed book fair. Includes income from booth and equipment rentals, operational costs, and the calculated total profit.
-
 | Fair
 | Core class of the system. Represents a single book fair with a theme, date, and general information.
 
 | Registered User
 | A user who has registered and authenticated within the system.
-
-| Cart
-| A shopping cart that contains the booths and equipment selected by the user before purchase.
-
-| Status
-| Describes the state of an order.
 |===
