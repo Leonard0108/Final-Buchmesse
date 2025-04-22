@@ -455,7 +455,6 @@ Add:
 | Payment system
 | open
 | The system shall provide the Customer the ability to pay
-ch redirects the User to the Home-page.
 
 |===
 
