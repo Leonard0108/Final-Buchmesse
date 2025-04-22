@@ -382,18 +382,21 @@ Add:
 | View Events
 | open
 | The system shall enable a User to access and view Events Available.
+|
 
 [[F005]]
 | F005
 | View Registered Event
 | open
 | The system shall provide the Customer the ability to view his Registered Event.
+|
 
 [[F006]]
 | F006
 | View Customer
 | open
 | Admin should be able to see how many customer an event will have 
+|
 
 [[F007]]
 | F007
@@ -407,54 +410,63 @@ Add:
 | Join Events
 | open
 | The system should provide the Customer the possibility to Join an events and to provide a payment system on the next step
+|
 
 [[F009]]
 | F009
 | Cancel join event
 | open
 | The system should provide the Customer the possibility to cancel joined events
+|
 
 [[F010]]
 | F010
 | Add news
 | open
 | Admin should be able to add news
+|
 
 [[F011]]
 | F011
 | Remove news
 | open
 | Admin should be able to remove news
- 
+|
+
 [[F012]]
 | F012
 | Add event
 | open
 | Admin should be able to add Event
+|
 
 [[F013]]
 | F013
 | Delete Events
 | open
 | Admin should be able to delete Event
- 
+|
+
 [[F014]]
 | F014
 | Add Blog
 | open
 | Admin should be able to add blog on the website 
+|
 
 [[F015]]
 | F015
 | Remove Blog
 | open
 | Admin Should be able to remove blog on the website
+|
 
 [[F016]]
 | F016
 | Payment system
 | open
 | The system shall provide the Customer the ability to pay
+|
 
 |===
 
