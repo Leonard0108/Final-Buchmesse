@@ -132,7 +132,7 @@ Actors represent either users or external systems that interact with the system.
 |===
 
 === Use Case Diagrams
-image::./models/analysis/Use-Cases.svg[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
+image::src/main/asciidoc/models/analysis/usecase.drawio (1).png[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
 
 === Use Case Description
 
