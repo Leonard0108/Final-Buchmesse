@@ -5,7 +5,7 @@ Treffen am 22.04.2025
 Ort:      BigBlueBotton (online)
 
 Beginn:   15:15 Uhr 
-Ende:     ... Uhr
+Ende:     16:20 Uhr
 
 Schriftführer: Alexander Schuster
 
@@ -21,10 +21,11 @@ Teilnehmer:
 - Leonard Setiadji 
 
 == Bemerkungen
- 
+ * Feedback zum Pflichtenheft erhalten
 
 
 == Aktueller Stand
+Pflichtenheft muss nochmal überabeitet werden. Es fehlen Sequenzdiagramme, GUI Ptototypen etc. Zudem genaue Abgrenzung der Stakeholder, Nennung der benutzen Tools und Diagrammarten.
 
 == Retroperspektive des letzen Sprints
 
@@ -32,20 +33,20 @@ Teilnehmer:
 |===
 //PH = Pflichtenheft
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
-| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | abgeschlossen
-| I005 | PH - Use Cases | Erstellung von Use Case Diagrammen mit Beschreibungen | Leon | abgeschlossen
-| I006 | PH - Functional Requirements | Erstellung Tabelle mit funktionalen Anforderungen | Alex | abgeschlossen?
-| I008 | PH - GUI-Prototyp | Erstellung von Bildern mit einen GUI - Prototyp | Ayaz | abgeschlossen
+| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | in Bearbeitung
+| I005 | PH - Use Cases | Erstellung von Use Case Diagrammen mit Beschreibungen | Leon | in Bearbeitung
+| I006 | PH - Functional Requirements | Erstellung Tabelle mit funktionalen Anforderungen | Alex | in Bearbeitung
+| I008 | PH - GUI-Prototyp | Erstellung von Bildern mit einen GUI - Prototyp | Ayaz | in Bearbeitung
 | I009 | PH - Datenmodell | Erstellung von Klassendiagrammen und Texten zum Thema Datenmodell | Ayaz | abgeschlossen
 | I010 | Vereinheitlichung Diagramme | Diagramme und Texte auf einander abstimmen und einhetilich machen (Sprache) | alle (Leon) | offen
-| I011 | Erweiterung Videoshop | individuelle Erweiterungen an dem Beispiel Videoshop in Git | alle | offen
-| I012 | Verfeinerung Pflichtenheft | Verfeinerung der Architektur, Komponenten, GUI und ggf. an das Salespointframework anpassen | alle | offen
-| I013 | Anfangen Erstellung Entwicklerdokumentation | Zuteilung von Aufgaben und Anfangen der Bearbeitung| alle | offen
+
 |===
 
 == Planung des nächsten Sprints
 |===
 |Issue |Titel |Beschreibung |Verantwortlicher |Status
-
+| I011 | Erweiterung Videoshop | individuelle Erweiterungen an dem Beispiel Videoshop in Git | alle | offen
+| I012 | Verfeinerung Pflichtenheft | Verfeinerung der Architektur, Komponenten, GUI und ggf. an das Salespointframework anpassen | alle | offen
+| I013 | Anfangen Erstellung Entwicklerdokumentation | Zuteilung von Aufgaben und Anfangen der Bearbeitung| alle | offen
 
 |===
