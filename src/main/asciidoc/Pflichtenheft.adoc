@@ -142,12 +142,7 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 | ID                               | U001
 | Name                             | Login
 | Description                      | The unauthorized User shall be able to login and authorize with the system to access further functionality.
-| Actor                            | Customer and Admin
-| Essential Steps                  a| 
-1. User accesses "Login" in the navigation bar
-2. User enters his E-Mail and password
-3. User hits "Login" button
-
+| Actor                            | Customer, Admin and Boss
 | Functional Requirements          | <<F001>>
 |===
 
@@ -157,8 +152,7 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 | ID                               | U002
 | Name                             | Logout
 | Description                      | The authorized user shall be able to log out again.
-| Actor                            | Customer and Admin
-| Essential Steps                  | 1. User hits „Log out“ button in the navigation bar
+| Actor                            | Customer, Admin and Boss
 | Functional Requirements          | <<F002>>
 |===
 
@@ -169,11 +163,6 @@ image::./models/analysis/usecase.drawio (2).png[context diagram, 100%, 100%, pdf
 | Name                             | Registration
 | Description                      | The unauthorized user shall be able to create an account.
 | Actor                            | Customer
-| Essential Steps                 a| 
-1. Unauthorized User presses the „Register“ button
-2. He enters his desired E-Mail, password and his publisher name
-3. He clicks the „create Account“ button
-
 | Functional Requirements          | <<F003>>
 |===
 
@@ -361,21 +350,23 @@ Add:
 | Authentication
 | open
 | The system should provide registered users to authenticate and login.
-| There is a button for a login which leads to a new mask with input fields for E-Mail and password. If logged in successful, the user should be redirected to the customer/admin-view.
+| * There is a Button for a Login. If pressed, it will lead to a new mask with input fields for E-mail and password
+* Email and password will be verfified. If successfull, the user should be redirected to the registered Users view.
 
 [[F002]]
 | F002
 | Logout
 | open
 | The system should provide registered users to logout again.
-| There is a button to logout. If logged out successful, the user should be redirected to the home-page again.
+| * There is a button to logout for registered users. If pressed, the user should be redirected to the home-page and get unauthorized again.
 
 [[F003]]
 | F003
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
-| There is a button for the registration and a mask with input fields of the E-Mail, password and publisher. If registered successfully, the user should be redirected to the customer/admin view and should be added to the Customer-list.
+| * There is a button for the registration. If pressed, the unregistered user will see a mask with input fields for the E-Mail, password and publisher-name. 
+* If registered successfully (filled everything), the user should be redirected to the customer/admin view and should be added to the Customer-list.
 
 [[F004]]
 | F004
