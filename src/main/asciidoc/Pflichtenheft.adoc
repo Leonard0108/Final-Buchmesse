@@ -560,7 +560,12 @@ Priority: 1 - low ; 5 - high.
 
 == GUI Prototype
 
-image::./models/analysis/gui.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/homepage.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/inform.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/admindashboard.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/standbooking.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/login.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
+image::./models/analysis/register.png[GUI Prototype, 100%, 100%, pdfwidth=100%, title= "GUI Prototype of the {project_name}", align=center]
 
 == Data Model
 === Overview: Class Diagrams
