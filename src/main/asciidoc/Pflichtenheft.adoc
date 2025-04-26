@@ -182,168 +182,60 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 [[U004]]
 |===
 | ID                               | U004
-| Name                             | View Events
-| Description                      | Customer should be able to see available book fair events
+| Name                             | Book Stand
+| Description                      | The Customer shall be able to see and book available stands of upcoming events.
 | Actor                            | Customer
-| Essential Steps                 a| 
-1. User clicks on the „View Event“ tab
-
-| Functional Requirements          | <<F004>>
+| Functional Requirements          | 
 |===
 
 [cols="1h, 3"]
 [[U005]]
 |===
 | ID                               | U005
-| Name                             | View Registered Event
-| Description                      | The Customer shall be able to view the contents of his registered Event.
+| Name                             | Book Equipment
+| Description                      | The Customer shall be able to book equipment for the selected stand and finalize the payment by booking it.
 | Actor                            | Customer
-| Essential Steps                 a| 
-1. Customer clicks „View Registered Event“ button in the navigation bar
-2. Customer is shown his bookings as well as details of event
-
-| Functional Requirements          | <<F005>>
+| Functional Requirements          | 
 |===
 
 [cols="1h, 3"]
 [[U006]]
 |===
 | ID                               | U006
-| Name                             | View Customer
-| Description                      | Admin should be able to see how many customer an event will have
+| Name                             | Manage Halls
+| Description                      | The Admin shall be able to manage halls for events. He can add and remove halls as well as change the propertys like size.
 | Actor                            | Admin
-| Essential Steps                 a| 
-Add:
-
-1. The Admin clicks on „View Customer“ in an Event
-
-| Functional Requirements          | <<F006>>
+| Functional Requirements          | 
 |===
 
 [cols="1h, 3"]
 [[U007]]
 |===
 | ID                               | U007
-| Name                             | View Event Calendar
-| Description                      | the Customer should be able to see a calendar of events
-| Actor                            | Customer
-| Essential Steps                 a| 
-1. The Customer presses the button „Calendar“ in the navigation bar
-| Functional Requirements          | <<F007>>
+| Name                             | Manage Stands
+| Description                      | The Admin shall be able to manage stands of halls. He can add or remove stands from halls as well as change the propertys like size, category or price.
+| Actor                            | Admin
+| Functional Requirements          | 
 |===
 
 [cols="1h, 3"]
 [[U008]]
 |===
 | ID                               | U008
-| Name                             | Join Events
-| Description                      | Customer can join Events
-| Actor                            | Customer
-| Essential Steps                  a|
-1. Customer presses "Join Event" in the Cart
-
-| Functional Requirements          | <<F008>>
+| Name                             | Manage Equipment
+| Description                      | The Admin shall be able to manage equipment of stands. He can add or remove equipment as well as change the propertys like quantaty, size or price.
+| Actor                            | Admin
+| Functional Requirements          | 
 |===
 
 [cols="1h, 3"]
 [[U009]]
 |===
 | ID                               | U009
-| Name                             | Cancel Join Event
-| Description                      | The Customer shall be able to cancel his bookings.
-| Actor                            | Customer
-| Essential Steps                 a| 
-1. The Customer presses the button „Cancel Join Event“ in the navigation bar
-
-| Functional Requirements          | <<F009>>
-|===
-
-[cols="1h, 3"]
-[[U010]]
-|===
-| ID                               | U010
-| Name                             | Add News
-| Description                      | The Admin shall be able to add news.
+| Name                             | Manage Events
+| Description                      | The Admin shall be able to manage events. He can add or remove events as well as change the propertys like name or the halls they use.
 | Actor                            | Admin
-| Essential Steps                 a| 
-
-| Functional Requirements          | <<F010>>
-|===
-
-[cols="1h, 3"]
-[[U011]]
-|===
-| ID                               | U011
-| Name                             | Delete News
-| Description                      | The Admin shall be able delete news
-| Actor                            | Admin
-| Essential Steps                 a|
-1. The Admin clicks on the the button „Delete News“ in the navigation
-
-| Functional Requirements          | <<F011>>
-|===
-
-[cols="1h, 3"]
-[[U012]]
-|===
-| ID                               | U012
-| Name                             | add Events
-| Description                      | The Admin shall be able to add events from the Calendar
-| Actor                            | Admin
-| Essential Steps                 a| 
-1. The Admin clicks in the navigation on the button „Event Calendar“
-2. The Admin can click on „Add Event“ 
-| Functional Requirements          | <<F012>>
-|===
-
-[cols="1h, 3"]
-[[U013]]
-|===
-| ID                               | U013
-| Name                             | Delete Event
-| Description                      | The Admin shall be able to delete an event.
-| Actor                            | Admin
-| Essential Steps                 a|
-1. The Admin click on "delete" Event
-
-| Functional Requirements          | <<F013>>
-|===
-
-[cols="1h, 3"]
-[[U014]]
-|===
-| ID                               | U014
-| Name                             | Add Blog
-| Description                      | Admin can add new blog to make the website more compelling
-| Actor                            | Admin
-| Essential Steps                  | 1. The Admin clicks on the button „add new blog“
-| Functional Requirements          | <<F014>>
-|===
-
-[cols="1h, 3"]
-[[U015]]
-|===
-| ID                               | U015
-| Name                             | Delete Blog
-| Description                      | The Admin shall be able to remove blog.
-| Actor                            | Admin
-| Essential Steps                 a| 
-Add:
-1. The Admin clicks on the button „Delete blog“ on the Booth or equipment
-
-| Functional Requirements          | <<F015>>
-|===
-
-[cols="1h, 3"]
-[[U016]]
-|===
-| ID                               | U016
-| Name                             | Payment System
-| Description                      | System should be able to include a secure payment for the customer.
-| Actor                            | System
-| Essential Steps                 a|
-
-| Functional Requirements          | <<F016>>
+| Functional Requirements          | 
 |===
 
 == Functional Requirements
