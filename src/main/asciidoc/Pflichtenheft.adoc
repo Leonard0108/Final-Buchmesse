@@ -254,7 +254,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Authentication
 | open
 | The system should provide registered users to authenticate and login.
-| * There is a Button for a Login. If pressed, it will lead to a new mask with input fields for E-mail and password
+a| * There is a Button for a Login. If pressed, it will lead to a new mask with input fields for E-mail and password
 * Email and password will be verfified. If successfull, the user should be redirected to the registered Users view.
 
 [[F002]]
@@ -262,109 +262,131 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Logout
 | open
 | The system should provide registered users to logout again.
-| * There is a button to logout for registered users. If pressed, the user should be redirected to the home-page and get unauthorized again.
+a| * There is a button to logout for registered users. If pressed, the user should be redirected to the home-page and get unauthorized again.
 
 [[F003]]
 | F003
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
-| * There is a button for the registration. If pressed, the unregistered user will see a mask with input fields for the E-Mail, password and publisher-name. 
+a| * There is a button for the registration. If pressed, the unregistered user will see a mask with input fields for the E-Mail, password and publisher-name. 
 * If registered successfully (filled everything), the user should be redirected to the customer/admin view and should be added to the Customer-list.
 
 [[F004]]
 | F004
-| View Events
+| Select a Stand
 | open
-| The system shall enable a User to access and view Events Available.
-|
+| The system should provide Customers the possibility to select an Event and choose a Stand to book. The Stands variates by size and category, which influence the price of the booth.
+a| * In the Detail-View the system shall provide fields with buttons, each representing a Stand. If pressed ("Book Now") the user will get to the Configuration view.
 
 [[F005]]
 | F005
-| View Registered Event
+| Select Equipment
 | open
-| The system shall provide the Customer the ability to view his Registered Event.
-|
+| The system should provide Customers in the Configuration view to choose equipment for the selected stand. There are various equipments which have different names and prices.
+a|  * For each equipment exist a drop down menu to choose the wished quantity. 
+*  If a quantity is selected, the price will be added to the total price.
 
 [[F006]]
 | F006
-| View Customer
+| Book Stand with Equipment
 | open
-| Admin should be able to see how many customer an event will have 
-|
+| The system should provide registered users to buy/book the choosed stand with equipment (optional) and pay for it.
+a|  * The system shall provide Customers the posibillity to buy their final choice of the stand and equipment by pressing the button "Confirm Booking". 
+*  If pressed, an Order will be created and be validated. 
 
 [[F007]]
 | F007
-| View Event Calendar
+| Create Order
 | open
-| The system should provide the ability to remove a booking from his Cart.
-| There should be a button "Remove" in Cart-page to remove a Booking from the Customers Cart.
+| The system should provide the possebility to create a new Order with the status "OPEN".
+a|  * The system creates an Order after the user pressed "Confirm Booking" and set the status of the Order to "OPEN".
 
 [[F008]]
 | F008
-| Join Events
+| Validate Order
 | open
-| The system should provide the Customer the possibility to Join an events and to provide a payment system on the next step
-|
+| The system should provide the possebility to validate a new Order.
+a| *  The system will validate the order by checking the current stock.
+*  If the selected quantity exceeds the available stock, an error message will notify the user, and the order will be cleared.
+*  If the order is valid, it will proceed the payment.
 
 [[F009]]
 | F009
-| Cancel join event
+| Pay Order
 | open
-| The system should provide the Customer the possibility to cancel joined events
-|
+| The system shall provide the functionality to pay an existing order. If payed, the Order will be archived.
+a| *  The system confirms the payment and set the status of the Order to "PAID"
+*  The Order will be saved in the "Order-Database".
 
 [[F010]]
 | F010
-| Add news
+| Archive Order
 | open
-| Admin should be able to add news
-|
+| The system shall provide the functionality to pay an existing order.
+a| *  The system confirms the payment and set the status of the Order to "PAID"
 
 [[F011]]
 | F011
-| Remove news
+| Manage Halls
 | open
-| Admin should be able to remove news
-|
+| The system shall provide the Admin the possibility to add, change and remove Halls.
+a| *  In the Admin-Dashboard the Admin has a button "Manage Halls". If pressed, the Admin will be redirected to the Manage-Halls-View. 
+*  ...
 
 [[F012]]
 | F012
-| Add event
+| Manage Stands
 | open
-| Admin should be able to add Event
-|
+| The system shall provide the Admin the possibility to add, change and remove Stands.
+a| *  In the Admin-Dashboard the Admin has a button "Manage Stands". If pressed, the Admin will be redirected to the Manage-Stands-View. 
+*  ...
 
 [[F013]]
 | F013
-| Delete Events
+| Manage Equipment
 | open
-| Admin should be able to delete Event
-|
+| The system shall provide the Admin the possibility to add, change and remove Equipment.
+a| *  In the Admin-Dashboard the Admin has a button "Manage Equipment". If pressed, the Admin will be redirected to the Manage-Equipment-View. 
+*  ...
 
 [[F014]]
 | F014
-| Add Blog
+| Manage Events
 | open
-| Admin should be able to add blog on the website 
-|
+| The system shall provide the Admin the possibility to add and remove Book fairs of the system.
+a| *  In the Admin-Dashboard the Admin has a button "Manage Events". If pressed, the Admin will be redirected to the Manage-Events-View. 
+*  ...
 
 [[F015]]
 | F015
-| Remove Blog
+| View Homepage
 | open
-| Admin Should be able to remove blog on the website
-|
+| The system shall provide all users the possibility to see the Homepage.
+a| *  ...
 
 [[F016]]
 | F016
-| Payment system
+| View Details
 | open
-| The system shall provide the Customer the ability to pay
-|
+| The system shall provide all users the possibility to see Details of a selected event(book fair).
+a| *  For each upcoming event in the Homepage will be a button "View Details", which redirects the user to the Detail-View.
+
+[[F017]]
+| F017
+| View Configurations
+| open
+| The system shall allow all registered users to access the Configuration View for a selected stand. In this view, the details of the selected stand will be displayed, along with any available equipment that can be booked for the stand
+a| *  When a Customer selects a stand in the Detail View, they will be redirected to the Configuration View.
+
+[[F018]]
+| F018
+| View Admin-Dashboard
+| open
+| The system shall provide the Admin the possibility to see a overview of the Event Calendar and a short balance.
+a| *  When the Admin is logged in, he will be redirected to the Admin-Dashboard-View.
 
 |===
-
 === Nice-to-Have Criteria
 
 [options="header", cols="1, 1, 1, 1, 1"]
@@ -397,7 +419,7 @@ a| The system shall provide the Admin the ability to filter the calender with:
 
 | F903
 | Change Event
-|open
+| open
 | The system shall provide the Admin the ability to change entered event informations (date and name). 
 | There should be a button for events to change the entered informations and save it.
 
