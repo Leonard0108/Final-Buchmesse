@@ -80,11 +80,23 @@ a|
   *  a friendly userinterface
   *  a fast process of booking
 
-| Administrators
-| Users responsible for the management of the trade fair and bookings
-a|
-  *  get fast a simple overview about data
-  *  manage data
+| Author 
+| Users/Vistitors who can also book stands or are part of a publishing house. They can, for example, hold readings from their books, sign books, and engage with visitors.
+a| 
+  *  a friendly userinterface
+  *  a fast process of booking
+
+| Booksellers 
+| Visitors who can discover new books for their own stores, establish contacts with publishers or authors, and purchase books from them.
+| *  get fast a simple overview about upcoming book fairs
+
+| Visitors
+| Visitors who mainly want to dicover new books and meet their favourite authors
+| *  get fast a simple overview about upcoming book fairs
+
+| Media/Press
+| Visitors who cover new releases and emerging trends. They conduct interviews, create reports, and publish articles to reach a broader audience.
+| *  get fast a simple overview about upcoming book fairs
 
 | Developer 
 | Individuals who develop the design and implement and test the application
