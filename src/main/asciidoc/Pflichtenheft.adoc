@@ -88,15 +88,15 @@ a|
 
 | Booksellers 
 | Visitors who can discover new books for their own stores, establish contacts with publishers or authors, and purchase books from them.
-| *  get fast a simple overview about upcoming book fairs
+a| *  get fast a simple overview about upcoming book fairs
 
 | Visitors
 | Visitors who mainly want to dicover new books and meet their favourite authors
-| *  get fast a simple overview about upcoming book fairs
+a| *  get fast a simple overview about upcoming book fairs
 
 | Media/Press
 | Visitors who cover new releases and emerging trends. They conduct interviews, create reports, and publish articles to reach a broader audience.
-| *  get fast a simple overview about upcoming book fairs
+a| *  get fast a simple overview about upcoming book fairs
 
 | Developer 
 | Individuals who develop the design and implement and test the application
@@ -125,7 +125,7 @@ image::./models/analysis/Kontext-Diagramm_C4_C3.png[context diagram, 100%, 100%,
 This section outlines the key use cases the system must support. Each use case defines a specific functionality from the client’s perspective and identifies the relevant actors involved. These scenarios serve as the foundation for understanding how the system will be utilized in a real-world context.
 
 === Actors
-Actors represent either users or external systems that interact with the system. The table below provides an overview of all identified actors, along with a brief description of each. Abstract actors—displayed in italic—are used to represent groups of related actors for the purpose of generalization and simplification
+Actors represent either users or external systems that interact with the system. The table below provides an overview of all identified actors, along with a brief description of each.
 
 [options="header", cols="1, 1"]
 |===
@@ -133,13 +133,13 @@ Actors represent either users or external systems that interact with the system.
 | Description
 
 | unauthorized User
-| Users who are not logged in and only sees the Catalog
+| Users who are not logged in and only sees the Homepage with upcoming Events as well as the details of book fairs.
 
 | Customer
 | Any User, who has the role Customer and buys the products (Booths and equipment).
 
 | Admin
-| Users who have the role Admin and administrate the application. They have access to the event calender, the equipment warehouse, balance sheet as well as the occupancy plan.
+| Users who have the role Admin and administrate the application. They have access to the Magagement-Dashboard which provides an overview about current events, a balance overview as well as an Calendar for events. He can also manage halls, stands and equipment as well as creating new book fairs.
 
 |===
 
