@@ -239,6 +239,9 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Functional Requirements          | 
 |===
 
+== Sequence Diagram
+image::./models/analysis/SEQ1.drawio.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Use Case Diagram of the {project_name} in UML", align=center]
+
 == Functional Requirements
 
 === Must-Have Criteria
