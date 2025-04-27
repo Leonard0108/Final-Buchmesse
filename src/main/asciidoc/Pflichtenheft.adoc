@@ -240,7 +240,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 |===
 
 == Sequence Diagram
-image::./models/analysis/SEQ1.drawio.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Use Case Diagram of the {project_name} in UML", align=center]
+image::./models/analysis/SEQ1.drawio.png[context diagram, 100%, 100%, pdfwidth=100%, title= "Sequence diagram for the 3 main actors of the {project_name} in UML", align=center]
 
 == Functional Requirements
 
