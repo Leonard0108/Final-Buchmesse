@@ -319,68 +319,62 @@ a| *  The system will validate the order by checking the current stock.
 a| *  The system confirms the payment and set the status of the Order to "PAID"
 *  The Order will be saved in the "Order-Database".
 
+
 [[F010]]
 | F010
-| Archive Order
-| open
-| The system shall provide the functionality to pay an existing order.
-a| *  The system confirms the payment and set the status of the Order to "PAID"
-
-[[F011]]
-| F011
 | Manage Halls
 | open
 | The system shall provide the Admin the possibility to add, change and remove Halls.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Halls". If pressed, the Admin will be redirected to the Manage-Halls-View. 
 *  ...
 
-[[F012]]
-| F012
+[[F011]]
+| F011
 | Manage Stands
 | open
 | The system shall provide the Admin the possibility to add, change and remove Stands.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Stands". If pressed, the Admin will be redirected to the Manage-Stands-View. 
 *  ...
 
-[[F013]]
-| F013
+[[F012]]
+| F012
 | Manage Equipment
 | open
 | The system shall provide the Admin the possibility to add, change and remove Equipment.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Equipment". If pressed, the Admin will be redirected to the Manage-Equipment-View. 
 *  ...
 
-[[F014]]
-| F014
+[[F013]]
+| F013
 | Manage Events
 | open
 | The system shall provide the Admin the possibility to add and remove Book fairs of the system.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Events". If pressed, the Admin will be redirected to the Manage-Events-View. 
 *  ...
 
-[[F015]]
-| F015
+[[F014]]
+| F014
 | View Homepage
 | open
 | The system shall provide all users the possibility to see the Homepage.
 a| *  ...
 
-[[F016]]
-| F016
+[[F015]]
+| F015
 | View Details
 | open
 | The system shall provide all users the possibility to see Details of a selected event(book fair).
 a| *  For each upcoming event in the Homepage will be a button "View Details", which redirects the user to the Detail-View.
 
-[[F017]]
-| F017
+[[F016]]
+| F016
 | View Configurations
 | open
 | The system shall allow all registered users to access the Configuration View for a selected stand. In this view, the details of the selected stand will be displayed, along with any available equipment that can be booked for the stand
 a| *  When a Customer selects a stand in the Detail View, they will be redirected to the Configuration View.
 
-[[F018]]
-| F018
+[[F017]]
+| F017
 | View Admin-Dashboard
 | open
 | The system shall provide the Admin the possibility to see a overview of the Event Calendar and a short balance.
@@ -435,51 +429,61 @@ Priority: 1 - low ; 5 - high.
 | ID
 | Titel
 | Description
+| Criteria
 | Priority
 
 | 001
 | Security
 | The system must be secured by authentication and role assignment to avoid attacks or manipulation in the system.
+| The system will use the spring-security module to enable authentication and role assignemt.
 | 2
 
 | 002
 | Data protection
 | The system shall be GDPR conform to ensure a compliant data handling.
+| The user will be notified about which infomration and data will be saved of him. Further the user can see his own informations.
 | 2
 
 | 003
 | Performance 
 | The load time for every user-interaction should be less then 2 seconds for 90% of requests, to ensure a fast and smooth operation.
+| The Controller will be scripted simple and only reads and loads neccesary data.
 | 4
 
 | 004 
 | Usability
 | The user interface must be designed in such a way that the navigation is intuitive, and the applicant can quickly find all the required functions without needing additional instructions or training.
+| There will be a Navigation bar so the user can easily navigate between the different views. ...
 | 5
 
 | 005
 | Reliability
 |The system must ensure an availability of at least 99% on an annual average. In case of failures, the system must be restored within 4 hours to ensure continuous usage.
+| In case of Errors it will be logged in the Documentation. The Developer will then look it up and try to solve it.
 | 3
 
 | 006
 | Scalability
 | The system must be scalable to ensure good performance even with an increasing number of requests and users.
+| Because the data will be saved in a Database, it ensures 
 | 5
 
 | 007
 | Flexibility & Maintainability
-| The system must be designed for easy adaptation to changing requirements or technologies. It should have a modular architecture, allowing new functionalities or adjustments to be added without significant disruption. All changes must be documented and traceable, ensuring efficient maintenance and extension.
+| The system must be designed for easy adaptation to changing requirements or technologies.
+|  It should have a modular architecture, allowing new functionalities or adjustments to be added without significant disruption. All changes must be documented and traceable, ensuring efficient maintenance and extension.
 | 4
 
 | 008
 | Protocolation
 | The system must log all system activities, including login attempts, application changes, system errors, and critical events. The logs must be securely archived and retained for at least 5 years in compliance with legal requirements.
+| The system logs every action that the user triggers as well as the system itself. The Log will be saved in a Document.
 | 3
 
 | 009
 | Documentation
 | There must be comprehensive documentation available for the system, describing both the software architecture and the specific implementations, to facilitate long-term maintenance and further development.
+| The Documentaion will be written down in the Pflichtenheft, the Developer Documentation as well as in the Code.
 | 5
 
 |===
