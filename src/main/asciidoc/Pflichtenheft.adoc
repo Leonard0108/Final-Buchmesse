@@ -424,7 +424,7 @@ a| The system shall provide the Admin the ability to filter the calender with:
 Non-functional requirements are the property of the system ans is used to measure the quality of the system.
 
 Priority: 1 - low ; 5 - high.
-[options="header", cols="1, 1, 1, ^1"]
+[options="header", cols="1, 1, 1, 1, ^1"]
 |===
 | ID
 | Titel
