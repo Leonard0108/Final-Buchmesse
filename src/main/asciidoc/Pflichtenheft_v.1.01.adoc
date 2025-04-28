@@ -4,7 +4,6 @@
 :numbered:
 = Pflichtenheft __{project_name}__ 
 
-Version 1.01
 
 == Summary
 The objective of this specification document is to provide a clear overview of the planned software product and to establish a common communication basis between the client and the contractor (Group 4).
