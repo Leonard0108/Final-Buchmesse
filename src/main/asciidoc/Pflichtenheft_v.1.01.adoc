@@ -4,7 +4,16 @@
 :numbered:
 = Pflichtenheft __{project_name}__ 
 
+[options="header"]
+[cols="1, 1"]
 
+|===
+| Version 
+| Date
+
+| 1.0
+| 29.04.2025
+|===
 == Summary
 The objective of this specification document is to provide a clear overview of the planned software product and to establish a common communication basis between the client and the contractor (Group 4).
 It contains a comprehensive description of the project, the specific assignment, the involved stakeholders, various illustrative diagrams, as well as the functional and non-functional requirements. Additionally, a GUI prototype is presented.
