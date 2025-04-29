@@ -183,7 +183,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Book Stand
 | Description                      | The Customer shall be able to see and book available stands of upcoming events.
 | Actor                            | Customer
-| Functional Requirements          | 
+| Functional Requirements          | <<F004>>, <<F006>>, <<F007>>, <<F008>>, <<F009>>
 |===
 
 [cols="1h, 3"]
@@ -193,7 +193,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Book Equipment
 | Description                      | The Customer shall be able to book equipment for the selected stand and finalize the payment by booking it.
 | Actor                            | Customer
-| Functional Requirements          | 
+| Functional Requirements          | <<F005>>, <<F006>>, <<F007>>, <<F008>>, <<F009>>
 |===
 
 [cols="1h, 3"]
@@ -203,7 +203,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Manage Halls
 | Description                      | The Admin shall be able to manage halls for events. He can add and remove halls as well as change the propertys like size.
 | Actor                            | Admin
-| Functional Requirements          | 
+| Functional Requirements          | <<F010>>
 |===
 
 [cols="1h, 3"]
@@ -213,7 +213,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Manage Stands
 | Description                      | The Admin shall be able to manage stands of halls. He can add or remove stands from halls as well as change the propertys like size, category or price.
 | Actor                            | Admin
-| Functional Requirements          | 
+| Functional Requirements          | <<F011>>
 |===
 
 [cols="1h, 3"]
@@ -223,7 +223,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Manage Equipment
 | Description                      | The Admin shall be able to manage equipment of stands. He can add or remove equipment as well as change the propertys like quantaty, size or price.
 | Actor                            | Admin
-| Functional Requirements          | 
+| Functional Requirements          | <<F012>>
 |===
 
 [cols="1h, 3"]
@@ -233,7 +233,7 @@ image::./models/analysis/Use-Case_Diagram.svg[context diagram, 100%, 100%, pdfwi
 | Name                             | Manage Events
 | Description                      | The Admin shall be able to manage events. He can add or remove events as well as change the propertys like name or the halls they use.
 | Actor                            | Admin
-| Functional Requirements          | 
+| Functional Requirements          | <<F013>>
 |===
 
 == Sequence Diagram
@@ -258,53 +258,53 @@ image::./models/analysis/SEQ1.drawio.png[context diagram, 100%, 100%, pdfwidth=1
 a| * There is a Button for a Login. If pressed, it will lead to a new mask with input fields for E-mail and password
 * Email and password will be verfified. If successfull, the user should be redirected to the registered Users view.
 
-[[F002]]
-| F002
+
+| [[F002]] F002
 | Logout
 | open
 | The system should provide registered users to logout again.
 a| * There is a button to logout for registered users. If pressed, the user should be redirected to the home-page and get unauthorized again.
 
-[[F003]]
-| F003
+
+| [[F003]] F003
 | Registration
 | open
 | The system shall provide new (not registered) users to register with a E-Mail, password and the name of the publisher.
 a| * There is a button for the registration. If pressed, the unregistered user will see a mask with input fields for the E-Mail, password and publisher-name. 
 * If registered successfully (filled everything), the user should be redirected to the customer/admin view and should be added to the Customer-list.
 
-[[F004]]
-| F004
+
+| [[F004]] F004
 | Select a Stand
 | open
 | The system should provide Customers the possibility to select an Event and choose a Stand to book. The Stands variates by size and category, which influence the price of the booth.
 a| * In the Detail-View the system shall provide fields with buttons, each representing a Stand. If pressed ("Book Now") the user will get to the Configuration view.
 
-[[F005]]
-| F005
+
+| [[F005]] F005
 | Select Equipment
 | open
 | The system should provide Customers in the Configuration view to choose equipment for the selected stand. There are various equipments which have different names and prices.
 a|  * For each equipment exist a drop down menu to choose the wished quantity. 
 *  If a quantity is selected, the price will be added to the total price.
 
-[[F006]]
-| F006
+
+| [[F006]] F006
 | Book Stand with Equipment
 | open
 | The system should provide registered users to buy/book the choosed stand with equipment (optional) and pay for it.
 a|  * The system shall provide Customers the posibillity to buy their final choice of the stand and equipment by pressing the button "Confirm Booking". 
 *  If pressed, an Order will be created and be validated. 
 
-[[F007]]
-| F007
+
+| [[F007]] F007
 | Create Order
 | open
 | The system should provide the possebility to create a new Order with the status "OPEN".
 a|  * The system creates an Order after the user pressed "Confirm Booking" and set the status of the Order to "OPEN".
 
-[[F008]]
-| F008
+
+| [[F008]] F008
 | Validate Order
 | open
 | The system should provide the possebility to validate a new Order.
@@ -312,8 +312,8 @@ a| *  The system will validate the order by checking the current stock.
 *  If the selected quantity exceeds the available stock, an error message will notify the user, and the order will be cleared.
 *  If the order is valid, it will proceed the payment.
 
-[[F009]]
-| F009
+
+| [[F009]] F009
 | Pay Order
 | open
 | The system shall provide the functionality to pay an existing order. If payed, the Order will be archived.
@@ -321,61 +321,60 @@ a| *  The system confirms the payment and set the status of the Order to "PAID"
 *  The Order will be saved in the "Order-Database".
 
 
-[[F010]]
-| F010
+| [[F010]] F010
 | Manage Halls
 | open
 | The system shall provide the Admin the possibility to add, change and remove Halls.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Halls". If pressed, the Admin will be redirected to the Manage-Halls-View. 
 *  ...
 
-[[F011]]
-| F011
+
+| [[F011]] F011
 | Manage Stands
 | open
 | The system shall provide the Admin the possibility to add, change and remove Stands.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Stands". If pressed, the Admin will be redirected to the Manage-Stands-View. 
 *  ...
 
-[[F012]]
-| F012
+
+| [[F012]] F012
 | Manage Equipment
 | open
 | The system shall provide the Admin the possibility to add, change and remove Equipment.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Equipment". If pressed, the Admin will be redirected to the Manage-Equipment-View. 
 *  ...
 
-[[F013]]
-| F013
+
+| [[F013]] F013
 | Manage Events
 | open
 | The system shall provide the Admin the possibility to add and remove Book fairs of the system.
 a| *  In the Admin-Dashboard the Admin has a button "Manage Events". If pressed, the Admin will be redirected to the Manage-Events-View. 
 *  ...
 
-[[F014]]
-| F014
+
+| [[F014]] F014
 | View Homepage
 | open
 | The system shall provide all users the possibility to see the Homepage.
 a| *  ...
 
-[[F015]]
-| F015
+
+| [[F015]] F015
 | View Details
 | open
 | The system shall provide all users the possibility to see Details of a selected event(book fair).
 a| *  For each upcoming event in the Homepage will be a button "View Details", which redirects the user to the Detail-View.
 
-[[F016]]
-| F016
+
+| [[F016]] F016
 | View Configurations
 | open
 | The system shall allow all registered users to access the Configuration View for a selected stand. In this view, the details of the selected stand will be displayed, along with any available equipment that can be booked for the stand
 a| *  When a Customer selects a stand in the Detail View, they will be redirected to the Configuration View.
 
-[[F017]]
-| F017
+
+| [[F017]] F017
 | View Admin-Dashboard
 | open
 | The system shall provide the Admin the possibility to see a overview of the Event Calendar and a short balance.
