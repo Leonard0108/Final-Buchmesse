@@ -19,7 +19,6 @@ To reduce manual effort and increase operational efficiency, the system is inten
 * Manage hall allocations and booking of exhibition stands.
 * Track and organize exhibition equipment rentals.
 * Provide detailed occupancy plans for each fair.
-* Support the creation of financial overviews for each event.
 
 The solution will first be implemented as a prototype covering the most essential processes and should be designed in a way that allows for future expansion into a full-featured application. The system will not replace the existing personnel management software but will integrate with it by including personnel cost data into each event’s financial report.
 
