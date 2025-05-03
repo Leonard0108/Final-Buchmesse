@@ -44,18 +44,18 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 
 [options="header"]
 |===
-|Qualitätsziel |Lösungsansatz
-|Wartbarkeit a|
-* *Modularität* Die Anwendung wird aus einzelnen Modulen gebaut, sodass Änderungen an einer Stelle sich auf wenige Stellen auswirken.
-* *Wiederverwendbarkeit* Einzelkomponenten sollen von andere Systeme weitergenutzt werden können
-* *Modifizierbarkeit* Die Anwendung soll ohne Fehler erweitert oder modifiziert werden können.
-|Nutzbarkeit a|
-* *Learnability* Das System soll für die Nutzenden einfach zu verstehen sein, etwa durch klare Beschreibungen von Knöpfen und Eingabefeldern.
-* *Error handling/Nutzerschutz* Ungültige Eingaben müssen erkannt werden und dürfen nicht zu ungültigen Systemstadien führen.
-* *Accessibility* Es muss sichergestellt werden, dass diverse potentiell eingeschränkte Personen das System nutzen können, etwa durch die verwendung geeigneter Schriftgrößen und Farbkontraste
-|Sicherheit a|
-* *Geheimhaltung* Das System muss sicherstellen, dass nur solche Personen Zugang zu Informationen bekommen, die dafür auch autorisiert sind. Dies wird mit _Spring Security_ und _Thymeleaf_ (`sec:authorize` - tag) erledigt.
-* *Integrität* Das System muss die nicht autorisierte Modifizierung von Daten verhindern. Dies kann mit _Spring Security_ (`@PreAuthorize` - annotation) gemacht werden.
+|Quality Goal |Solution Approach
+|Maintainability a|
+* *Modularity* The application is built from individual modules so that changes in one place affect only a few other parts.
+* *Reusability* Individual components should be usable by other systems.
+* *Modifiability* The application should be expandable or modifiable without introducing errors.
+|Usability a|
+* *Learnability* The system should be easy for users to understand, for example through clear labeling of buttons and input fields.
+* *Error handling/User protection* Invalid inputs must be detected and must not lead to invalid system states.
+* *Accessibility* It must be ensured that various potentially impaired individuals can use the system, for example by using appropriate font sizes and color contrasts.
+|Security a|
+* *Confidentiality* The system must ensure that only authorized persons have access to information. This is handled using _Spring Security_ and _Thymeleaf_ (`sec:authorize` tag).
+* *Integrity* The system must prevent unauthorized modification of data. This can be achieved using _Spring Security_ (`@PreAuthorize` annotation).
 |===
 
 === 4.2. Software Architecture
