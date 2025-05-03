@@ -240,8 +240,9 @@ Links and buttons that reload the current page (possibly with different paramete
 == 6. Runtime View
 
 === Booking Process (Suggested Sequence)
-1. Publisher logs in
-2. Selects a fair and available stand
-3. Chooses equipment
-4. Confirms booking
-5. System sends confirmation and updates database
+
+image::./models/design/Catalog_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Catalog in UML", align=center]
+
+image::./models/design/Order_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Orders in UML", align=center]
+
+image::./models/design/Management_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Management in UML", align=center]
