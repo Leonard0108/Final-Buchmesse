@@ -43,13 +43,20 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 === 4.1. Meeting Quality Goals
 
 [options="header", cols="1,1"]
-|===
-| Quality Goal | Solution Strategy
-| Scalability | Modular system design with scalable backend
-| Maintainability | Clean codebase, layered architecture
-| Usability | UI/UX focused on non-technical users
-| Integrability | REST APIs and database connectors
-|===
+===
+|Quality Goal |Solution Approach
+|Maintainability a|
+* *Modularity* The application is built from individual modules so that changes in one place affect only a few other parts.
+* *Reusability* Individual components should be usable by other systems.
+* *Modifiability* The application should be expandable or modifiable without introducing errors.
+|Usability a|
+* *Learnability* The system should be easy for users to understand, for example through clear labeling of buttons and input fields.
+* *Error handling/User protection* Invalid inputs must be detected and must not lead to invalid system states.
+* *Accessibility* It must be ensured that various potentially impaired individuals can use the system, for example by using appropriate font sizes and color contrasts.
+|Security a|
+* *Confidentiality* The system must ensure that only authorized persons have access to information. This is handled using _Spring Security_ and _Thymeleaf_ (`sec:authorize` tag).
+* *Integrity* The system must prevent unauthorized modification of data. This can be achieved using _Spring Security_ (`@PreAuthorize` annotation).
+===
 
 === 4.2. Software Architecture
 
