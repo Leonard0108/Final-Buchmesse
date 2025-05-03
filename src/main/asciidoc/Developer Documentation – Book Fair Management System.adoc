@@ -97,10 +97,10 @@ This section outlines the required software environments for both server and cli
 ==== Backend Server Environment (suggested)
 
 * Programming Language: Java 21 or newer
-* Operating System: Linux-based or Windows Server
+* Operating System: Linux-based or Windows 8/10/11 or newer
 * Application Server: Apache Tomcat 10 or similar
 * Database System: PostgreSQL or MySQL
-* REST API-compatible web framework (e.g. Spring Boot)
+* REST API-compatible web framework (e.g. Spring Boot, SalesPoint)
 
 === 2.3 Product Usage
 
