@@ -9,7 +9,43 @@
 *Version:* 1.0  
 *Date:* April 29, 2025
 
-This system aims to modernize the organization of book fairs by Leifurter Buchmessen AG. The web-based application enables efficient digital management of sales stands, equipment, booking data, and statistics. It supports publishers, fair organizers, and provides a foundation for scalable future expansion.
+=== 1.1 Objective Definition
+
+The goal of the software system for the *Leifurter Book Fair AG* is to provide digital support and partial automation for the organization and execution of various thematic book fairs held on the company's premises. These fairs cover topics ranging from horticulture and politics to historical novels, and they attract specialized publishers who showcase their catalogs, take orders from booksellers, and negotiate new book projects with authors.
+
+To reduce manual effort and increase operational efficiency, the system is intended to:
+
+* Maintain an up-to-date calendar of past and upcoming fairs.
+* Manage hall allocations and booking of exhibition stands.
+* Track and organize exhibition equipment rentals.
+* Provide detailed occupancy plans for each fair.
+* Support the creation of financial overviews for each event.
+
+The solution will first be implemented as a prototype covering the most essential processes and should be designed in a way that allows for future expansion into a full-featured application. The system will not replace the existing personnel management software but will integrate with it by including personnel cost data into each event’s financial report.
+
+=== 1.2 Quality Requirements
+
+To ensure the long-term usability and efficiency of the software, the following quality attributes, inspired by the ISO/IEC 25010 software quality model, are defined as priorities:
+
+[cols="2,1", options="header"]
+|===
+| Quality Attribute | Priority (1–5)
+| Maintainability   | 5
+| Usability         | 4
+| Security          | 5
+|===
+
+==== 1.2.1 Maintainability
+
+The system should be highly maintainable, given the complexity and long-term nature of the operations it supports. As the number of fairs and halls increases, the software must allow for scalable configuration and easy adaptation to new processes or policy changes.
+
+==== 1.2.2 Usability
+
+The application should provide an intuitive interface for administrative staff, enabling them to quickly create and update event data, manage reservations, and retrieve relevant reports without extensive training.
+
+==== 1.2.3 Security
+
+Because the software processes sensitive business data—such as financial records and contractual agreements—the system must enforce secure data storage and access control. It must prevent unauthorized access and ensure compliance with applicable data protection regulations.
 
 == 2. Constraints
 
