@@ -78,7 +78,7 @@ An H2 database is used, which maps Java classes to database tables via Hibernate
 
 White boxes represent links or buttons that allow navigation to other pages. For better clarity, the following elements or element groups have been omitted:
 
-Links in the navigation menu ( link:./../resources/templates/layout.html[layout.html] ) outside the homepage
+Links in the navigation menu ( link:.src/main/asciidoc/models/analysis/homepage.png ) outside the homepage
 
 Links and buttons that reload the current page (possibly with different parameters or modified server-side data structures)
 ** 
