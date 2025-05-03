@@ -60,7 +60,7 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 
 === 4.2. Software Architecture
 
-* Beschreibung der Architektur anhand eines Client-Server-Diagramms
+Description of the architecture using a client-server diagram
 
 === 4.3. Key Design Decisions
 
