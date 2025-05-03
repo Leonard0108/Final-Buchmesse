@@ -78,18 +78,18 @@ An H2 database is used, which maps Java classes to database tables via Hibernate
 
 White boxes represent links or buttons that allow navigation to other pages. For better clarity, the following elements or element groups have been omitted:
 
-    Links in the navigation menu ( link:./../resources/templates/layout.html[layout.html] ) outside the homepage
+Links in the navigation menu ( link:./../resources/templates/layout.html[layout.html] ) outside the homepage
 
-    Links and buttons that reload the current page (possibly with different parameters or modified server-side data structures)
-    ** 
-    ** 
-    ** 
-    ** 
-    ** 
-    ** 
-    ** 
-    ** 
-    ** 
+Links and buttons that reload the current page (possibly with different parameters or modified server-side data structures)
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+** 
 
 === Use of External Frameworks
 
@@ -103,6 +103,9 @@ White boxes represent links or buttons that allow navigation to other pages. For
 |Google Charts |User Interface |Chart tool for the statistics dashboard
 |===
 === Open Issues
+**
+**
+**
 
 == 5. Building Block View
 
