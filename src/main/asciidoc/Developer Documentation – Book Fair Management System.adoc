@@ -60,11 +60,7 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 
 === 4.2. Software Architecture
 
-Top-Level Architecture:
-- Frontend: React.js (SPA)
-- Backend: Django or Node.js-based API
-- Database: PostgreSQL
-- External Systems: ERP/HR systems integration via API
+* Beschreibung der Architektur anhand eines Client-Server-Diagramms
 
 === 4.3. Key Design Decisions
 
