@@ -1,0 +1,117 @@
+
+= Developer Documentation – Book Fair Management System
+:toc:
+
+== 1. Introduction
+
+*Project Name:* Book Fair Management System  
+*Client:* Leifurter Buchmessen AG  
+*Version:* 1.0  
+*Date:* April 29, 2025
+
+This system aims to modernize the organization of book fairs by Leifurter Buchmessen AG. The web-based application enables efficient digital management of sales stands, equipment, booking data, and statistics. It supports publishers, fair organizers, and provides a foundation for scalable future expansion.
+
+== 2. Constraints
+
+=== Hardware Constraints
+- Server infrastructure to support a web-based system.
+- On-site client machines or tablets for check-in or stand management (optional).
+
+=== Software Constraints
+- Web application must be compatible with modern browsers.
+- Must integrate with existing personnel management and accounting systems.
+
+=== Operational Constraints
+- Should be deployable on-premises or via cloud (e.g., AWS, Azure).
+- Must comply with GDPR (EU data protection).
+- Must support scaling with additional exhibition halls (currently 3, planned 7 total).
+
+== 3. Context and Boundaries
+
+=== Actors
+- Fair Organizers (Admin users)
+- Publishers (Customers)
+- Financial Staff
+- External Equipment Providers
+
+=== Primary Interfaces
+- Web frontend for internal and external users
+- Integration with financial systems and event calendar
+
+== 4. Solution Strategy
+
+=== 4.1. Meeting Quality Goals
+
+[options="header", cols="1,1"]
+|===
+| Quality Goal | Solution Strategy
+| Scalability | Modular system design with scalable backend
+| Maintainability | Clean codebase, layered architecture
+| Usability | UI/UX focused on non-technical users
+| Integrability | REST APIs and database connectors
+|===
+
+=== 4.2. Software Architecture
+
+Top-Level Architecture:
+- Frontend: React.js (SPA)
+- Backend: Django or Node.js-based API
+- Database: PostgreSQL
+- External Systems: ERP/HR systems integration via API
+
+=== 4.3. Key Design Decisions
+
+- Persistence Layer: ORM-based access to PostgreSQL
+- Design Patterns: MVC, Repository, Singleton for shared resources
+- UI Components: Modular components with role-based views
+
+Frameworks:
+
+[options="header", cols="1,1,1"]
+|===
+| Library / Tool | Usage | Reason
+| React | Frontend UI | Fast development, reusable
+| Django REST API | Backend | Built-in admin, DRY
+| Chart.js | Visualization | Statistics and analytics
+|===
+
+== 5. Building Block View
+
+=== Modules / Packages
+- Authentication & User Roles
+- Stand Management
+- Equipment Inventory
+- Booking System
+- Statistics Dashboard
+
+=== Key Classes
+
+[options="header", cols="1,1"]
+|===
+| Class/Enum | Description
+| User | Represents staff or publisher logins
+| Fair | Book fair event with halls and dates
+| Stand | Rentable space with pricing and category info
+| Booking | Stand rental + equipment requests
+| Report | Aggregates stats for organizers
+|===
+
+=== 5.1. Traceability
+
+[options="header", cols="1,1"]
+|===
+| Requirement (Pflichtenheft) | Design Class
+| Stand booking management | Booking, Stand
+| Equipment tracking | EquipmentItem, Booking
+| Event statistics (visitors, revenue, etc.) | Report, Fair
+| Publisher profile and contract tracking | User, Booking
+|===
+
+== 6. Runtime View
+
+=== Booking Process (Suggested Sequence)
+1. Publisher logs in
+2. Selects a fair and available stand
+3. Chooses equipment
+4. Confirms booking
+5. System sends confirmation and updates database
