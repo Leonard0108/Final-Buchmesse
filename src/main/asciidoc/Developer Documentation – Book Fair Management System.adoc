@@ -64,19 +64,45 @@ Description of the architecture using a client-server diagram
 
 === 4.3. Key Design Decisions
 
-- Persistence Layer: ORM-based access to PostgreSQL
-- Design Patterns: MVC, Repository, Singleton for shared resources
-- UI Components: Modular components with role-based views
+==== Patterns Used
 
-Frameworks:
+Spring MVC
 
-[options="header", cols="1,1,1"]
+==== Persistence
+
+An H2 database is used, which maps Java classes to database tables via Hibernate annotations (@Entity, etc.). Persistence is ensured through Spring Data JPA.
+
+==== User Interface
+
+[[UserInterface]]
+
+White boxes represent links or buttons that allow navigation to other pages. For better clarity, the following elements or element groups have been omitted:
+
+    Links in the navigation menu ( link:./../resources/templates/layout.html[layout.html] ) outside the homepage
+
+    Links and buttons that reload the current page (possibly with different parameters or modified server-side data structures)
+    ** 
+    ** 
+    ** 
+    ** 
+    ** 
+    ** 
+    ** 
+    ** 
+    ** 
+
+=== Use of External Frameworks
+
+[options="header"]
 |===
-| Library / Tool | Usage | Reason
-| React | Frontend UI | Fast development, reusable
-| Django REST API | Backend | Built-in admin, DRY
-| Chart.js | Visualization | Statistics and analytics
+|External Library |Category |Description
+|Spring Boot |General Usage |Functions for the application's MVC system
+|Spring Data JPA |Data Access |Support for data access and persistence compliance
+|Salespoint |General Usage |General MVC application functions with prebuilt structures
+|Thymeleaf |User Interface |Rendering aid for HTML
+|Google Charts |User Interface |Chart tool for the statistics dashboard
 |===
+=== Open Issues
 
 == 5. Building Block View
 
