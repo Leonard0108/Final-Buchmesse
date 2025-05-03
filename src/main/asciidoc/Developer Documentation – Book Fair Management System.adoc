@@ -48,18 +48,81 @@ Because the software processes sensitive business data—such as financial recor
 
 == 2. Constraints
 
-=== Hardware Constraints
-- Server infrastructure to support a web-based system.
-- On-site client machines or tablets for check-in or stand management (optional).
+=== 2.1 Hardware Specifications
 
-=== Software Constraints
-- Web application must be compatible with modern browsers.
-- Must integrate with existing personnel management and accounting systems.
+This section lists the necessary hardware required for the operation and use of the Leifurter Book Fair System.
 
-=== Operational Constraints
-- Should be deployable on-premises or via cloud (e.g., AWS, Azure).
-- Must comply with GDPR (EU data protection).
-- Must support scaling with additional exhibition halls (currently 3, planned 7 total).
+==== Required Equipment
+
+* Server Machine
+* Office Workstations
+* Keyboard and Mouse
+* Local Network Infrastructure (Router, Switches)
+
+==== 2.1.1 Minimum Requirements
+
+[cols="2,2", options="header"]
+|===
+| Component | Minimum Specification
+
+| Client Hardware
+| * CPU: Dual-core processor with at least 1 GHz clock speed
+  * RAM: 2 GB
+  * Storage: 500 MB available disk space
+
+| Server Hardware
+| * CPU: Quad-core processor with at least 2 GHz clock speed
+  * RAM: 8 GB
+  * Storage: 4 GB available disk space
+|===
+=== 2.2 Software Specifications
+
+This section outlines the required software environments for both server and client systems in order to ensure proper execution of the application.
+
+==== Runtime Environment
+
+* Java Runtime Environment: Java 21 or newer
+
+==== Supported Web Browsers (for client-side access)
+
+* Microsoft Edge 124.0 or newer
+* Mozilla Firefox 128.0 or newer
+* Google Chrome 126.0 or newer
+* Opera 109.0 or newer
+
+==== Frontend Server Environment (suggested)
+
+* Graphical web interface: HTML, CSS, JavaScript
+
+==== Backend Server Environment (suggested)
+
+* Programming Language: Java 21 or newer
+* Operating System: Linux-based or Windows Server
+* Application Server: Apache Tomcat 10 or similar
+* Database System: PostgreSQL or MySQL
+* REST API-compatible web framework (e.g. Spring Boot)
+
+=== 2.3 Product Usage
+
+The software will serve as an integrated system for managing the operational and logistical needs of the Leifurter Book Fair AG. It supports event planning, resource allocation, vendor coordination, and financial reporting.
+
+Key usage scenarios include:
+
+* Managing a calendar of past and upcoming fairs
+* Event registration for the clients
+* Recording exhibition stand bookings and associated equipment
+* Managing hall capacities and layouts
+
+==== Deployment and Access
+
+The system is designed to run on a centralized server and be accessed via standard web browsers on local or remote workstations used by administrative staff.
+
+* All user interactions occur via a graphical web interface.
+* Persistent data storage is handled through a backend database.
+* Users will not interact directly with the database (e.g., via SQL or PosgreSQL); all operations are performed through the application UI.
+
+The application is intended to be intuitive and requires minimal training for staff. Data integrity and continuity are ensured through structured data management and session-based access control.
+
 
 == 3. Context and Boundaries
 
