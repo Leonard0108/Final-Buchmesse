@@ -40,10 +40,10 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 
 == 4. Solution Strategy
 
-=== 4.1. Meeting Quality Goals
+=== 4.1. Quality Goals
 
 [options="header", cols="1,1"]
-===
+
 |Quality Goal |Solution Approach
 |Maintainability a|
 * *Modularity* The application is built from individual modules so that changes in one place affect only a few other parts.
@@ -56,7 +56,6 @@ This system aims to modernize the organization of book fairs by Leifurter Buchme
 |Security a|
 * *Confidentiality* The system must ensure that only authorized persons have access to information. This is handled using _Spring Security_ and _Thymeleaf_ (`sec:authorize` tag).
 * *Integrity* The system must prevent unauthorized modification of data. This can be achieved using _Spring Security_ (`@PreAuthorize` annotation).
-===
 
 === 4.2. Software Architecture
 
