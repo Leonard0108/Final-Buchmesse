@@ -509,7 +509,7 @@ image::./models/analysis/register.png[GUI Prototype, 100%, 100%, pdfwidth=100%, 
 == Data Model
 === Overview: Class Diagrams
 
-image::./models/analysis/Klassendiagramm.svg[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
+image::./models/analysis/Datenmodell2.0.drawio.svg[context diagram, 100%, 100%, pdfwidth=100%, title= "Context diagram of the {project_name} in UML", align=center]
 
 === Classes and Enumeration
 
