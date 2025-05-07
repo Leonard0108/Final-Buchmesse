@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipment Page</title>
+  <style>
+    body {
+      background-color: #e5e5e5;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #5d4c8d;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      border-radius: 25px 25px 0 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #d9aeb1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+
+    .card-content p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .card button {
+      background-color: #ccc;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+      cursor: pointer;
+      width: calc(100% - 20px);
+    }
+
+    .card button:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <header>Equipment</header>
+  <div class="container">
+    <div class="card">
+      <img src="https://source.unsplash.com/400x300/?equipment,tools" alt="Equipment Image" />
+      <div class="card-content">
+        <p><strong>Name:</strong></p>
+        <p><strong>Description:</strong></p>
+        <p><strong>Preis:</strong></p>
+      </div>
+      <button>Add</button>
+    </div>
+  <script>
+      fetch('/api/events')
+        .then(response => response.json())
+        .then(events => {
+          const container = document.getElementById('event-container');
+          container.innerHTML = '';
+
+          events.forEach(event => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+              <img src="${event.imageUrl || 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image" />
+              <div class="card-content">
+                <p><strong>${event.name}</strong></p>
+                <p>${event.date}</p>
+                <p>${event.location}</p>
+                <p>${event.status}</p>
+                <p>${event.type}</p>
+                <p>${event.visitorsQuantity}</p>
+              </div>
+              <button>Book</button>
+            `;
+            container.appendChild(card);
+          });
+        })
+        .catch(error => {
+          console.error('Fehler beim Laden der Events:', error);
+        });
+  </script>
+</body>
+</html>
