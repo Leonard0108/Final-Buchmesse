@@ -15,14 +15,80 @@
  */
 package kickstart.welcome;
 
+import kickstart.Customer.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WelcomeController {
 
+
 	@GetMapping("/")
 	public String index() {
-		return "welcome";
+		return "buchmesse";
+	}
+
+	@GetMapping("/login")
+	public String login() {
+	return "login";
+	}
+
+	@GetMapping("/register")
+	public String register() {
+		return "register";
+	}
+
+	@Autowired
+	private CustomerService customerService;
+
+	@PostMapping("/register")
+	public String registerSubmit(@RequestParam String email, @RequestParam String password, String forname, String surname, Model model) {
+		boolean success = true;
+		if (email == null){
+			model.addAttribute("ErrorEmail", "Email can't be empty");
+			success = false;
+		}
+		else if (password == null) {
+			model.addAttribute("ErrorPassword", "Password can't be empty");
+			success = false;
+		}
+
+		if (success){
+			success = customerService.registerCustomer(email, password, forname, surname);
+
+			if (success) {
+				return "redirect:/";
+			} else {
+				model.addAttribute("ErrorEmail", "Email already registered");
+			}
+		}
+
+		System.out.println("Fehler bei Email oder Password");
+		return "register";
+	}
+
+	@PostMapping("/login")
+	public String loginSubmit(@RequestParam String email, @RequestParam String password, Model model){
+		boolean success = true;
+		if (email == null) {
+			model.addAttribute("ErrorEmail", "Email can't be empty");
+			success = false;
+		}
+		else if (password == null) {
+			model.addAttribute("ErrorPassword", "Password can't be empty");
+			success = false;
+		}
+		if(success) {
+			//Checks the Password
+			success = customerService.loginCustomer(email, password);
+			if (success) {
+				return "success";
+			}
+		}
+		return "login";
 	}
 }
