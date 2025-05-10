@@ -47,6 +47,7 @@ public class Application {
 			return http
 					.headers(headers -> headers.frameOptions(FrameOptionsConfig::sameOrigin))
 					.csrf(csrf -> csrf.disable())
+					.formLogin(login -> login.loginProcessingUrl("/login"))
 					.logout(logout -> logout.logoutUrl("/logout").logoutSuccessUrl("/"))
 					.build();
 		}
