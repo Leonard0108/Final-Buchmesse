@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymleaf.org">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Login – Buchmesse AG</title>
@@ -10,12 +10,14 @@
 
 <div class="login-box">
   <h2>Login</h2>
-  <form>
-    <label class="typ2" for="username">Email or Username</label>
-    <input type="text" id="username" name="username" required>
+  <form method="post" th:action="@{/login}">
+    <label class="typ2">Email</label>
+    <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
+    <input type="text" name="email" required>
 
     <label class="typ2" for="password">Password</label>
-    <input type="password" id="password" name="password" required>
+      <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
+      <input type="password" id="password" name="password" required>
 
     <button class="typ2" type="submit">Log In</button>
   </form>

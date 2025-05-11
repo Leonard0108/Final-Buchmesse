@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
   <title>Admin Dashboard – Buchmesse AG</title>
@@ -108,8 +110,13 @@
       <a href="#" class="button">Manage Stands</a>
       <a href="#" class="button">Manage Equipment</a>
       <a href="#" class="button">Create New Fair</a>
+    <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+        <button type="submit" class="ui button">Logout</button>
+    </form>
     </div>
   </div>
+
+
 
 </div>
 

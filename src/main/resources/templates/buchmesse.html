@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en"
-        xmlns:th="http://www.thymleaf.org">
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
   <meta charset="UTF-8">
-    <link th:href="@{/resources/css/style.css}" rel="stylesheet"/>
-    <!-- href="../static/resources/css/style.css" rel="stylesheet" -->
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet" />
   <title>Book Fair Management System</title>
 
 </head>
@@ -14,7 +14,7 @@
       <h1>Book Fair</h1>
     </header>
 
-    <nav>
+    <nav sec:authorize="!isAuthenticated()">
       <a th:href="@{/login}">Login</a>
       <a th:href="@{/register}">Register</a>
     </nav>
