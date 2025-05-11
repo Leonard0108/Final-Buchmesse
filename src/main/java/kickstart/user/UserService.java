@@ -1,5 +1,6 @@
 package kickstart.Customer;
 
+import jakarta.servlet.http.HttpSession;
 import org.salespointframework.useraccount.Password.UnencryptedPassword;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.salespointframework.useraccount.Role;
@@ -17,16 +18,18 @@ public class CustomerService {
 
 	public static final Role CUSTOMER_ROLE = Role.of("CUSTOMER");
 
-
 	private final CustomerRepository customers;
 	private final UserAccountManagement userAccounts;
+	private final PasswordEncoder encoder;
 
-	public CustomerService(CustomerRepository customers, UserAccountManagement userAccounts) {
+	public CustomerService(CustomerRepository customers, UserAccountManagement userAccounts, PasswordEncoder encoder) {
 		Assert.notNull(customers, "CustomerRepository must not be null!");
 		Assert.notNull(userAccounts, "UserAccountManagement must not be null!");
+		Assert.notNull(encoder, "PasswordEncoder must not be null!");
 
 		this.customers = customers;
 		this.userAccounts = userAccounts;
+		this.encoder = encoder;
 	}
 
 	public boolean registerCustomer(String email, String password, String forname, String surname) {
@@ -45,18 +48,19 @@ public class CustomerService {
 		return true;
 	}
 
-	public boolean loginCustomer(String email, String password) {
+	public String loginCustomer(String email, String password) {
 		Optional<UserAccount> userOpt = userAccounts.findByUsername(email);
 
 		if (userOpt.isPresent()) {
 			UserAccount user = userOpt.get();
-			if (passwordEncoder.matches(password, user.getPassword())) {
+			if (encoder.matches(password, String.valueOf(user.getPassword()))) {
 				//Password matched the given Password
-				return true;
+				return "success";
+			}
+			else {
+				return "PasswordError";		//Password dont match
 			}
 		}
-
-		// user not found or password false
-		return false;
+		return "EmailError";		//Email doesnt exist/not found
 	}
 }
