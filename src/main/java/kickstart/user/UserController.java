@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.servlet.http.HttpSession;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class UserController {
 
@@ -63,7 +65,7 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public String loginSubmit(@RequestParam String email, @RequestParam String password, Model model){
+	public String loginSubmit(@RequestParam String email, @RequestParam String password, Model model, HttpServletRequest request){
 		boolean success = true;
 		if (email == null) {
 			model.addAttribute("ErrorEmail", "Email can't be empty");
@@ -75,7 +77,7 @@ public class UserController {
 		}
 		if(success) {
 			//Checks the Password
-			String result = userService.loginUser(email, password);
+			String result = userService.loginUser(email, password, request);
 			if (result.equals("success")) {
 				return "redirect:/admin-dashboard";
 			}
