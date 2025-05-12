@@ -1,10 +1,14 @@
 package kickstart.user;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.salespointframework.useraccount.Role;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -16,7 +20,7 @@ import java.util.Optional;
 @Transactional
 public class UserService {
 
-	public static final Role CUSTOMER_ROLE = Role.of("CUSTOMER");
+	public static final String CUSTOMER_ROLE = "CUSTOMER";
 	private final UserRepository users;
 	private final BCryptPasswordEncoder encoder;
 
@@ -39,12 +43,13 @@ public class UserService {
 		return true;
 	}
 
-	public String loginUser(String email, String password) {
+	public String loginUser(String email, String password, HttpServletRequest request) {
 		Optional<User> userOpt = users.findByEmail(email);
 
 		if (userOpt.isPresent()) {
 			User user = userOpt.get();
-			if (encoder.matches(encoder.encode(password), user.getPassword())) {
+
+			if (encoder.matches(password, user.getPassword())) {
 				//Password matched the given Password
 				List<SimpleGrantedAuthority> authorities =
 						List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
@@ -53,7 +58,9 @@ public class UserService {
 						new UsernamePasswordAuthenticationToken(user.getEmail(), null, authorities);
 
 				SecurityContextHolder.getContext().setAuthentication(auth);
-				return "admin-dashboard";
+				HttpSession session = request.getSession();
+				session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
+				return "success";
 			}
 			else {
 				return "PasswordError";		//Password dont match
