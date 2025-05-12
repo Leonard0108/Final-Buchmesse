@@ -1,7 +1,6 @@
 package kickstart.user;
 
 import org.salespointframework.core.DataInitializer;
-import org.salespointframework.useraccount.Role;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

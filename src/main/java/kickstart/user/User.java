@@ -2,7 +2,6 @@ package kickstart.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import org.salespointframework.useraccount.Role;
 
 import java.util.UUID;
 
