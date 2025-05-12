@@ -10,8 +10,8 @@ import org.springframework.util.Assert;
 @Component
 @Order(10)
 public class UserDataInit implements DataInitializer {
-	public static final Role CUSTOMER_ROLE = Role.of("CUSTOMER");
-	public static final Role ADMIN_ROLE = Role.of("ADMIN");
+	public static final String CUSTOMER_ROLE = "CUSTOMER";
+	public static final String ADMIN_ROLE = "ADMIN";
 
 	private final UserRepository users;
 	private final BCryptPasswordEncoder encoder;
