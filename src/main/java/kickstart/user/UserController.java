@@ -73,8 +73,13 @@ public class UserController {
 		if(success) {
 			//Checks the Password
 			String result = userService.loginUser(email, password, request);
-			if (result.equals("success")) {
-				return "redirect:/admin-dashboard";
+			if (!(result.equals("EmailError")  || result.equals("PaswwordError"))) {
+				if(result = "ADMIN") {
+					return "redirect:/event_page";
+				}
+				else if(result = "CUSTOMER") {
+					return "redirect:/admin_dashboard";
+				}
 			}
 			else if (result.equals("EmailError")) {
 				model.addAttribute("ErrorEmail", "Email doesn't exist");
