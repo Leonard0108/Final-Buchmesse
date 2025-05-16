@@ -71,14 +71,14 @@ public class UserController {
 			success = false;
 		}
 		if(success) {
-			//Checks the Password
+			
 			String result = userService.loginUser(email, password, request);
 			if (!(result.equals("EmailError")  || result.equals("PaswwordError"))) {
-				if(result = "ADMIN") {
-					return "redirect:/event_page";
+				if(result == "ADMIN") {
+					return "redirect:/Admin";
 				}
-				else if(result = "CUSTOMER") {
-					return "redirect:/admin_dashboard";
+				else if(result == "CUSTOMER") {
+					return "redirect:/events";
 				}
 			}
 			else if (result.equals("EmailError")) {
