@@ -170,22 +170,23 @@
                     <th>Actions</th>
                 </tr>
             </thead>
+            
             <tbody>
-
-            <tr th:each="entry : ${cartItems}" th:if="${entry.key != null}">
-                <td th:text="${entry.key.name}"></td>
-                <td th:text="${entry.key.price}"></td>
-                <td th:text="${entry.value}"></td>
-                <td th:text="${entry.key.price.multiply(entry.value)}"></td>
-                <td class="actions">
-                    <a th:if="${entry.key instanceof T(kickstart.Equipments.Equipment)}"
-                       th:href="@{/cart/removeEquipment/{id}(id=${entry.key.id})}">Remove</a>
-                    <a th:if="${entry.key instanceof T(kickstart.Events.Event)}"
-                       th:href="@{/cart/removeEvent/{id}(id=${entry.key.id})}">Remove</a>
+                <tr th:each="entry : ${cartItems}">
+                    <td th:text="${entry.key.name}">Product</td>
+                    <td th:text="${entry.key.price}">Price</td>
+                    <td th:text="${entry.value}">Qty</td>
+                    <td th:text="${entry.key.price.multiply(entry.value)}">Total</td>
+                    <td class="actions">
+                    <a th:if="${entry.key.class.simpleName == 'Equipment'}"
+                    th:href="@{/cart/removeEquipment/{id}(id=${entry.key.id})}">Remove</a>
+                    <a th:if="${entry.key.class.simpleName == 'Event'}"
+                    th:href="@{/cart/removeEvent/{id}(id=${entry.key.id})}">Remove</a>
                 </td>
-            </tr>
 
+                </tr>
             </tbody>
+
         </table>
 
         <div class="total">

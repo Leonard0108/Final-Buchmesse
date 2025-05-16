@@ -64,5 +64,19 @@ public class Equipment implements CartItem{
 
     public void setId(UUID id) {
         this.id = id;
-}
+    }
+
+    @Override
+    public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Equipment that = (Equipment) o;
+    return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+
 }
