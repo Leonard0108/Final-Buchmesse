@@ -3,6 +3,7 @@ package kickstart.Admin;
 import kickstart.Equipments.Equipment;
 import kickstart.Equipments.EquipmentCatalog;
 import org.javamoney.moneta.Money;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +19,14 @@ public class AdminEquipmentController {
 		this.equipmentCatalog = equipmentCatalog;
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/add")
 	public String showForm(Model model) {
 		model.addAttribute("equipment", new Equipment());
 		return "addNewequipment_form";
 	}
 
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/add")
 	public String saveEquipment(@ModelAttribute Equipment equipment,
 								@RequestParam("priceAmount") double priceAmount,
