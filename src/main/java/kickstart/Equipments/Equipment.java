@@ -11,7 +11,6 @@ import java.util.UUID;
 public class Equipment implements CartItem{
     @Id
 	private UUID id = UUID.randomUUID();
-    
     private String name;
     private Money price;
     private String type;
