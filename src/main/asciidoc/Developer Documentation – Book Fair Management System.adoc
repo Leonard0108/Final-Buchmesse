@@ -1,0 +1,248 @@
+
+= Developer Documentation – Book Fair Management System
+:toc:
+
+== 1. Introduction
+
+*Project Name:* Book Fair Management System  
+*Client:* Leifurter Buchmessen AG  
+*Version:* 1.0  
+*Date:* April 29, 2025
+
+=== 1.1 Objective Definition
+
+The goal of the software system for the *Leifurter Book Fair AG* is to provide digital support and partial automation for the organization and execution of various thematic book fairs held on the company's premises. These fairs cover topics ranging from horticulture and politics to historical novels, and they attract specialized publishers who showcase their catalogs, take orders from booksellers, and negotiate new book projects with authors.
+
+To reduce manual effort and increase operational efficiency, the system is intended to:
+
+* Maintain an up-to-date calendar of past and upcoming fairs.
+* Manage hall allocations and booking of exhibition stands.
+* Track and organize exhibition equipment rentals.
+* Provide detailed occupancy plans for each fair.
+
+The solution will first be implemented as a prototype covering the most essential processes and should be designed in a way that allows for future expansion into a full-featured application. The system will not replace the existing personnel management software but will integrate with it by including personnel cost data into each event’s financial report.
+
+=== 1.2 Quality Requirements
+
+To ensure the long-term usability and efficiency of the software, the following quality attributes, inspired by the ISO/IEC 25010 software quality model, are defined as priorities:
+
+[cols="2,1", options="header"]
+|===
+| Quality Attribute | Priority (1–5)
+| Maintainability   | 5
+| Usability         | 4
+| Security          | 5
+|===
+
+==== 1.2.1 Maintainability
+
+The system should be highly maintainable, given the complexity and long-term nature of the operations it supports. As the number of fairs and halls increases, the software must allow for scalable configuration and easy adaptation to new processes or policy changes.
+
+==== 1.2.2 Usability
+
+The application should provide an intuitive interface for administrative staff, enabling them to quickly create and update event data, manage reservations, and retrieve relevant reports without extensive training.
+
+==== 1.2.3 Security
+
+Because the software processes sensitive business data—such as financial records and contractual agreements—the system must enforce secure data storage and access control. It must prevent unauthorized access and ensure compliance with applicable data protection regulations.
+
+== 2. Constraints
+
+=== 2.1 Hardware Specifications
+
+This section lists the necessary hardware required for the operation and use of the Leifurter Book Fair System.
+
+==== Required Equipment
+
+* Server Machine
+* Office Workstations
+* Keyboard and Mouse
+* Local Network Infrastructure (Router, Switches)
+
+==== 2.1.1 Minimum Requirements
+
+[cols="2,2", options="header"]
+|===
+| Component | Minimum Specification
+
+| Client Hardware
+| * CPU: Dual-core processor with at least 1 GHz clock speed
+  * RAM: 2 GB
+  * Storage: 500 MB available disk space
+
+| Server Hardware
+| * CPU: Quad-core processor with at least 2 GHz clock speed
+  * RAM: 8 GB
+  * Storage: 4 GB available disk space
+|===
+=== 2.2 Software Specifications
+
+This section outlines the required software environments for both server and client systems in order to ensure proper execution of the application.
+
+==== Runtime Environment
+
+* Java Runtime Environment: Java 21 or newer
+
+==== Supported Web Browsers (for client-side access)
+
+* Microsoft Edge 124.0 or newer
+* Mozilla Firefox 128.0 or newer
+* Google Chrome 126.0 or newer
+* Opera 109.0 or newer
+
+==== Frontend Server Environment (suggested)
+
+* Graphical web interface: HTML, CSS, JavaScript
+
+==== Backend Server Environment (suggested)
+
+* Programming Language: Java 21 or newer
+* Operating System: Linux-based or Windows 8/10/11 or newer
+* Application Server: Apache Tomcat 10 or similar
+* Database System: PostgreSQL or MySQL
+* REST API-compatible web framework (e.g. Spring Boot, SalesPoint)
+
+=== 2.3 Product Usage
+
+The software will serve as an integrated system for managing the operational and logistical needs of the Leifurter Book Fair AG. It supports event planning, resource allocation, vendor coordination, and financial reporting.
+
+Key usage scenarios include:
+
+* Managing a calendar of past and upcoming fairs
+* Event registration for the clients
+* Recording exhibition stand bookings and associated equipment
+* Managing hall capacities and layouts
+
+==== Deployment and Access
+
+The system is designed to run on a centralized server and be accessed via standard web browsers on local or remote workstations used by administrative staff.
+
+* All user interactions occur via a graphical web interface.
+* Persistent data storage is handled through a backend database.
+* Users will not interact directly with the database (e.g., via SQL or PosgreSQL); all operations are performed through the application UI.
+
+The application is intended to be intuitive and requires minimal training for staff. Data integrity and continuity are ensured through structured data management and session-based access control.
+
+
+== 3. Context and Boundaries
+
+=== Actors
+- Fair Organizers (Admin users)
+- Publishers (Customers)
+- Financial Staff
+- External Equipment Providers
+
+=== Primary Interfaces
+- Web frontend for internal and external users
+- Integration with financial systems and event calendar
+
+== 4. Solution Strategy
+
+=== 4.1. Quality Goals
+
+[options="header"]
+|===
+|Quality Goal |Solution Approach
+|Maintainability a|
+* *Modularity* The application is built from individual modules so that changes in one place affect only a few other parts.
+* *Reusability* Individual components should be usable by other systems.
+* *Modifiability* The application should be expandable or modifiable without introducing errors.
+|Usability a|
+* *Learnability* The system should be easy for users to understand, for example through clear labeling of buttons and input fields.
+* *Error handling/User protection* Invalid inputs must be detected and must not lead to invalid system states.
+* *Accessibility* It must be ensured that various potentially impaired individuals can use the system, for example by using appropriate font sizes and color contrasts.
+|Security a|
+* *Confidentiality* The system must ensure that only authorized persons have access to information. This is handled using _Spring Security_ and _Thymeleaf_ (`sec:authorize` tag).
+* *Integrity* The system must prevent unauthorized modification of data. This can be achieved using _Spring Security_ (`@PreAuthorize` annotation).
+|===
+
+=== 4.2. Software Architecture
+
+Description of the architecture using a client-server diagram
+
+=== 4.3. Key Design Decisions
+
+==== Patterns Used
+
+Spring MVC
+
+==== Persistence
+
+An H2 database is used, which maps Java classes to database tables via Hibernate annotations (@Entity, etc.). Persistence is ensured through Spring Data JPA.
+
+==== User Interface
+
+[[UserInterface]]
+
+White boxes represent links or buttons that allow navigation to other pages. For better clarity, the following elements or element groups have been omitted:
+
+Links in the navigation menu ( link:.src/main/asciidoc/models/analysis/homepage.png ) outside the homepage
+
+Links and buttons that reload the current page (possibly with different parameters or modified server-side data structures)
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+** 
+
+=== Use of External Frameworks
+
+[options="header"]
+|===
+|External Library |Category |Description
+|Spring Boot |General Usage |Functions for the application's MVC system
+|Spring Data JPA |Data Access |Support for data access and persistence compliance
+|Salespoint |General Usage |General MVC application functions with prebuilt structures
+|Thymeleaf |User Interface |Rendering aid for HTML
+|Google Charts |User Interface |Chart tool for the statistics dashboard
+|===
+=== Open Issues
+**
+**
+**
+
+== 5. Building Block View
+
+=== Modules / Packages
+- Authentication & User Roles
+- Stand Management
+- Equipment Inventory
+- Booking System
+- Statistics Dashboard
+
+=== Key Classes
+
+[options="header", cols="1,1"]
+|===
+| Class/Enum | Description
+| User | Represents staff or publisher logins
+| Fair | Book fair event with halls and dates
+| Stand | Rentable space with pricing and category info
+| Booking | Stand rental + equipment requests
+| Report | Aggregates stats for organizers
+|===
+
+=== 5.1. Traceability
+
+[options="header", cols="1,1"]
+|===
+| Requirement (Pflichtenheft) | Design Class
+| Stand booking management | Booking, Stand
+| Equipment tracking | EquipmentItem, Booking
+| Event statistics (visitors, revenue, etc.) | Report, Fair
+| Publisher profile and contract tracking | User, Booking
+|===
+
+== 6. Runtime View
+
+=== Booking Process (Suggested Sequence)
+
+image::./models/design/Catalog_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Catalog in UML", align=center]
+
+image::./models/design/Order_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Orders in UML", align=center]
+
+image::./models/design/Management_SequenceDiagram.svg[sequence diagram, 100%, 100%, pdfwidth=100%, title= "Sequence Diagram of the Management in UML", align=center]

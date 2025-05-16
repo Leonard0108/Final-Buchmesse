@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Login – Buchmesse AG</title>
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet" />
+</head>
+<body class="body2">
+
+<div class="login-box">
+  <h2>Login</h2>
+  <form method="post" th:action="@{/login}">
+    <label class="typ2">Email</label>
+    <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
+    <input type="text" name="email" required>
+
+    <label class="typ2" for="password">Password</label>
+      <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
+      <input type="password" id="password" name="password" required>
+
+    <button class="typ2" type="submit">Log In</button>
+  </form>
+
+  <div class="link">
+    <p>Don't have an account? <a th:href="@{/login}">Register here</a></p>
+  </div>
+</div>
+
+</body>
+</html>

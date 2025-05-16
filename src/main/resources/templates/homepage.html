@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Our Shop</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" /> <!-- Optional external CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #5d4c8d;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .category {
+            background-color: #d9aeb1;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category h2 {
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #5d4c8d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #4a3b73;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5d4c8d;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/events}">Events</a></li>
+            <li><a th:href="@{/equipments}">Additional Equipment</a></li>
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+            <li><a th:href="@{/register}">Register</a></li>
+            <li><a th:href="@{/Admin}">Admin Panel</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome to Our Shop!</h1>
+        <p>Explore our exclusive events and equipment.</p>
+
+        <div class="categories">
+            <div class="category">
+                <h2>Events</h2>
+                <p>Discover upcoming events and book your spot!</p>
+                <a th:href="@{/events}" class="btn">Explore Events</a>
+            </div>
+
+            <div class="category">
+                <h2>Equipment</h2>
+                <p>Browse equipment and rent for your needs!</p>
+                <a th:href="@{/equipments}" class="btn">Browse Equipment</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Our Shop. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

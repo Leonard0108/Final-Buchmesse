@@ -1,0 +1,57 @@
+= Protokoll Gruppe 4
+
+Treffen am 15.04.2025
+
+Ort:      BigBlueBotton (online)
+
+Beginn:   13:30 Uhr 
+Ende:     14:25 Uhr
+
+Schriftführer: Alexander Schuster
+
+*Nächstes Treffen:* +
+22.04.2025, 15:15 Uhr, Ort: BBB (online)
+
+Teilnehmer:
+
+- Kolja Schumacher (Kunde & Product Owner)
+- Alexander Schuster (Scrum Master)
+- Ayaz Shakirov
+- Daniel Deynega
+- Leonard Setiadji 
+
+== Bemerkungen
+  *  Neuer Regeltermin (Di um 15:15)
+  *  noch uneinheitliche Diagramme und Texte (Verantworlticher: Leon)
+
+
+== Aktueller Stand
+Pflichtenheft im groben fertig
+
+== Retroperspektive des letzen Sprints
+
+[option="headers"]
+|===
+//PH = Pflichtenheft
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+| I001 | PH - Zusammenfassung | Erstellung Text Zusammenfassung | Alex | abgeschlossen
+| I002 | PH - Aufgabendefinition & Ziele | Erstellung Text Aufgabendefinition & Ziele | Alex | abgeschlossen
+| I003 | PH - Produktnutzung | Erstellung Text Produktnutzung | Daniel  | abgeschlossen
+| I004 | PH - Stakeholders | Erstellung Tabelle Stakholders | Alex | abgeschlossen
+| I005 | PH - Systemgrenzen und Top-Level Architecture | Erstellung von Diagrammen und Text | Daniel | abgeschlossen?
+| I005 | PH - Use Cases | Erstellung von Use Case Diagrammen mit Beschreibungen | Leon | abgeschlossen?
+| I006 | PH - Functional Requirements | Erstellung Tabelle mit funktionalen Anforderungen | Alex | abgeschlossen?
+| I007 | PH - Nicht funktionale Anforderungen | Erstellung einer Tabelle mit funktionalen Anforderungen | Alex | abgeschlossen
+| I008 | PH - GUI-Prototyp | Erstellung von Bildern mit einen GUI - Prototyp | Ayaz | abgeschlossen?
+| I009 | PH - Datenmodell | Erstellung von Klassendiagrammen und Texten zum Thema Datenmodell | Ayaz | abgeschlossen?
+|===
+
+== Planung des nächsten Sprints
+|===
+|Issue |Titel |Beschreibung |Verantwortlicher |Status
+| I010 | Vereinheitlichung Diagramme | Diagramme und Texte auf einander abstimmen und einhetilich machen (Sprache) | alle (Leon) | offen
+| I011 | Erweiterung Videoshop | individuelle Erweiterungen an dem Beispiel Videoshop in Git | alle | offen
+| I012 | Verfeinerung Pflichtenheft | Verfeinerung der Architektur, Komponenten, GUI und ggf. an das Salespointframework anpassen | alle | offen
+| I013 | Anfangen Erstellung Entwicklerdokumentation | Zuteilung von Aufgaben und Anfangen der Bearbeitung| alle | offen
+
+|===
