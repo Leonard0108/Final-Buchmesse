@@ -79,6 +79,21 @@
             background-color: #4a3b73;
         }
 
+        .event-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .event-item form {
+            display: inline;
+        }
+
+        .event-item button {
+            background-color: #c0392b;
+            width: auto;
+            margin-left: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -142,6 +157,16 @@
 
         <button type="submit">Save Event</button>
     </form>
+
+    <hr style="margin: 40px 0;">
+
+    <h2>Delete Existing Event</h2>
+    <div th:each="e : ${eventList}" class="event-item">
+        <p><strong th:text="${e.name}">Event Name</strong> — <span th:text="${e.date}">Event Date</span></p>
+        <form th:action="@{/delete-event/{id}(id=${e.id})}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
 </div>
 
 <footer>

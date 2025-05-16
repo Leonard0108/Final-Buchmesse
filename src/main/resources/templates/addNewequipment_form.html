@@ -1,42 +1,9 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head>-->
-<!--    <title>Add Equipment</title>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<h2>Add New Equipment</h2>-->
-
-<!--<form th:action="@{/add}" th:object="${equipment}" method="post">-->
-<!--    <label>Name:</label>-->
-<!--    <input type="text" th:field="*{name}" required /><br/>-->
-
-<!--    <label>Type:</label>-->
-<!--    <input type="text" th:field="*{type}" required /><br/>-->
-
-<!--    <label>Image URL:</label>-->
-<!--    <input type="text" th:field="*{imageUrl}" /><br/>-->
-
-<!--    <label>Price:</label>-->
-<!--    <input type="number" name="priceAmount" step="0.01" required /><br/>-->
-
-<!--    <label>Currency:</label>-->
-<!--    <select name="priceCurrency">-->
-<!--        <option value="USD">USD</option>-->
-<!--        <option value="EUR">EUR</option>-->
-<!--    </select><br/>-->
-
-<!--    <button type="submit">Save</button>-->
-<!--</form>-->
-
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>Add New Equipment</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" /> <!-- если подключишь CSS -->
+    <link rel="stylesheet" th:href="@{/styles.css}" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -113,6 +80,21 @@
             background-color: #4a3b73;
         }
 
+        .equipment-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .equipment-item form {
+            display: inline;
+        }
+
+        .equipment-item button {
+            background-color: #c0392b;
+            width: auto;
+            margin-left: 10px;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -160,6 +142,16 @@
 
         <button type="submit">Save Equipment</button>
     </form>
+
+    <hr style="margin: 40px 0;">
+
+    <h2>Delete Existing Equipment</h2>
+    <div th:each="e : ${equipmentList}" class="equipment-item">
+        <p><strong th:text="${e.name}">Equipment Name</strong> — <span th:text="${e.type}">Type</span></p>
+        <form th:action="@{/delete-equipment/{id}(id=${e.id})}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
 </div>
 
 <footer>

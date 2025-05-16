@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.money.Monetary;
+import java.util.UUID;
 
 @Controller
 public class AdminEquipmentController {
@@ -23,6 +24,7 @@ public class AdminEquipmentController {
 	@GetMapping("/add")
 	public String showForm(Model model) {
 		model.addAttribute("equipment", new Equipment());
+		model.addAttribute("equipmentList", equipmentCatalog.findAll());
 		return "addNewequipment_form";
 	}
 
@@ -34,6 +36,13 @@ public class AdminEquipmentController {
 
 		equipment.setPrice(Money.of(priceAmount, Monetary.getCurrency(priceCurrency)));
 		equipmentCatalog.save(equipment);
+		return "redirect:/add";
+	}
+
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostMapping("/delete-equipment/{id}")
+	public String deleteEquipment(@PathVariable("id") UUID id) {
+		equipmentCatalog.deleteById(id);
 		return "redirect:/add";
 	}
 }

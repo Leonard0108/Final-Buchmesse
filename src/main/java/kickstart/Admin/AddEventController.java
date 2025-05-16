@@ -7,6 +7,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import java.util.UUID;
 
 import javax.money.Monetary;
 
@@ -22,8 +23,9 @@ public class AddEventController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/add-event")
 	public String showForm(Model model) {
-		model.addAttribute("event", new Event());
-		return "add_event_form";
+	model.addAttribute("event", new Event());
+	model.addAttribute("eventList", eventCatalog.findAll());
+	return "add_event_form";
 	}
 
 	@PreAuthorize("hasRole('ADMIN')")
@@ -31,9 +33,16 @@ public class AddEventController {
 	public String saveEvent(@ModelAttribute Event event,
 							@RequestParam("priceAmount") double priceAmount,
 							@RequestParam("priceCurrency") String priceCurrency) {
-
 		event.setPrice(Money.of(priceAmount, Monetary.getCurrency(priceCurrency)));
 		eventCatalog.save(event);
 		return "redirect:/add-event";
 	}
+
+	@PreAuthorize("hasRole('ADMIN')")
+	@PostMapping("/delete-event/{id}")
+	public String deleteEvent(@PathVariable("id") UUID id) {
+		eventCatalog.deleteById(id);
+		return "redirect:/add-event";
+	}
+
 }
