@@ -49,8 +49,9 @@ public class UserService {
 
 			if (encoder.matches(password, user.getPassword())) {
 				//Password matched the given Password
+				String role = user.getRole();
 				List<SimpleGrantedAuthority> authorities =
-						List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()));
+						List.of(new SimpleGrantedAuthority("ROLE_" + role));
 
 				UsernamePasswordAuthenticationToken auth =
 						new UsernamePasswordAuthenticationToken(user.getEmail(), null, authorities);
@@ -58,7 +59,7 @@ public class UserService {
 				SecurityContextHolder.getContext().setAuthentication(auth);
 				HttpSession session = request.getSession();
 				session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
-				return "success";
+				return role;
 			}
 			else {
 				return "PasswordError";		//Password dont match
