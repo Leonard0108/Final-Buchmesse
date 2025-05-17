@@ -4,43 +4,30 @@ import org.javamoney.moneta.Money;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.stream.StreamSupport;
+
 @Component
 public class EquipmentDataInit implements CommandLineRunner {
 
-    private final EquipmentCatalog equipmentCatalog;
+	private final EquipmentCatalog equipmentCatalog;
 
-    public EquipmentDataInit(EquipmentCatalog equipmentCatalog) {
-        this.equipmentCatalog = equipmentCatalog;
-    }
+	public EquipmentDataInit(EquipmentCatalog equipmentCatalog) {
+		this.equipmentCatalog = equipmentCatalog;
+	}
 
-    @Override
-    public void run(String... args) throws Exception {
-        // Creating and saving events with the existing constructor
-        equipmentCatalog.save(new Equipment(
-            "Gray upholstered bar stool 180x50x50",
-			199.99,
-            "Bench",
-            "Sitzbank_1.png"
-        ));
-        equipmentCatalog.save(new Equipment(
-            "white bar counter 150x180x100",
-			 199.99,
-            "Table",
-            "Bartresen_1.png"
-        ));
-        equipmentCatalog.save(new Equipment(
-            "Coffe machine X",
-            199.99,
-            "Sound",
-            "Kaffemaschine_1.png"
-        ));
-		equipmentCatalog.save(new Equipment(
-			"Barhocker 60x60x130",
-			199.99,
-			"Chair",
-			"Barhocker_1.png"
-		));
+	@Override
+	public void run(String... args) throws Exception {
+		createEquipmentIfNotExists("Camera", Money.of(99.99, "USD"), "Lighting", "http://example.com/tech-conference-image.jpg");
+		createEquipmentIfNotExists("Chair", Money.of(45, "USD"), "Misc", "http://example.com/tech-conference-image.jpg");
+		createEquipmentIfNotExists("Speaker", Money.of(199.99, "USD"), "Sound", "http://example.com/tech-conference-image.jpg");
+	}
 
-        System.out.println("Sample eq added to the database.");
-    }
+	private void createEquipmentIfNotExists(String name, Money price, String type, String imageUrl) {
+		boolean exists = StreamSupport.stream(equipmentCatalog.findAll().spliterator(), false)
+			.anyMatch(e -> e.getName().equalsIgnoreCase(name));
+
+		if (!exists) {
+			equipmentCatalog.save(new Equipment(name, price, type, imageUrl));
+		}
+	}
 }

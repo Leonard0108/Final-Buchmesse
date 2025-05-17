@@ -32,11 +32,13 @@ public class ShoppingCartService {
     };
 
 
-	public double getTotal() {
-		return cart.entrySet().stream()
-			.mapToDouble(entry -> entry.getKey().getPrice() * entry.getValue())
-			.sum();
-	}
+    public BigDecimal getTotal() {
+    double sum = cart.entrySet().stream()
+            .map(entry -> entry.getKey().getPrice().getNumber().doubleValue() * entry.getValue())
+            .reduce(0.0, Double::sum);
+
+    return BigDecimal.valueOf(sum);
+    }
 
 
 

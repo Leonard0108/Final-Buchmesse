@@ -200,50 +200,37 @@
 <main>
   <header id="animated-title">Shopping Cart</header>
 
-    <div th:if="${#lists.isEmpty(cartItems)}" class="cart-info">
-        <p>Your cart is currently empty. Start shopping to add items!</p>
-    </div>
+  <div th:if="${#lists.isEmpty(cartItems)}" class="cart-info">
+    <p>Your cart is currently empty. Start shopping to add items!</p>
+  </div>
 
-    <div th:if="${!#lists.isEmpty(cartItems)}">
-        <table>
-            <thead>
-                <tr>
-                    <th>Product Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr th:each="entry : ${cartItems}">
-                    <td th:text="${entry.key.name}">Product</td>
-                    <td th:text="${#numbers.formatDecimal(entry.key.price, 1, 'COMMA', 2, 'POINT')}">Price</td>
-                    <td th:text="${entry.value}">Qty</td>
-                    <td th:text="${#numbers.formatDecimal(entry.key.price * entry.value, 1, 'COMMA', 2, 'POINT')}">Total</td>
-                    <td class="actions">
-                    <a th:if="${entry.key.class.simpleName == 'Equipment'}"
-                    th:href="@{/cart/removeEquipment/{id}(id=${entry.key.id})}">Remove</a>
-                    <a th:if="${entry.key.class.simpleName == 'Event'}"
-                    th:href="@{/cart/removeEvent/{id}(id=${entry.key.id})}">Remove</a>
-                </td>
-
-                </tr>
-            </tbody>
-
-        </table>
-
-        <div class="total">
-            <h3>Total: <span th:text="${total}"></span></h3>
+  <div th:if="${!#lists.isEmpty(cartItems)}">
+    <div class="cart-grid">
+      <div class="cart-item" th:each="entry : ${cartItems}">
+        <div>
+          <p><strong th:text="${entry.key.name}">Product</strong></p>
+          <p th:text="'Price: ' + ${entry.key.price}">Price</p>
+          <p th:text="'Quantity: ' + ${entry.value}">Qty</p>
+          <p th:text="'Total: ' + ${entry.key.price.multiply(entry.value)}">Total</p>
         </div>
-
-        <form th:action="@{/cart/checkout}" method="post">
-            <button type="submit" class="checkout-btn">Proceed to Checkout</button>
-        </form>
+        <div class="actions">
+          <a th:if="${entry.key.class.simpleName == 'Equipment'}"
+             th:href="@{/cart/removeEquipment/{id}(id=${entry.key.id})}">Remove</a>
+          <a th:if="${entry.key.class.simpleName == 'Event'}"
+             th:href="@{/cart/removeEvent/{id}(id=${entry.key.id})}">Remove</a>
+        </div>
+      </div>
     </div>
 
-</div>
+    <div class="total">
+      <p>Total: <span th:text="${total}">0</span></p>
+    </div>
+
+    <form th:action="@{/cart/checkout}" method="post">
+      <button type="submit" class="checkout-btn">Proceed to Checkout</button>
+    </form>
+  </div>
+</main>
 
 <footer>
   <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>

@@ -208,17 +208,6 @@
 
   <div class="card-container">
     <div class="card" th:each="equipment : ${equipments}">
-        <img th:src="${equipment != null && equipment.imageUrl != null} ? @{/resources/images/} + ${equipment.imageUrl}" alt="Equipment Image" />
-        <div class="card-content">
-            <p><strong th:text="${equipment != null ? equipment.name : 'Name'}">Name</strong></p>
-            <p th:text="${equipment != null ? equipment.type : 'Type'}">Type</p>
-            <p th:text="${equipment != null ? equipment.price : 'Price'}">Price</p>
-        </div>
-        <form method="post" th:action="@{/cart}">
-            <input type="hidden" name="pid" th:value="${equipment != null ? equipment.id : ''}" />
-            <input type="number" name="number" value="1" min="1" max="10" />
-            <button type="submit">Add to Cart</button>
-        </form>
       <img th:if="${equipment.imageUrl != null}"
         th:src="@{${equipment.imageUrl}}"
         alt="Equipment Image"

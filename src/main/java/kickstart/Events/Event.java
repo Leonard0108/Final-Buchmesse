@@ -15,7 +15,7 @@ public class Event implements CartItem {
 
 	private String name;
 	private String description;
-	private double price;
+	private Money price;
 
 	private String date;
 	private String location;
@@ -27,7 +27,7 @@ public class Event implements CartItem {
 	public Event() {
 	}
 
-	public Event(String name, String description, double price,
+	public Event(String name, String description, Money price,
 				 String date, String location, String status,
 				 String visitorsQuantity, String type, String imageUrl) {
 		this.name = name;
@@ -53,7 +53,7 @@ public class Event implements CartItem {
 		return description;
 	}
 
-	public double getPrice() {
+	public Money getPrice() {
 		return price;
 	}
 
@@ -90,7 +90,7 @@ public class Event implements CartItem {
 		this.description = description;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(Money price) {
 		this.price = price;
 	}
 

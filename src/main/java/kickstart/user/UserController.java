@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.servlet.http.HttpSession;
-
 import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
@@ -71,20 +70,21 @@ public class UserController {
 			success = false;
 		}
 		if(success) {
-			
+
 			String result = userService.loginUser(email, password, request);
-			if (!(result.equals("EmailError")  || result.equals("PasswordError"))) {
-				if(result.equals("ADMIN")) {
+
+			if (!("EmailError".equals(result) || "PasswordError".equals(result))) {
+				if ("ADMIN".equals(result)) {
 					return "redirect:/Admin";
-				}
-				else if(result.equals("CUSTOMER")) {
+				} else if ("CUSTOMER".equals(result)) {
 					return "redirect:/events";
 				}
 			}
-			else if (result.equals("EmailError")) {
+			else if ("EmailError".equals(result)) {
 				model.addAttribute("ErrorEmail", "Email doesn't exist");
+			} else if ("PasswordError".equals(result)) {
+				model.addAttribute("ErrorPassword", "Password doesn't match");
 			}
-			model.addAttribute("ErrorPassword", "Password doesn't match");
 		}
 		return "login";
 	}

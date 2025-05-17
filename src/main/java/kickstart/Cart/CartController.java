@@ -31,7 +31,7 @@ public class CartController {
     public ModelAndView shoppingCart() {
         ModelAndView modelAndView = new ModelAndView("cart_page");
         modelAndView.addObject("cartItems", shoppingCartService.getProductsInCart().entrySet());
-        modelAndView.addObject("total", String.format("%.2f", shoppingCartService.getTotal()));
+        modelAndView.addObject("total", shoppingCartService.getTotal().toString());
         return modelAndView;
     }
 
