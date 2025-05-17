@@ -17,23 +17,29 @@ public class EquipmentDataInit implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // Creating and saving events with the existing constructor
         equipmentCatalog.save(new Equipment(
-            "Camera",
-            Money.of(99.99, "USD"),
-            "Lighting",
-            "http://example.com/tech-conference-image.jpg"
+            "Gray upholstered bar stool 180x50x50",
+			199.99,
+            "Bench",
+            "Sitzbank_1.png"
         ));
         equipmentCatalog.save(new Equipment(
-            "Chair",
-            Money.of(45, "USD"),
-            "Misc",
-            "http://example.com/tech-conference-image.jpg"
+            "white bar counter 150x180x100",
+			 199.99,
+            "Table",
+            "Bartresen_1.png"
         ));
         equipmentCatalog.save(new Equipment(
-            "Speaker",
-            Money.of(199.99, "USD"),
+            "Coffe machine X",
+            199.99,
             "Sound",
-            "http://example.com/tech-conference-image.jpg"
+            "Kaffemaschine_1.png"
         ));
+		equipmentCatalog.save(new Equipment(
+			"Barhocker 60x60x130",
+			199.99,
+			"Chair",
+			"Barhocker_1.png"
+		));
 
         System.out.println("Sample eq added to the database.");
     }
