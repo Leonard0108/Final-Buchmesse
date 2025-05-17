@@ -73,11 +73,11 @@ public class UserController {
 		if(success) {
 			
 			String result = userService.loginUser(email, password, request);
-			if (!(result.equals("EmailError")  || result.equals("PaswwordError"))) {
-				if(result == "ADMIN") {
+			if (!(result.equals("EmailError")  || result.equals("PasswordError"))) {
+				if(result.equals("ADMIN")) {
 					return "redirect:/Admin";
 				}
-				else if(result == "CUSTOMER") {
+				else if(result.equals("CUSTOMER")) {
 					return "redirect:/events";
 				}
 			}
