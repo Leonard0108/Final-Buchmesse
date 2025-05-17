@@ -1,154 +1,220 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Register – Buchmesse AG</title>
-    <link rel="stylesheet" th:href="@{/styles.css}" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>Register – Buchmesse AG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        nav {
-            background-color: #5d4c8d;
-            padding: 10px 0;
-        }
+  <style>
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-700.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
 
-        nav li {
-            margin: 0 15px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    html, body {
+      height: 100%;
+    }
 
-        .register-container {
-            max-width: 450px;
-            margin: 80px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 6px;
-            box-shadow: 0 0 0 1px #ddd;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .register-container h2 {
-            text-align: center;
-            color: #2c3e50;
-        }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            color: #2c3e50;
-            font-weight: bold;
-        }
+    .background-anim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-        .error-message {
-            color: red;
-            font-size: 0.9em;
-            margin: 5px 0;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 30px;
+    }
 
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #5d4c8d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-        button:hover {
-            background-color: #4a3b73;
-        }
+    .register-container {
+      max-width: 450px;
+      width: 100%;
+      margin-top: 6rem;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
 
-        .link {
-            text-align: center;
-            margin-top: 20px;
-        }
+    .register-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 24px;
+      color: #fff;
+    }
 
-        .link a {
-            color: #5d4c8d;
-            text-decoration: none;
-        }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #ddd;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #5d4c8d;
-            color: white;
-            margin-top: 50px;
-        }
-    </style>
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.9em;
+      margin: 5px 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #5d4c8d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a3b73;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .link a {
+      color: #a586ff;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
+<!-- Animated SVG Background -->
+<svg class="background-anim" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <stop offset="0%" stop-color="#7e66cc">
+        <animate attributeName="stop-color" values="#7e66cc;#34256f;#9b75ff;#7e66cc" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#181828">
+        <animate attributeName="stop-color" values="#181828;#303050;#202040;#181828" dur="4s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gradient)" />
+</svg>
+
 <nav>
-    <ul>
-        <li><a th:href="@{/}">Home</a></li>
-        <li><a th:href="@{/events}">Events</a></li>
-        <li><a th:href="@{/equipments}">Additional Equipment</a></li>
-        <li><a th:href="@{/cart}">Cart</a></li>
-        <li><a th:href="@{/login}">Login</a></li>
-        <li><a th:href="@{/register}">Register</a></li>
-        <li><a th:href="@{/Admin}">Admin Panel</a></li>
-    </ul>
+  <ul>
+    <li><a th:href="@{/}">Home</a></li>
+    <li><a th:href="@{/events}">Events</a></li>
+    <li><a th:href="@{/equipments}">Equipments</a></li>
+    <li><a th:href="@{/cart}">Cart</a></li>
+    <li><a th:href="@{/login}">Login</a></li>
+    <li><a th:href="@{/register}">Register</a></li>
+    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+  </ul>
 </nav>
 
-<div class="register-container">
+<main>
+  <div class="register-container">
     <h2>Create an Account</h2>
 
     <form method="post" th:action="@{/register}">
-        <label>Forname</label>
-        <input type="text" name="forname">
+      <label>Forname</label>
+      <input type="text" name="forname">
 
-        <label>Surname</label>
-        <input type="text" name="surname">
+      <label>Surname</label>
+      <input type="text" name="surname">
 
-        <label>Email Address</label>
-        <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
-        <input type="email" name="email" required>
+      <label>Email Address</label>
+      <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
+      <input type="email" name="email" required>
 
-        <label>Password</label>
-        <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
-        <input type="password" name="password" required>
+      <label>Password</label>
+      <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
+      <input type="password" name="password" required>
 
-        <button type="submit">Register</button>
+      <button type="submit">Register</button>
     </form>
 
     <div class="link">
-        <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
+      <p>Already have an account? <a th:href="@{/login}">Log in</a></p>
     </div>
-</div>
+  </div>
+</main>
 
 <footer>
-    <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
+  <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
 </footer>
 
 </body>

@@ -1,145 +1,230 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event Page</title>
-    <style>
-        body {
-            background-color: #e5e5e5;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events – Buchmesse AG</title>
 
-        nav {
-            background-color: #5d4c8d;
-            padding: 10px 0;
-        }
+  <style>
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-700.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
 
-        nav li {
-            margin: 0 15px;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: white;
+      overflow-x: hidden;
+    }
 
-        header {
-            background-color: #5d4c8d;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-        }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1000px;
-            margin: auto;
-        }
+    .background-anim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
-        .card {
-            background-color: #d9aeb1;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 30px;
+    }
 
-        .card-content {
-            padding: 10px;
-        }
+    nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-        .card-content p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
+    .hero-text {
+      margin-top: 6rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-        .card button {
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px;
-            cursor: pointer;
-            width: calc(100% - 20px);
-        }
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px #000;
+    }
 
-        .card button:hover {
-            background-color: #bbb;
-        }
+    .hero-text p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-shadow: 1px 1px 2px #000;
+      margin: 0 auto;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #5d4c8d;
-            color: white;
-            margin-top: 50px;
-        }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem auto 4rem;
+      max-width: 1000px;
+      padding: 2rem;
+    }
 
-    </style>
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #aaa;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h2 {
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background: #5d4c8d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .card a:hover {
+      background: #4a3b73;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navigation Header -->
+<!-- Keep this identifier untouched -->
+<svg class="background-anim" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <stop offset="0%" stop-color="#7e66cc">
+        <animate attributeName="stop-color" values="#7e66cc;#34256f;#9b75ff;#7e66cc" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#181828">
+        <animate attributeName="stop-color" values="#181828;#303050;#202040;#181828" dur="4s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gradient)" />
+</svg>
+
 <nav>
-    <ul>
-        <li><a th:href="@{/}">Home</a></li>
-        <li><a th:href="@{/events}">Events</a></li>
-        <li><a th:href="@{/equipments}">Additional Equipment</a></li>
-        <li><a th:href="@{/cart}">Cart</a></li>
-        <li><a th:href="@{/login}">Login</a></li>
-        <li><a th:href="@{/register}">Register</a></li>
-        <li><a th:href="@{/Admin}">Admin Panel</a></li>
-    </ul>
+  <ul>
+    <li><a th:href="@{/}">Home</a></li>
+    <li><a th:href="@{/events}">Events</a></li>
+    <li><a th:href="@{/equipments}">Equipments</a></li>
+    <li><a th:href="@{/cart}">Cart</a></li>
+    <li><a th:href="@{/login}">Login</a></li>
+    <li><a th:href="@{/register}">Register</a></li>
+    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+  </ul>
 </nav>
 
-<!-- Page Title -->
-<header>Events</header>
+<main>
+  <section class="hero-text">
+    <h1>Explore Our Events</h1>
+    <p>Uncover a lineup of curated exhibitions and immersive fair experiences.</p>
+  </section>
 
-<!-- Event Cards -->
-<div class="container" id="event-container">
+  <div class="card-container">
     <div class="card" th:each="event : ${events}">
-        <img th:src="${event.imageUrl != null ? event.imageUrl : 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image" />
-        <div class="card-content">
-            <p><strong th:text="${event.name}">name</strong></p>
-            <p th:text="${event.date}">date</p>
-            <p th:text="${event.location}">location</p>
-            <p th:text="${event.status}">status</p>
-            <p th:text="${event.type}">type</p>
-            <p th:text="${event.visitorsQuantity}">visitorsQuantity</p>
-        </div>
-        <form th:action="@{/cart}" method="post">
-            <input type="hidden" name="pid" th:value="${event.id}" />
-            <input type="number" name="number" value="1" min="1" max="5" />
-            <button type="submit">Add to Cart</button>
-        </form>
+      <img th:src="${event.imageUrl != null ? event.imageUrl : 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image">
+      <h2 th:text="${event.name}">Event Name</h2>
+      <p th:text="${event.date}">Date</p>
+      <p th:text="${event.location}">Location</p>
+      <p th:text="${event.status}">Status</p>
+      <p th:text="${event.type}">Type</p>
+      <p th:text="${event.visitorsQuantity}">Visitors</p>
+      <form th:action="@{/cart}" method="post">
+        <input type="hidden" name="pid" th:value="${event.id}" />
+        <input type="number" name="number" value="1" min="1" max="5" />
+        <button type="submit">Add to Cart</button>
+      </form>
     </div>
-</div> 
+  </div>
+</main>
 
 <footer>
-    <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
+  <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
 </footer>
+<script src="/js/gsap.min.js"></script>
+<script>
+  gsap.from(".hero-text h1", {
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power3.out"
+  });
+
+  gsap.from(".hero-text p", {
+    opacity: 0,
+    y: 30,
+    duration: 2,
+    delay: 0.3,
+    ease: "power3.out"
+  });
+</script>
+
 </body>
 </html>

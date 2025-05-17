@@ -1,176 +1,249 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Add New Event</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <title>Add New Event – Buchmesse AG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-regular.woff2') format('woff2');
+      font-weight: 400;
+    }
 
-        nav {
-            background-color: #5d4c8d;
-            padding: 10px 0;
-        }
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat/montserrat-v29-latin-700.woff2') format('woff2');
+      font-weight: 700;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        nav li {
-            margin: 0 15px;
-        }
+    html, body {
+      height: 100%;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        .form-container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .background-anim {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
 
-        .form-container h2 {
-            text-align: center;
-            color: #5d4c8d;
-        }
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 30px;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
 
-        input, textarea, select {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+    nav li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
 
-        button {
-            margin-top: 20px;
-            width: 100%;
-            background-color: #5d4c8d;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    main {
+      flex: 1;
+      padding: 6rem 1rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-        button:hover {
-            background-color: #4a3b73;
-        }
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.08);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
 
-        .event-item {
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-        }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
 
-        .event-item form {
-            display: inline;
-        }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #ddd;
+    }
 
-        .event-item button {
-            background-color: #c0392b;
-            width: auto;
-            margin-left: 10px;
-        }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 0.5rem;
+      background-color: rgba(255,255,255,0.1);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: white;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #5d4c8d;
-            color: white;
-            margin-top: 50px;
-        }
-    </style>
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background-color: #5d4c8d;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4a3b73;
+    }
+
+    .event-item {
+      border-bottom: 1px solid #aaa;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #ccc;
+    }
+
+    .event-item form {
+      margin: 0;
+    }
+
+    .event-item button {
+      background-color: #c0392b;
+      width: auto;
+      margin-left: 10px;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
+<svg class="background-anim" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+      <stop offset="0%" stop-color="#7e66cc">
+        <animate attributeName="stop-color" values="#7e66cc;#34256f;#9b75ff;#7e66cc" dur="4s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" stop-color="#181828">
+        <animate attributeName="stop-color" values="#181828;#303050;#202040;#181828" dur="4s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gradient)" />
+</svg>
+
 <nav>
-    <ul>
-        <li><a th:href="@{/}">Home</a></li>
-        <li><a th:href="@{/events}">Events</a></li>
-        <li><a th:href="@{/equipments}">Equipment</a></li>
-        <li><a th:href="@{/cart}">Cart</a></li>
-        <li><a th:href="@{/login}">Login</a></li>
-        <li><a th:href="@{/register}">Register</a></li>
-        <li><a th:href="@{/Admin}">Admin Panel</a></li>
-    </ul>
+  <ul>
+    <li><a th:href="@{/}">Home</a></li>
+    <li><a th:href="@{/events}">Events</a></li>
+    <li><a th:href="@{/equipments}">Equipments</a></li>
+    <li><a th:href="@{/cart}">Cart</a></li>
+    <li><a th:href="@{/login}">Login</a></li>
+    <li><a th:href="@{/register}">Register</a></li>
+    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+  </ul>
 </nav>
 
-<div class="form-container">
+<main>
+  <div class="form-container">
     <h2>Add New Event</h2>
-
     <form th:action="@{/add-event}" th:object="${event}" method="post">
+      <label>Name:</label>
+      <input type="text" th:field="*{name}" required />
 
-        <label>Name:</label>
-        <input type="text" th:field="*{name}" required />
+      <label>Description:</label>
+      <textarea th:field="*{description}" rows="3"></textarea>
 
-        <label>Description:</label>
-        <textarea th:field="*{description}" rows="3"></textarea>
+      <label>Date:</label>
+      <input type="text" th:field="*{date}" placeholder="YYYY-MM-DD" required />
 
-        <label>Date:</label>
-        <input type="text" th:field="*{date}" placeholder="YYYY-MM-DD" required />
+      <label>Location:</label>
+      <input type="text" th:field="*{location}" required />
 
-        <label>Location:</label>
-        <input type="text" th:field="*{location}" required />
+      <label>Status:</label>
+      <input type="text" th:field="*{status}" />
 
-        <label>Status:</label>
-        <input type="text" th:field="*{status}" />
+      <label>Visitors Quantity:</label>
+      <input type="text" th:field="*{visitorsQuantity}" />
 
-        <label>Visitors Quantity:</label>
-        <input type="text" th:field="*{visitorsQuantity}" />
+      <label>Type:</label>
+      <input type="text" th:field="*{type}" />
 
-        <label>Type:</label>
-        <input type="text" th:field="*{type}" />
+      <label>Image URL:</label>
+      <input type="text" th:field="*{imageUrl}" />
 
-        <label>Image URL:</label>
-        <input type="text" th:field="*{imageUrl}" />
+      <label>Price:</label>
+      <input type="number" name="priceAmount" step="0.01" required />
 
-        <label>Price:</label>
-        <input type="number" name="priceAmount" step="0.01" required />
+      <label>Currency:</label>
+      <select name="priceCurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
 
-        <label>Currency:</label>
-        <select name="priceCurrency">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-        </select>
-
-        <button type="submit">Save Event</button>
+      <button type="submit">Save Event</button>
     </form>
 
-    <hr style="margin: 40px 0;">
+    <hr style="margin: 3rem 0; border-color: #666;">
 
     <h2>Delete Existing Event</h2>
     <div th:each="e : ${eventList}" class="event-item">
-        <p><strong th:text="${e.name}">Event Name</strong> — <span th:text="${e.date}">Event Date</span></p>
-        <form th:action="@{/delete-event/{id}(id=${e.id})}" method="post">
-            <button type="submit">Delete</button>
-        </form>
+      <span>
+        <strong th:text="${e.name}">Event Name</strong> — <span th:text="${e.date}">Event Date</span>
+      </span>
+      <form th:action="@{/delete-event/{id}(id=${e.id})}" method="post">
+        <button type="submit">Delete</button>
+      </form>
     </div>
-</div>
+  </div>
+</main>
 
 <footer>
-    <p>&copy; 2025 Book Fair Admin Panel. All rights reserved.</p>
+  <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
 </footer>
 
 </body>
