@@ -1,31 +1,147 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Login – Buchmesse AG</title>
-    <link th:href="@{/resources/css/style.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Login – Buchmesse AG</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #5d4c8d;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 0 0 1px #ddd;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5d4c8d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a3b73;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link a {
+            color: #5d4c8d;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5d4c8d;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
 </head>
-<body class="body2">
+<body>
 
-<div class="login-box">
-  <h2>Login</h2>
-  <form method="post" th:action="@{/login}">
-    <label class="typ2">Email</label>
-    <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
-    <input type="text" name="email" required>
+<nav>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/events}">Events</a></li>
+        <li><a th:href="@{/equipments}">Additional Equipment</a></li>
+        <li><a th:href="@{/cart}">Cart</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li><a th:href="@{/register}">Register</a></li>
+        <li><a th:href="@{/Admin}">Admin Panel</a></li>
+    </ul>
+</nav>
 
-    <label class="typ2" for="password">Password</label>
-      <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
-      <input type="password" id="password" name="password" required>
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="post" th:action="@{/login}">
+        <label for="email">Email</label>
+        <p th:if="${ErrorEmail}" th:text="${ErrorEmail}" class="error-message"></p>
+        <input type="text" name="email" id="email" required>
 
-    <button class="typ2" type="submit">Log In</button>
-  </form>
+        <label for="password">Password</label>
+        <p th:if="${ErrorPassword}" th:text="${ErrorPassword}" class="error-message"></p>
+        <input type="password" name="password" id="password" required>
 
-  <div class="link">
-    <p>Don't have an account? <a th:href="@{/login}">Register here</a></p>
-  </div>
+        <button type="submit">Log In</button>
+    </form>
+
+    <div class="link">
+        <p>Don't have an account? <a th:href="@{/register}">Register here</a></p>
+    </div>
 </div>
+
+<footer>
+    <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
+</footer>
 
 </body>
 </html>

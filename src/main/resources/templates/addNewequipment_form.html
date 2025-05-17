@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add New Equipment</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #5d4c8d;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #5d4c8d;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #5d4c8d;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a3b73;
+        }
+
+        .equipment-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .equipment-item form {
+            display: inline;
+        }
+
+        .equipment-item button {
+            background-color: #c0392b;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5d4c8d;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/events}">Events</a></li>
+        <li><a th:href="@{/equipments}">Equipment</a></li>
+        <li><a th:href="@{/cart}">Cart</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li><a th:href="@{/register}">Register</a></li>
+        <li><a th:href="@{/Admin}">Admin Panel</a></li>
+    </ul>
+</nav>
+
+<div class="form-container">
+    <h2>Add New Equipment</h2>
+
+    <form th:action="@{/add}" th:object="${equipment}" method="post">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required />
+
+        <label>Type:</label>
+        <input type="text" th:field="*{type}" required />
+
+        <label>Image URL:</label>
+        <input type="text" th:field="*{imageUrl}" />
+
+        <label>Price:</label>
+        <input type="number" name="priceAmount" step="0.01" required />
+
+        <label>Currency:</label>
+        <select name="priceCurrency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+        </select>
+
+        <button type="submit">Save Equipment</button>
+    </form>
+
+    <hr style="margin: 40px 0;">
+
+    <h2>Delete Existing Equipment</h2>
+    <div th:each="e : ${equipmentList}" class="equipment-item">
+        <p><strong th:text="${e.name}">Equipment Name</strong> — <span th:text="${e.type}">Type</span></p>
+        <form th:action="@{/delete-equipment/{id}(id=${e.id})}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Book Fair Admin Panel. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

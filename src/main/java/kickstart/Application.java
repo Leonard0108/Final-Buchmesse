@@ -27,8 +27,7 @@ import org.springframework.security.web.SecurityFilterChain;
 /**
  * The main application class.
  */
-@EnableSalespoint
-public class Application {
+@EnableSalespoint public class Application {
 
 	/**
 	 * The main application method

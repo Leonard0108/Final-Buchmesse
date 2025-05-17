@@ -1,138 +1,79 @@
-/*Overall*/
-    body {
+/* styles.css */
+body {
     font-family: Arial, sans-serif;
     margin: 0;
-    }
-    label {
-    display: block;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
     font-weight: bold;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+}
 
-/* Homepage */
+.main-content {
+    text-align: center;
+    margin-top: 50px;
+}
 
-    body.body1 {
-      background: #f9f9f9;
-      padding: 0;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #ecf0f1;
-      padding: 10px;
-      text-align: right;
-    }
-    nav a {
-      color: #2c3e50;
-      margin-left: 15px;
-      text-decoration: none;
-    }
-    .content {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .fair-card {
-      background: white;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .fair-card h3 {
-      margin: 0 0 10px;
-    }
-    a.button.typ1 {
-      background: #3498db;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .button:hover {
-      background: #2980b9;
-    }
+.categories {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
 
-/*For Registration */
-    body.body2 {
-          background: #ecf0f1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-    }
-    .register-box {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      width: 100%;
-      max-width: 450px;
-    }
-    h2.typ2 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    label.typ1{
-    margin-bottom: 6px;
-    }
+.category {
+    margin: 0 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+}
 
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button.typ2 {
-      width: 100%;
-      padding: 12px;
-      background-color: #3498db;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .link {
-      text-align: center;
-      margin-top: 15px;
-    }
-    .link a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    .link a:hover {
-      text-decoration: underline;
-    }
-    p.error-message {
-      color: red;
-      margin-top: 0;
-      font-size: 0.9em;
-    }
-/* Login */
-    .login-box {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      width: 100%;
-      max-width: 400px;
-    }
-    label.typ2{
-        margin-bottom: 8px;
-    }
+.category h2 {
+    font-size: 20px;
+}
+
+.category p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.category .btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.category .btn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}

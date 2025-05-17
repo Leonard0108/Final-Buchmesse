@@ -14,11 +14,6 @@ import jakarta.servlet.http.HttpServletRequest;
 @Controller
 public class UserController {
 
-	@GetMapping("/")
-	public String index() {
-		return "buchmesse";
-	}
-
 	@GetMapping("/login")
 	public String login() {
 		return "login";
@@ -30,9 +25,9 @@ public class UserController {
 	}
 
 	@PreAuthorize("hasRole('ADMIN')")
-	@GetMapping("/admin-dashboard")
+	@GetMapping("/dashboard")
 	public String adminPanel(){
-		return "admin-dashboard";
+		return "dashboard";
 	}
 
 	@Autowired
@@ -76,10 +71,15 @@ public class UserController {
 			success = false;
 		}
 		if(success) {
-			//Checks the Password
+			
 			String result = userService.loginUser(email, password, request);
-			if (result.equals("success")) {
-				return "redirect:/admin-dashboard";
+			if (!(result.equals("EmailError")  || result.equals("PaswwordError"))) {
+				if(result == "ADMIN") {
+					return "redirect:/Admin";
+				}
+				else if(result == "CUSTOMER") {
+					return "redirect:/events";
+				}
 			}
 			else if (result.equals("EmailError")) {
 				model.addAttribute("ErrorEmail", "Email doesn't exist");

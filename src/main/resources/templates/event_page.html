@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Page</title>
+    <style>
+        body {
+            background-color: #e5e5e5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #5d4c8d;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header {
+            background-color: #5d4c8d;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: #d9aeb1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 10px;
+        }
+
+        .card-content p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .card button {
+            background-color: #ccc;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            width: calc(100% - 20px);
+        }
+
+        .card button:hover {
+            background-color: #bbb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #5d4c8d;
+            color: white;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Header -->
+<nav>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/events}">Events</a></li>
+        <li><a th:href="@{/equipments}">Additional Equipment</a></li>
+        <li><a th:href="@{/cart}">Cart</a></li>
+        <li><a th:href="@{/login}">Login</a></li>
+        <li><a th:href="@{/register}">Register</a></li>
+        <li><a th:href="@{/Admin}">Admin Panel</a></li>
+    </ul>
+</nav>
+
+<!-- Page Title -->
+<header>Events</header>
+
+<!-- Event Cards -->
+<div class="container" id="event-container">
+    <div class="card" th:each="event : ${events}">
+        <img th:src="${event.imageUrl != null ? event.imageUrl : 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image" />
+        <div class="card-content">
+            <p><strong th:text="${event.name}">name</strong></p>
+            <p th:text="${event.date}">date</p>
+            <p th:text="${event.location}">location</p>
+            <p th:text="${event.status}">status</p>
+            <p th:text="${event.type}">type</p>
+            <p th:text="${event.visitorsQuantity}">visitorsQuantity</p>
+        </div>
+        <form th:action="@{/cart}" method="post">
+            <input type="hidden" name="pid" th:value="${event.id}" />
+            <input type="number" name="number" value="1" min="1" max="5" />
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+</div> 
+
+<footer>
+    <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
+</footer>
+</body>
+</html>
