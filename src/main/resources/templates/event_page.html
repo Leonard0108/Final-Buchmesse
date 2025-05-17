@@ -121,7 +121,7 @@
 <!-- Event Cards -->
 <div class="container" id="event-container">
     <div class="card" th:each="event : ${events}">
-        <img th:src="${event.imageUrl != null ? event.imageUrl : 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image" />
+        <img th:src="${event != null && event.imageUrl != null} ? @{/resources/images/} + ${event.imageUrl}" alt="Event Image" />
         <div class="card-content">
             <p><strong th:text="${event.name}">name</strong></p>
             <p th:text="${event.date}">date</p>
