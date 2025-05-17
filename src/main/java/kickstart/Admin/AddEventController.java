@@ -31,9 +31,8 @@ public class AddEventController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/add-event")
 	public String saveEvent(@ModelAttribute Event event,
-							@RequestParam("priceAmount") double priceAmount,
-							@RequestParam("priceCurrency") String priceCurrency) {
-		event.setPrice(Money.of(priceAmount, Monetary.getCurrency(priceCurrency)));
+							@RequestParam("priceAmount") double priceAmount){
+		event.setPrice(priceAmount);
 		eventCatalog.save(event);
 		return "redirect:/add-event";
 	}

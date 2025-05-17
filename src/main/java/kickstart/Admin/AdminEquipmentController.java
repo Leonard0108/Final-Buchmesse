@@ -31,10 +31,9 @@ public class AdminEquipmentController {
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("/add")
 	public String saveEquipment(@ModelAttribute Equipment equipment,
-								@RequestParam("priceAmount") double priceAmount,
-								@RequestParam("priceCurrency") String priceCurrency) {
+								@RequestParam("priceAmount") double priceAmount) {
 
-		equipment.setPrice(Money.of(priceAmount, Monetary.getCurrency(priceCurrency)));
+		equipment.setPrice(priceAmount);
 		equipmentCatalog.save(equipment);
 		return "redirect:/add";
 	}
