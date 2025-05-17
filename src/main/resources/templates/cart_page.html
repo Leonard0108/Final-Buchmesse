@@ -174,9 +174,9 @@
             <tbody>
                 <tr th:each="entry : ${cartItems}">
                     <td th:text="${entry.key.name}">Product</td>
-                    <td th:text="${entry.key.price}">Price</td>
+                    <td th:text="${#numbers.formatDecimal(entry.key.price, 1, 'COMMA', 2, 'POINT')}">Price</td>
                     <td th:text="${entry.value}">Qty</td>
-                    <td th:text="${entry.key.price.multiply(entry.value)}">Total</td>
+                    <td th:text="${#numbers.formatDecimal(entry.key.price * entry.value, 1, 'COMMA', 2, 'POINT')}">Total</td>
                     <td class="actions">
                     <a th:if="${entry.key.class.simpleName == 'Equipment'}"
                     th:href="@{/cart/removeEquipment/{id}(id=${entry.key.id})}">Remove</a>
