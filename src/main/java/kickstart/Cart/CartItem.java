@@ -2,10 +2,8 @@ package kickstart.Cart;
 
 import java.util.UUID;
 
-import org.javamoney.moneta.Money;
-
 public interface CartItem {
-    Money getPrice();
+    double getPrice();
     String getName();
     UUID getId();
 
