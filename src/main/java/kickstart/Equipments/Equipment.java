@@ -3,7 +3,6 @@ package kickstart.Equipments;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import kickstart.Cart.CartItem;
-import org.javamoney.moneta.Money;
 import java.util.UUID;
 
 
@@ -12,14 +11,14 @@ public class Equipment implements CartItem{
     @Id
 	private UUID id = UUID.randomUUID();
     private String name;
-    private Money price;
+    private double price;
     private String type;
     private String imageUrl;
 
     public Equipment() {
     }
 
-    public Equipment(String name, Money price, String type, String imageUrl) {
+    public Equipment(String name, double price, String type, String imageUrl) {
         this.name = name;
         this.price = price;
         this.type = type;
@@ -34,11 +33,11 @@ public class Equipment implements CartItem{
         this.name = name;
     }
 
-    public Money getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Money price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
