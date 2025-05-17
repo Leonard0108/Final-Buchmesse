@@ -9,6 +9,7 @@ import org.springframework.util.Assert;
 @Component
 @Order(10)
 public class UserDataInit implements DataInitializer {
+
 	public static final String CUSTOMER_ROLE = "CUSTOMER";
 	public static final String ADMIN_ROLE = "ADMIN";
 
@@ -25,12 +26,16 @@ public class UserDataInit implements DataInitializer {
 
 	@Override
 	public void initialize() {
-		if (users.findByEmail("alexanderschuster2020@gmail.com").isPresent()) {
-			return;
-		}
+		createUserIfNotExists("alexanderschuster2020@gmail.com", "123", "Alexander", "Schuster", ADMIN_ROLE);
+		System.out.println("Initializing users Alex");
 
-		users.save(new User("alexanderschuster2020@gmail.com", encoder.encode("123"), "Alexander", "Schuster", ADMIN_ROLE));
-		users.save(new User("sebatianschuster2020@gmail.com", encoder.encode("321"), "Sebastian", "Schuster", CUSTOMER_ROLE));
-		users.save(new User("test@web.de", encoder.encode("test"), "Frank","Müller", CUSTOMER_ROLE));
+		createUserIfNotExists("sebatianschuster2020@gmail.com", "321", "Sebastian", "Schuster", CUSTOMER_ROLE);
+		createUserIfNotExists("test@web.de", "test", "Frank", "Müller", CUSTOMER_ROLE);
+	}
+
+	private void createUserIfNotExists(String email, String password, String firstName, String lastName, String role) {
+		if (users.findByEmail(email).isEmpty()) {
+			users.save(new User(email, encoder.encode(password), firstName, lastName, role));
+		}
 	}
 }
