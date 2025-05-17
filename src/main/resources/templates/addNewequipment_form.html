@@ -185,36 +185,49 @@
     <li><a th:href="@{/events}">Events</a></li>
     <li><a th:href="@{/equipments}">Equipments</a></li>
     <li><a th:href="@{/cart}">Cart</a></li>
-    <li><a th:href="@{/login}">Login</a></li>
-    <li><a th:href="@{/register}">Register</a></li>
-    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:unless="${session.userName != null}"><a th:href="@{/login}">Login</a></li>
+    <li th:unless="${session.userName != null}"><a th:href="@{/register}">Register</a></li>
+
+    <li th:if="${session.userRole == 'ADMIN'}"><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:if="${session.userName != null}">
+      Logged in as <span th:text="${session.userName}">User</span>
+      (<span th:text="${session.userRole}">Role</span>)
+    </li>
+
+    <li th:if="${session.userName != null}">
+      <a th:href="@{/logout}">Logout</a>
+    </li>
   </ul>
 </nav>
+
 
 <main>
   <div class="form-container">
     <h2>Add New Equipment</h2>
-    <form th:action="@{/add}" th:object="${equipment}" method="post">
-      <label>Name:</label>
-      <input type="text" th:field="*{name}" required />
+    <form th:action="@{/add}" th:object="${equipment}" method="post" enctype="multipart/form-data">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required />
 
-      <label>Type:</label>
-      <input type="text" th:field="*{type}" required />
+    <label>Type:</label>
+    <input type="text" th:field="*{type}" required />
 
-      <label>Image URL:</label>
-      <input type="text" th:field="*{imageUrl}" />
+    <label>Upload Image:</label>
+    <input type="file" name="image" accept="image/*" />
 
-      <label>Price:</label>
-      <input type="number" name="priceAmount" step="0.01" required />
+    <label>Price:</label>
+    <input type="number" name="priceAmount" step="0.01" required />
 
-      <label>Currency:</label>
-      <select name="priceCurrency">
+    <label>Currency:</label>
+    <select name="priceCurrency">
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
-      </select>
+    </select>
 
-      <button type="submit">Save Equipment</button>
+    <button type="submit">Save Equipment</button>
     </form>
+
 
     <hr />
 

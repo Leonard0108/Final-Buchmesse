@@ -175,11 +175,23 @@
     <li><a th:href="@{/events}">Events</a></li>
     <li><a th:href="@{/equipments}">Equipments</a></li>
     <li><a th:href="@{/cart}">Cart</a></li>
-    <li><a th:href="@{/login}">Login</a></li>
-    <li><a th:href="@{/register}">Register</a></li>
-    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:unless="${session.userName != null}"><a th:href="@{/login}">Login</a></li>
+    <li th:unless="${session.userName != null}"><a th:href="@{/register}">Register</a></li>
+
+    <li th:if="${session.userRole == 'ADMIN'}"><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:if="${session.userName != null}">
+      Logged in as <span th:text="${session.userName}">User</span>
+      (<span th:text="${session.userRole}">Role</span>)
+    </li>
+
+    <li th:if="${session.userName != null}">
+      <a th:href="@{/logout}">Logout</a>
+    </li>
   </ul>
 </nav>
+
 
 <main>
   <section class="hero-text">
@@ -189,7 +201,10 @@
 
   <div class="card-container">
     <div class="card" th:each="event : ${events}">
-      <img th:src="${event.imageUrl != null ? event.imageUrl : 'https://source.unsplash.com/400x300/?event,people'}" alt="Event Image">
+    <img th:if="${event.imageUrl != null}"
+        th:src="@{${event.imageUrl}}"
+        alt="Event Image"
+        style="width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px;" />
       <h2 th:text="${event.name}">Event Name</h2>
       <p th:text="${event.date}">Date</p>
       <p th:text="${event.location}">Location</p>

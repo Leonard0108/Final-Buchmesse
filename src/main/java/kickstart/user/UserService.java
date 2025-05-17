@@ -32,7 +32,6 @@ public class UserService {
 	}
 
 	public boolean registerUser(String email, String password, String forname, String surname) {
-		/*Validation*/
 		if (users.findByEmail(email).isPresent()) {
 			return false; // Email already exists
 		}
@@ -43,29 +42,33 @@ public class UserService {
 	}
 
 	public String loginUser(String email, String password, HttpServletRequest request) {
-		Optional<User> userOpt = users.findByEmail(email);
+	Optional<User> userOpt = users.findByEmail(email);
 
-		if (userOpt.isPresent()) {
-			User user = userOpt.get();
+	if (userOpt.isPresent()) {
+		User user = userOpt.get();
 
-			if (encoder.matches(password, user.getPassword())) {
-				//Password matched the given Password
-				String role = user.getRole();
-				List<SimpleGrantedAuthority> authorities =
-						List.of(new SimpleGrantedAuthority("ROLE_" + role));
+		if (encoder.matches(password, user.getPassword())) {
+			String role = user.getRole();
+			List<SimpleGrantedAuthority> authorities =
+					List.of(new SimpleGrantedAuthority("ROLE_" + role));
 
-				UsernamePasswordAuthenticationToken auth =
-						new UsernamePasswordAuthenticationToken(user.getEmail(), null, authorities);
+			UsernamePasswordAuthenticationToken auth =
+					new UsernamePasswordAuthenticationToken(user.getEmail(), null, authorities);
 
-				SecurityContextHolder.getContext().setAuthentication(auth);
-				HttpSession session = request.getSession();
-				session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
-				return role;
-			}
-			else {
-				return "PasswordError";		//Password dont match
-			}
+			SecurityContextHolder.getContext().setAuthentication(auth);
+			HttpSession session = request.getSession();
+			session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
+
+			// Set for nav rendering
+			session.setAttribute("userName", user.getForename());
+			session.setAttribute("userRole", role);
+
+			return role;
+		} else {
+			return "PasswordError";
 		}
-		return "EmailError";		//Email doesnt exist/not found
 	}
+	return "EmailError";
+	}
+
 }

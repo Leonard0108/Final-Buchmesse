@@ -183,11 +183,23 @@
     <li><a th:href="@{/events}">Events</a></li>
     <li><a th:href="@{/equipments}">Equipments</a></li>
     <li><a th:href="@{/cart}">Cart</a></li>
-    <li><a th:href="@{/login}">Login</a></li>
-    <li><a th:href="@{/register}">Register</a></li>
-    <li><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:unless="${session.userName != null}"><a th:href="@{/login}">Login</a></li>
+    <li th:unless="${session.userName != null}"><a th:href="@{/register}">Register</a></li>
+
+    <li th:if="${session.userRole == 'ADMIN'}"><a th:href="@{/Admin}">Admin Panel</a></li>
+
+    <li th:if="${session.userName != null}">
+      Logged in as <span th:text="${session.userName}">User</span>
+      (<span th:text="${session.userRole}">Role</span>)
+    </li>
+
+    <li th:if="${session.userName != null}">
+      <a th:href="@{/logout}">Logout</a>
+    </li>
   </ul>
 </nav>
+
 
 <main>
   <section class="hero-text">
@@ -196,7 +208,10 @@
 
   <div class="card-container">
     <div class="card" th:each="equipment : ${equipments}">
-      <img th:src="${equipment != null && equipment.imageUrl != null} ? @{/images/} + ${equipment.imageUrl} : @{/images/default-image.jpg}" alt="Equipment Image" />
+      <img th:if="${equipment.imageUrl != null}"
+        th:src="@{${equipment.imageUrl}}"
+        alt="Equipment Image"
+        style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;" />
       <h2 th:text="${equipment != null ? equipment.name : 'Name'}">Name</h2>
       <p th:text="${equipment != null ? equipment.type : 'Type'}">Type</p>
       <p th:text="${equipment != null ? equipment.price : 'Price'}">Price</p>
