@@ -71,4 +71,8 @@ public class UserService {
 	return "EmailError";
 	}
 
+	public User getUserByEmail(String email) {
+        return users.findByEmail(email).orElse(null); // Returns user or null if not found
+    }
+
 }

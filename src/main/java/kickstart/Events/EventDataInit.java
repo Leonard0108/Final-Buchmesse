@@ -25,7 +25,7 @@ public class EventDataInit implements CommandLineRunner {
 			"Upcoming",
 			"Visitors: 1000",
 			"Conference",
-			"http://example.com/tech-conference-image.jpg");
+			"");
 
 		createEventIfNotExists("Music Festival 2025",
 			"An exciting music festival with top bands and performers.",
@@ -35,7 +35,7 @@ public class EventDataInit implements CommandLineRunner {
 			"Upcoming",
 			"Visitors: 5000",
 			"Festival",
-			"http://example.com/music-festival-image.jpg");
+			"");
 
 		createEventIfNotExists("Startup Bootcamp",
 			"A bootcamp for aspiring entrepreneurs to learn and grow their businesses.",
@@ -45,7 +45,7 @@ public class EventDataInit implements CommandLineRunner {
 			"Upcoming",
 			"Visitors: 200",
 			"Workshop",
-			"http://example.com/startup-bootcamp-image.jpg");
+			"");
 	}
 
 	private void createEventIfNotExists(String name, String description, Money price, String date,

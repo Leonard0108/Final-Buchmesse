@@ -17,9 +17,9 @@ public class EquipmentDataInit implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		createEquipmentIfNotExists("Camera", Money.of(99.99, "USD"), "Lighting", "http://example.com/tech-conference-image.jpg");
-		createEquipmentIfNotExists("Chair", Money.of(45, "USD"), "Misc", "http://example.com/tech-conference-image.jpg");
-		createEquipmentIfNotExists("Speaker", Money.of(199.99, "USD"), "Sound", "http://example.com/tech-conference-image.jpg");
+		createEquipmentIfNotExists("Camera", Money.of(99.99, "USD"), "Lighting", "");
+		createEquipmentIfNotExists("Chair", Money.of(45, "USD"), "Misc", "");
+		createEquipmentIfNotExists("Speaker", Money.of(199.99, "USD"), "Sound", "");
 	}
 
 	private void createEquipmentIfNotExists(String name, Money price, String type, String imageUrl) {

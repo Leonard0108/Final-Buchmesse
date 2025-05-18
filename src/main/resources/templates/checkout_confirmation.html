@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+
+    <style>
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('/fonts/montserrat/montserrat-v29-latin-regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('/fonts/montserrat/montserrat-v29-latin-700.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .background-anim {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 30px;
+        }
+
+        nav li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .hero-text {
+            margin-top: 6rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px #000;
+            margin: 0 auto;
+        }
+
+        .confirmation-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #aaa;
+            border-radius: 12px;
+            padding: 2rem;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .confirmation-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-box p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .confirmation-box ul {
+            text-align: left;
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+
+        .confirmation-box ul li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+<svg class="background-anim" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" gradientTransform="rotate(90)">
+        <stop offset="0%" stop-color="#7e66cc">
+        <animate attributeName="stop-color"
+        values="#7e66cc;#34256f;#9b75ff;#7e66cc"
+        dur="4s"
+        repeatCount="indefinite" />
+        </stop>
+        <stop offset="100%" stop-color="#181828">
+        <animate attributeName="stop-color"
+        values="#181828;#303050;#202040;#181828"
+        dur="4s"
+        repeatCount="indefinite" />
+        </stop>
+
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#gradient)" />
+</svg>
+
+<nav>
+  <ul>
+    <li><a th:href="@{/}">Home</a></li>
+    <li><a th:href="@{/events}">Events</a></li>
+    <li><a th:href="@{/equipments}">Equipments</a></li>
+    <li><a th:href="@{/cart}">Cart</a></li>
+    <li th:unless="${session.userName != null}"><a th:href="@{/login}">Login</a></li>
+    <li th:unless="${session.userName != null}"><a th:href="@{/register}">Register</a></li>
+    <li th:if="${session.userRole == 'ADMIN'}"><a th:href="@{/Admin}">Admin Panel</a></li>
+    <li th:if="${session.userName != null}">
+      Logged in as <span th:text="${session.userName}">User</span>
+      (<span th:text="${session.userRole}">Role</span>)
+    </li>
+    <li th:if="${session.userName != null}">
+      <a th:href="@{/logout}">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+<main>
+    <section class="hero-text">
+        <h1>Thank You for Your Purchase!</h1>
+        <p>Your order has been successfully placed.</p>
+    </section>
+
+    <div class="confirmation-box">
+        <h2>Thank You for Your Purchase!</h2>
+        <p>Your order has been successfully placed.</p>
+        <p>Total: <span th:text="${total}">Total Price</span></p>
+        <h3>Items in Your Order:</h3>
+        <ul>
+            <li th:each="item : ${cartItems}">
+                <span th:text="${item.key.name}">Item Name</span> - 
+                <span th:text="${item.value}">Quantity</span>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Buchmesse AG. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

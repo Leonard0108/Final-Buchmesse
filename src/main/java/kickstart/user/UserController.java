@@ -59,33 +59,38 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public String loginSubmit(@RequestParam String email, @RequestParam String password, Model model, HttpServletRequest request){
-		boolean success = true;
-		if (email == null) {
-			model.addAttribute("ErrorEmail", "Email can't be empty");
-			success = false;
-		}
-		else if (password == null) {
-			model.addAttribute("ErrorPassword", "Password can't be empty");
-			success = false;
-		}
-		if(success) {
+	public String loginSubmit(@RequestParam String email, @RequestParam String password, Model model, HttpServletRequest request, HttpSession session){
+    boolean success = true;
+    if (email == null) {
+        model.addAttribute("ErrorEmail", "Email can't be empty");
+        success = false;
+    }
+    else if (password == null) {
+        model.addAttribute("ErrorPassword", "Password can't be empty");
+        success = false;
+    }
 
-			String result = userService.loginUser(email, password, request);
+    if(success) {
+        // Perform the login logic and get the result (CUSTOMER, ADMIN, or error)
+        String result = userService.loginUser(email, password, request);
 
-			if (!("EmailError".equals(result) || "PasswordError".equals(result))) {
-				if ("ADMIN".equals(result)) {
-					return "redirect:/Admin";
-				} else if ("CUSTOMER".equals(result)) {
-					return "redirect:/events";
-				}
-			}
-			else if ("EmailError".equals(result)) {
-				model.addAttribute("ErrorEmail", "Email doesn't exist");
-			} else if ("PasswordError".equals(result)) {
-				model.addAttribute("ErrorPassword", "Password doesn't match");
-			}
-		}
-		return "login";
-	}
+        if (!("EmailError".equals(result) || "PasswordError".equals(result))) {
+            // If login is successful, find the user and set it in the session
+            User user = userService.getUserByEmail(email); // Fetch user by email from the database
+            session.setAttribute("user", user);  // Store user object in session
+
+            if ("ADMIN".equals(result)) {
+                return "redirect:/Admin";  // Redirect to Admin page
+            } else if ("CUSTOMER".equals(result)) {
+                return "redirect:/events";  // Redirect to events page
+            }
+        } else if ("EmailError".equals(result)) {
+            model.addAttribute("ErrorEmail", "Email doesn't exist");
+        } else if ("PasswordError".equals(result)) {
+            model.addAttribute("ErrorPassword", "Password doesn't match");
+        }
+    }
+    return "login";
+}
+
 }
